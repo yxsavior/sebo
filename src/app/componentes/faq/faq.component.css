@@ -1,0 +1,102 @@
+/* Garante que o contêiner da accordion tenha uma altura mínima */
+.accordion {
+  min-height: 400px;  /* Defina a altura mínima desejada */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Garante que cada item da accordion tenha altura mínima */
+.accordion-item {
+  min-height: 60px;  /* Altura mínima para os itens, mesmo quando fechados */
+}
+
+/* Se você tiver a propriedade min-height sendo aplicada corretamente, os items internos não devem diminuir */
+.accordion-button {
+  min-height: 60px;  /* Garante que cada botão tenha uma altura mínima */
+}
+
+/* Garante que a accordion não encolha para um tamanho menor do que a altura mínima */
+.accordion {
+  min-height: 400px;  /* Defina a altura mínima do FAQ */
+  padding-top: 10px;  /* Um pequeno padding para que o conteúdo não fique grudado no topo */
+  padding-bottom: 10px;  /* Um pequeno padding para que o conteúdo não fique grudado na base */
+}
+
+/* Forçar altura mínima no corpo da resposta (quando visível) */
+.accordion-body {
+  min-height: 60px;  /* Garantir que o conteúdo não fique comprimido quando a resposta estiver visível */
+}
+
+
+
+/* Remove as bordas externas dos itens */
+.accordion-item {
+  border: none; /* Sem borda externa */
+  margin-bottom: 0; /* Sem margem entre os itens */
+}
+
+/* Adiciona uma linha interna entre as perguntas */
+.accordion-item + .accordion-item {
+  border-top: 1px solid #ddd; /* Linha fina entre as perguntas */
+}
+
+/* Estilo do botão (sem cor de fundo, apenas texto simples) */
+.accordion-button {
+  background-color: transparent; /* Sem fundo */
+  color: #333; /* Cor de texto escuro */
+  border: none; /* Sem borda */
+  padding: 1rem; /* Espaçamento confortável */
+  font-weight: 600; /* Tamanho da fonte */
+  font-size: 1rem; /* Tamanho da fonte */
+  text-align: left; /* Alinhar o texto à esquerda */
+  box-shadow: none; /* Remover qualquer sombra */
+  text-transform: none; /* Remover letras maiúsculas */
+}
+
+/* Estilo para o botão quando está aberto */
+.accordion-button:not(.collapsed) {
+  background-color: transparent; /* Continuar sem cor de fundo */
+  color: #000; /* Cor mais escura quando aberto */
+}
+
+/* Estilo para o corpo do conteúdo (remover linha de separação quando expandido) */
+.accordion-collapse {
+  border-top: none; /* Remover a borda superior da área do conteúdo */
+}
+
+/* Se o item da FAQ estiver aberto, não exibe a linha entre a pergunta e a resposta */
+.accordion-item .accordion-collapse.show {
+  border-top: none; /* Não exibe a linha entre a pergunta e a resposta */
+}
+
+/* Forçar altura mínima em cada item do FAQ */
+.accordion-button:not(.collapsed) {
+  min-height: 60px; /* Garante que cada item tenha uma altura mínima mesmo quando fechado */
+}
+
+.accordion-flush {
+  width: 100%; /* Garante que o accordion ocupe toda a largura disponível */
+  max-width: 600px; /* Defina a largura máxima para que não fique muito largo */
+  margin: 0 auto; /* Centraliza o accordion */
+}
+
+.accordion-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 1rem; /* Espaçamento entre os itens */
+}
+
+.accordion-button {
+  padding: 1rem; /* Controle o espaço interno do botão */
+  border: none; /* Remove a borda, se necessário */
+  text-align: left; /* Alinha o texto do botão à esquerda */
+}
+
+.accordion-collapse {
+  overflow: hidden; /* Impede o conteúdo de se expandir para fora do contêiner */
+}
+
+.accordion-body {
+  padding: 1rem; /* Espaçamento interno da resposta */
+}

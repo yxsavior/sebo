@@ -1,0 +1,33 @@
+.navbar-toggler-icon {
+  background-color: transparent; /* Remove qualquer fundo */
+  position: relative;
+  width: 30px;
+  height: 20px;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon span {
+  background-color: white; /* Linhas brancas */
+  height: 4px;
+  border-radius: 5px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  transition: background-color 0.3s;
+}
+
+.navbar-toggler-icon::before {
+  content: '';
+  top: 0;
+}
+
+.navbar-toggler-icon::after {
+  content: '';
+  bottom: 0;
+}
+
+.navbar-toggler-icon span {
+  top: 50%;
+  transform: translateY(-50%);
+}

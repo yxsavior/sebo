@@ -1,0 +1,70 @@
+/* .btn {
+    margin-right: 10px;
+} */
+
+
+a {
+    display: inline-block;
+    margin-right: 15px;
+    text-decoration: none; 
+}
+
+.catalogo-link {
+    text-decoration: underline; 
+    color: black;
+    text-transform: uppercase;
+    text-underline-offset: 4px;
+}
+
+.botao-reservar {
+    /* background-color: #d145ca; */
+    background-color: black;
+}
+
+.detalhes-cor {
+    color: black;
+}
+
+
+/* Estilo para os botões */
+.filter-button {
+    color: #000; /* Cor do texto preta */
+    text-decoration: none; /* Remove o sublinhado */
+    padding-bottom: 5px;
+    position: relative; /* Necessário para o pseudo-elemento */
+    font-weight: 600;
+    transition: color 0.3s, border-bottom 0.3s; /* Transição suave para a cor e o sublinhado */
+}
+
+/* Barra inferior cinza, visível ao passar o mouse */
+.filter-button::after {
+    content: ''; 
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px; 
+    background-color: #ccc; /* Barra inferior cinza */
+    transition: background-color 0.3s; /* Transição para a cor da barra */
+}
+
+/* Muda a cor da barra para rosa ao passar o mouse */
+.filter-button:hover::after {
+    background-color: #ff007f; /* Cor rosa ao passar o mouse */
+}
+
+/* Estilo para o botão ativo (selecionado) */
+.filter-button.active {
+    color: #ff007f; /* Texto rosa para o botão ativo */
+    font-weight: bold; /* Deixa o texto mais forte */
+}
+
+.filter-button.active::after {
+    background-color: #ff007f; /* Barra rosa abaixo do botão ativo */
+}
+
+h2.container {
+    /* padding-left: 25x; */
+    padding-right: 5px; 
+    padding: 0px 25px;
+}

@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand text-light" href="#">UniSebo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Centraliza os links da navbar -->
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item me-4"> <!-- Aumenta o espaçamento com a classe me-4 -->
+          <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item me-4">
+          <a class="nav-link text-light" href="#">Sobre</a>
+        </li>
+        <li class="nav-item me-4">
+          <a class="nav-link text-light" href="#">Catálogo</a>
+        </li>
+        <li class="nav-item me-4">
+          <a class="nav-link text-light" href="#">Promoções</a>
+        </li>
+      </ul>
+
+
+      <!-- Botão para abrir o Modal -->
+      <button class="btn text-light" data-bs-toggle="modal" data-bs-target="#loginModal">
+        <i class="bi bi-person"></i> <!-- Ícone de Usuário -->
+      </button>
+
+      <!-- Modal de Login -->
+      <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="loginModalLabel">Área do Administrador</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="usuario" class="form-label">Usuário</label>
+                  <input type="text" class="form-control" id="usuario" placeholder="Digite seu usuário" required>
+                </div>
+                <div class="mb-3">
+                  <label for="senha" class="form-label">Senha</label>
+                  <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" required>
+                </div>
+                <button type="submit" class="btn btn-dark w-100">Entrar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</nav>
