@@ -1,3 +1,25 @@
-/* .verde-limao {
-    color: #DAFF01;
-} */
+.icone-customizado {
+  color: #D19C97;
+  height: 50px; /* Ajuste a altura do ícone conforme necessário */
+  width: 50px; /* Certifique-se de que a largura do ícone é consistente */
+}
+
+.titulo-preto {
+  color: black;
+}
+
+.divs-facilidades {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.divs-facilidades i {
+  margin-bottom: 10px; /* Margem inferior para espaçar o ícone do título */
+}
+
+.texto-menor {
+  margin-top: 5px; /* Ajuste o espaço entre o título e o texto */
+}

@@ -8,10 +8,12 @@ import { FaqComponent } from "./componentes/faq/faq.component";
 import { InfoComponent } from "./componentes/info/info.component";
 import { RodapeComponent } from "./componentes/rodape/rodape.component";
 import { QuotesComponent } from "./componentes/quotes/quotes.component";
+import { HomeComponent } from "./componentes/home/home.component";
+import { BannerComponent } from "./componentes/banner/banner.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CabecalhoComponent, CarrosselComponent, GenerosComponent, DestaquesComponent, FaqComponent, InfoComponent, RodapeComponent, QuotesComponent],
+  imports: [RouterOutlet, RodapeComponent, HomeComponent, BannerComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

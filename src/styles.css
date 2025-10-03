@@ -1,4 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+/* Global: Aplicando a fonte 'Prata' em todo o site */
+body {
+  /* font-family: 'Prata', serif; */
+  margin: 0; /* Remove margens padrão, se necessário */
+  padding: 0; /* Remove padding padrão, se necessário */
+  box-sizing: border-box; /* Ajusta o box-sizing para garantir consistência */
+}
+
+/* Definir variáveis CSS globais */
+:root {
+  --heading-font: 'Prata', serif;
+  --heading-font-weight: 400;
+  --heading-color: #2F2E33;
+  --heading-line-height: 1.24;
+  
+  --swiper-theme-color: #8C907E;
+  
+  /* Fontes e estilos para o body */
+  --bs-body-font-family: 'Prata', serif;
+  --bs-body-font-size: 16px;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.5;
+  --bs-body-color: #8f8f8f;
+  --bs-body-color-rgb: 143, 143, 143;
+}
+
+/* Estilos globais aplicando as variáveis */
+body {
+  font-family: var(--bs-body-font-family);
+  font-size: var(--bs-body-font-size);
+  font-weight: var(--bs-body-font-weight);
+  line-height: var(--bs-body-line-height);
+  color: var(--bs-body-color);
+  background-color: #fff; /* Cor de fundo do body */
+}
+
+/* Estilizando os títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  font-weight: var(--heading-font-weight);
+  color: var(--heading-color);
+  line-height: var(--heading-line-height);
+}
+
+/* Exemplo de uso de variável em outro elemento */
+.swiper-container {
+  --swiper-theme-color: var(--swiper-theme-color);
+}
+
+
 .texto-menor {
     font-size: 13px;
 }
