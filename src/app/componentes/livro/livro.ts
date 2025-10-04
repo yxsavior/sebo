@@ -5,6 +5,9 @@ export interface Livro {
   reservado: boolean;
   genero: GeneroLiterario;
   preco: string;
+  condicao: string;
+  generoAutoria: string;
+  editora: string;
 }
 
 export interface GeneroLiterario {

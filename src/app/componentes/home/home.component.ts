@@ -12,6 +12,8 @@ import { QuotesComponent } from '../quotes/quotes.component';
 import { FaqComponent } from '../faq/faq.component';
 import { Livro } from '../livro/livro';
 import { BannerComponent } from '../banner/banner.component';
+import { Router, RouterModule } from '@angular/router';
+import { RodapeComponent } from "../rodape/rodape.component";
 
 @Component({
   selector: 'app-home',
@@ -19,18 +21,23 @@ import { BannerComponent } from '../banner/banner.component';
   imports: [
     CommonModule,
     FormsModule,
-    CabecalhoComponent, // Importa os componentes aqui
+    CabecalhoComponent, 
     CarrosselComponent,
     InfoComponent,
     DestaquesComponent,
     QuotesComponent,
     FaqComponent,
+    RouterModule,
+    RodapeComponent
 ],
   templateUrl: './home.component.html',  // Link para o template HTML
   styleUrls: ['./home.component.css']  // Link para os estilos
 })
 
 export class HomeComponent {
-// Livro: Livro;
-  // Qualquer lógica do componente pode ser adicionada aqui
+ constructor(private router: Router) {}
+
+  navegarParaCatalogo() {
+    this.router.navigate(['/catalogo']);
+  }
 }

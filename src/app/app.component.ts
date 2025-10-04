@@ -10,10 +10,11 @@ import { RodapeComponent } from "./componentes/rodape/rodape.component";
 import { QuotesComponent } from "./componentes/quotes/quotes.component";
 import { HomeComponent } from "./componentes/home/home.component";
 import { BannerComponent } from "./componentes/banner/banner.component";
+import { CatalogoComponent } from "./componentes/catalogo/catalogo.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RodapeComponent, HomeComponent],
+  imports: [RouterOutlet, ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -52,8 +52,12 @@
 </div>
 
 <div class="text-center mt-3">
-  <a href="#" class="catalogo-link">Ver catálogo completo</a>
+  <a [routerLink]="['/catalogo']" class="catalogo-link">Ver catálogo completo</a>
+  <!-- <a href="/catalogo" class="catalogo-link">Ver catálogo completo</a> -->
 </div>
+<!-- 
+<button (click)="navegarParaCatalogo()">Ver catálogo completo</button> -->
+
 
 <!-- <p *ngIf="mostrarFormulario" style="color: red;">Modal deve estar aparecendo!</p> -->
 

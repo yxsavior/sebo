@@ -11,7 +11,10 @@ export const livros: Livro[] = [
     },
     reservado: false,
     preco: 'R$ 35,00',
-    imagem: 'as-ondas.png'
+    imagem: 'as-ondas.png',
+    generoAutoria: 'feminino',
+    condicao: 'novo',
+    editora: 'Record'
   },
     {
     titulo: 'O Deserto dos Tartáros',
@@ -22,8 +25,11 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: false,
-    preco: 'R$ 35,00',
-    imagem: 'deserto-dos-tartaros.png'
+    preco: 'R$ 25,00',
+    imagem: 'deserto-dos-tartaros.png',
+    generoAutoria: 'masculino',
+    condicao: 'novo',
+    editora: 'Record'
   },
 
   //Fantasia
@@ -36,8 +42,11 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: false,
-    preco: 'R$ 35,00',
-    imagem: 'alice.png'
+    preco: 'R$ 25,00',
+    imagem: 'alice.png',
+    generoAutoria: 'masculino',
+    condicao: 'novo',
+    editora: 'Record'
   },
 
   //Mistério
@@ -50,8 +59,11 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: false,
-    preco: 'R$ 35,00',
-    imagem: 'nao-sobrou-nenhum.png'
+    preco: 'R$ 15,00',
+    imagem: 'nao-sobrou-nenhum.png',
+    generoAutoria: 'feminino',
+    condicao: 'novo',
+    editora: 'Record'
   },
 
 
