@@ -10,6 +10,7 @@ import { GenerosComponent } from '../generos/generos.component';
 import { DestaquesComponent } from '../destaques/destaques.component';
 import { QuotesComponent } from '../quotes/quotes.component';
 import { FaqComponent } from '../faq/faq.component';
+import { Livro } from '../livro/livro';
 
 @Component({
   selector: 'app-home',
@@ -17,17 +18,18 @@ import { FaqComponent } from '../faq/faq.component';
   imports: [
     CommonModule,
     FormsModule,
-    CabecalhoComponent,  // Importa os componentes aqui
+    CabecalhoComponent, // Importa os componentes aqui
     CarrosselComponent,
     InfoComponent,
-    GenerosComponent,
     DestaquesComponent,
     QuotesComponent,
     FaqComponent
-  ],
+],
   templateUrl: './home.component.html',  // Link para o template HTML
   styleUrls: ['./home.component.css']  // Link para os estilos
 })
+
 export class HomeComponent {
+// Livro: Livro;
   // Qualquer lógica do componente pode ser adicionada aqui
 }

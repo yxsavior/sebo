@@ -1,15 +1,15 @@
 import { Component, input } from '@angular/core';
-import { Livro } from '../livro/livro';
+import { Livro } from './livro';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-destaques',
-  standalone: true,  // Este é um componente standalone
+  selector: 'app-livro',
   imports: [CommonModule],
-  templateUrl: './destaques.component.html',
-  styleUrl: './destaques.component.css'
+  templateUrl: './livro.component.html',
+  styleUrl: './livro.component.css'
 })
-export class DestaquesComponent {
+export class LivroComponent {
+
   livro = input.required<Livro>();
 
   alternarFavorito() {

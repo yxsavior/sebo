@@ -1,5 +1,6 @@
 #UniSebo
 Projeto final em Angular 19.
+Branch de desenvolvimento da lógica.
 
 ### Checklist:
 - [x] Home page
