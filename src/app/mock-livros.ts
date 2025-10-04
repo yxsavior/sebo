@@ -9,7 +9,7 @@ export const livros: Livro[] = [
       value: 'Romance',
       livros: []
     },
-    favorito: false,
+    reservado: false,
     preco: 'R$ 35,00',
     imagem: 'as-ondas.png'
   },
@@ -21,7 +21,7 @@ export const livros: Livro[] = [
       value: 'Romance',
       livros: []
     },
-    favorito: false,
+    reservado: false,
     preco: 'R$ 35,00',
     imagem: 'deserto-dos-tartaros.png'
   },
@@ -35,7 +35,7 @@ export const livros: Livro[] = [
       value: 'Fantasia',
       livros: []
     },
-    favorito: false,
+    reservado: false,
     preco: 'R$ 35,00',
     imagem: 'alice.png'
   },
@@ -49,7 +49,7 @@ export const livros: Livro[] = [
       value: 'Misterio',
       livros: []
     },
-    favorito: false,
+    reservado: false,
     preco: 'R$ 35,00',
     imagem: 'nao-sobrou-nenhum.png'
   },

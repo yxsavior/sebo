@@ -30,6 +30,6 @@ export class DestaquesComponent {
 
 
   alternarFavorito(livro: Livro) {
-    livro.favorito = !livro.favorito;
+    livro.reservado = !livro.reservado;
   }
 }

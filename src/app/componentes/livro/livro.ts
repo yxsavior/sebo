@@ -2,7 +2,7 @@ export interface Livro {
   titulo: string;
   autoria: string;
   imagem: string;
-  favorito: boolean;
+  reservado: boolean;
   genero: GeneroLiterario;
   preco: string;
 }

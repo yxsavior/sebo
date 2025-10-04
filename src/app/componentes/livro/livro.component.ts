@@ -13,6 +13,6 @@ export class LivroComponent {
   livro = input.required<Livro>();
 
   alternarFavorito() {
-    this.livro().favorito = !this.livro().favorito
+    this.livro().reservado = !this.livro().reservado
   }
 }
