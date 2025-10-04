@@ -51,24 +51,33 @@ a {
 
 /* Muda a cor da barra para rosa ao passar o mouse */
 .filter-button:hover::after {
-    background-color: #ff007f; /* Cor rosa ao passar o mouse */
+    background-color: #D19C97; /* Cor rosa ao passar o mouse */
 }
 
 /* Estilo para o botão ativo (selecionado) */
 .filter-button.active {
-    color: #ff007f; /* Texto rosa para o botão ativo */
+    color: #D19C97; /* Texto rosa para o botão ativo */
     font-weight: bold; /* Deixa o texto mais forte */
 }
 
 .filter-button.active::after {
-    background-color: #ff007f; /* Barra rosa abaixo do botão ativo */
+    background-color: #D19C97; /* Barra rosa abaixo do botão ativo */
 }
 
 h2.container {
-    /* padding-left: 25x; */
+    /* padding-left: 25x;
     padding-right: 5px; 
-    padding: 0px 25px;
+    padding: 0px 25px; */
+    font-family: 'Prata', serif;
+    /* gap: 20px;  */
+    padding-left: 0; /* Resetando possíveis paddings */
+    padding-right: 0;
 }
+
+h2.container span {
+    /* margin-right: 30px;  */
+}
+
 
 .card {
     position: relative;

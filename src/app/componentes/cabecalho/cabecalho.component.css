@@ -20,16 +20,19 @@
 .navbar-toggler-icon::before {
   content: '';
   top: 0;
+  
 }
 
 .navbar-toggler-icon::after {
   content: '';
   bottom: 0;
+  color: #D19C97 !important
 }
 
 .navbar-toggler-icon span {
   top: 50%;
   transform: translateY(-50%);
+  
 }
 
 /* Definindo um gradiente suave */
@@ -37,8 +40,12 @@
   background: linear-gradient(45deg, #f8bbd0, #f48fb1, #f06292, #000000);
 } */
 
-.navbar-custom {
+/* .navbar-custom {
   background: linear-gradient(45deg, #bdbdbd, #424242, #000000);
+} */
+
+.navbar-custom {
+color: #D19C97 !important
 }
 
 
