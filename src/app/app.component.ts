@@ -13,7 +13,7 @@ import { BannerComponent } from "./componentes/banner/banner.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RodapeComponent, HomeComponent, BannerComponent, DestaquesComponent],
+  imports: [RouterOutlet, RodapeComponent, HomeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

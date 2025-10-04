@@ -11,6 +11,7 @@ import { DestaquesComponent } from '../destaques/destaques.component';
 import { QuotesComponent } from '../quotes/quotes.component';
 import { FaqComponent } from '../faq/faq.component';
 import { Livro } from '../livro/livro';
+import { BannerComponent } from '../banner/banner.component';
 
 @Component({
   selector: 'app-home',
@@ -23,7 +24,7 @@ import { Livro } from '../livro/livro';
     InfoComponent,
     DestaquesComponent,
     QuotesComponent,
-    FaqComponent
+    FaqComponent,
 ],
   templateUrl: './home.component.html',  // Link para o template HTML
   styleUrls: ['./home.component.css']  // Link para os estilos

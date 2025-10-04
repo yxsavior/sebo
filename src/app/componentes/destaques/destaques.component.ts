@@ -1,23 +1,33 @@
-import { Component, input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Livro } from '../livro/livro';
 import { CommonModule } from '@angular/common';
 import { livros } from '../../mock-livros';
 
 @Component({
   selector: 'app-destaques',
-  standalone: true,  // Este é um componente standalone
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './destaques.component.html',
-  styleUrl: './destaques.component.css'
+  styleUrls: ['./destaques.component.css']
 })
 export class DestaquesComponent {
-  // livro = input.required<Livro>();
+  livros: Livro[] = livros;  // lista original
+  livrosFiltrados: Livro[] = livros;  // lista que será exibida, inicialmente igual a lista completa
 
-  // alternarFavorito() {
-  //   this.livro().favorito = !this.livro().favorito
-  // }
+  filtroAtivo: string = '*';  // Começa com "Todos"
 
-  livros: Livro[] = livros;  // atribui o mock
+
+  filtrar(categoria: string, event: Event) {
+    event.preventDefault();
+    this.filtroAtivo = categoria;
+
+    if (categoria === '*') {
+      this.livrosFiltrados = this.livros;
+    } else {
+      this.livrosFiltrados = this.livros.filter(livro => livro.genero.id === categoria);
+    }
+  }
+
 
   alternarFavorito(livro: Livro) {
     livro.favorito = !livro.favorito;

@@ -2,10 +2,18 @@
   <span class="me-5">Novidades</span>
   <div class="mb-4 mb-md-0 ms-5">
     <p class="m-0 d-flex flex-wrap justify-content-center">
-      <a href="#" class="filter-button me-4 mb-2 mb-md-0 active fs-6" (click)="filtrar('*', $event)">Todos</a>
-      <a href="#" class="filter-button me-4 mb-2 mb-md-0 fs-6" (click)="filtrar('romance', $event)">Romance</a>
-      <a href="#" class="filter-button me-4 mb-2 mb-md-0 fs-6" (click)="filtrar('misterio', $event)">Mistério</a>
-      <a href="#" class="filter-button me-4 mb-2 mb-md-0 fs-6" (click)="filtrar('fantasia', $event)">Fantasia</a>
+      <a href="#" class="filter-button me-4 mb-2 mb-md-0 fs-6" (click)="filtrar('*', $event)"
+        [ngClass]="{ 'active': filtroAtivo === '*' }">Todos</a>
+
+      <a href="#" class="filter-button me-4 mb-2 mb-md-0 fs-6" (click)="filtrar('romance', $event)"
+        [ngClass]="{ 'active': filtroAtivo === 'romance' }">Romance</a>
+
+      <a href="#" class="filter-button me-4 mb-2 mb-md-0 fs-6" (click)="filtrar('misterio', $event)"
+        [ngClass]="{ 'active': filtroAtivo === 'misterio' }">Mistério</a>
+
+      <a href="#" class="filter-button me-4 mb-2 mb-md-0 fs-6" (click)="filtrar('fantasia', $event)"
+        [ngClass]="{ 'active': filtroAtivo === 'fantasia' }">Fantasia</a>
+
     </p>
   </div>
 </h2>
@@ -27,7 +35,7 @@
         </div>
         <div class="card-footer d-flex justify-content-between bg-light border">
           <button (click)="alternarFavorito(livro)" class="btn btn-sm text-dark p-0">
-            <i class="fas fa-heart" [class.text-danger]="livro.favorito"></i> 
+            <i class="fas fa-heart" [class.text-danger]="livro.favorito"></i>
             {{ livro.favorito ? 'Desfavoritar' : 'Favoritar' }}
           </button>
           <a href="#" class="btn btn-sm text-dark p-0">
