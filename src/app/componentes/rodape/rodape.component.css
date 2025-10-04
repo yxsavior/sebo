@@ -1,52 +1,31 @@
-/* .footer {
-  background: #222;
-  color: #fff;
-  padding: 15px;
-  text-align: center;
+/* Garanta que o HTML e o Body ocupem 100% da altura da tela */
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
-.social-icons {
-  margin-top: 8px;
-}
-
-.social-icons a {
-  margin: 0 8px;
-  display: inline-block;
-}
-
-.social-icons img {
-  width: 24px;
-  height: 24px;
-  filter: invert(1); 
-  transition: transform 0.2s ease;
-}
-
-.social-icons img:hover {
-  transform: scale(1.2);
-} */
-
-
-.footer {
-  background-color: #222;
-  color: #fff;
-  text-align: center;
-  padding: 4px 0;
-}
-
-/* .footer-content {
+.container {
+  min-height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 8px;
-} */
-
-/* .social-links a {
-  margin: 0 10px;
-  font-size: 1.5rem;
-  color: #fff;
-  transition: color 0.3s ease;
 }
 
-.social-links a:hover {
-  color: #f39c12;
-} */
+.footer {
+  background: linear-gradient(45deg, #bdbdbd, #424242, #000000);
+  color: #D19C97;
+  text-align: center;
+  padding: 10px 0;
+  font-family: 'Prata', serif;
+  margin-top: auto;  /* Garante que o footer fique colado no fundo */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-content p {
+  margin: 0;
+}
