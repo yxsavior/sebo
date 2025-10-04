@@ -1,6 +1,6 @@
 #UniSebo
 Projeto final em Angular 19.
-Branch de correção de bugs.
+Branch de desenvolvimento do formulário de reserva.
 
 ### Checklist:
 - [x] Home page
