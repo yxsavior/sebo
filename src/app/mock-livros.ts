@@ -24,7 +24,7 @@ export const livros: Livro[] = [
       value: 'Romance',
       livros: []
     },
-    reservado: false,
+    reservado: true,
     preco: 'R$ 25,00',
     imagem: 'deserto-dos-tartaros.png',
     generoAutoria: 'masculino',

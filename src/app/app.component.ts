@@ -11,6 +11,7 @@ import { QuotesComponent } from "./componentes/quotes/quotes.component";
 import { HomeComponent } from "./componentes/home/home.component";
 import { BannerComponent } from "./componentes/banner/banner.component";
 import { CatalogoComponent } from "./componentes/catalogo/catalogo.component";
+import { GraficosComponent } from "./componentes/graficos/graficos.component";
 
 @Component({
   selector: 'app-root',
