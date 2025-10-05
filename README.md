@@ -1,6 +1,6 @@
 #UniSebo
 Projeto final em Angular 19.
-Branch de desenvolvimento do formulário de reserva.
+Branch de desenvolvimento do dashboard.
 
 ### Checklist:
 - [x] Home page

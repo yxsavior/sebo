@@ -1,217 +1,23 @@
 .card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    height: auto;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid #ddd;
-    border-radius: .25rem;
-
-    >hr {
-        margin-right: 0;
-        margin-left: 0;
-    }
-
-    >.list-group {
-        border-top: inherit;
-        border-bottom: inherit;
-
-        &:first-child {
-            border-top-width: 0;
-            border-radius: .25rem .25rem 0 0;
-        }
-
-        &:last-child {
-            border-bottom-width: 0;
-            border-radius: 0 0 .25rem .25rem;
-        }
-    }
-
-    >.card-header+.list-group,
-    >.list-group+.card-footer {
-        border-top: 0;
-    }
+    border-left-width: 5px; /* ou qualquer valor que você desejar */
+}
+.border-left-primary {
+    border-left-color: #4e73df; /* cor para 'primary' */
+}
+.border-left-success {
+    border-left-color: #1cc88a; /* cor para 'success' */
+}
+.border-left-info {
+    border-left-color: #36b9cc; /* cor para 'info' */
+}
+.border-left-warning {
+    border-left-color: #f6c23e; /* cor para 'warning' */
 }
 
-.card-body {
-    flex: 1 1 auto;
-    min-height: 60px;
-    padding: 0.25rem;
-    color: #333;
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
+.text-xs {
+    font-size: 0.75rem;  /* Tamanho ainda menor */
 }
 
-.card-title {
-    margin-bottom: .75rem;
-    font-weight: 600;
-    font-size: 1.25rem;
-}
-
-.card-subtitle {
-    margin-top: -.25rem;
-    margin-bottom: 0;
-}
-
-.card-text:last-child {
-    margin-bottom: 0;
-}
-
-.card-link {
-    color: #007bff;
-    text-decoration: none;
-
-    &:hover {
-        text-decoration: underline;
-    }
-
-    +.card-link {
-        margin-left: 1rem;
-    }
-}
-
-.card-header {
-    padding: 1rem;
-    margin-bottom: 0;
-    color: #fff;
-    /* background-color: #007bff; */
-    border-bottom: 1px solid #ddd;
-    border-radius: .25rem .25rem 0 0;
-    padding-bottom: 1rem;
-    height: 250px;
-}
-
-.card-footer {
-    display: flex;
-    justify-content: space-between;
-    background-color: #f8f9fa;
-    padding: 1rem;
-    color: #fff;
-    background-color: #f8f9fa;
-    border-top: 1px solid #ddd;
-    border-radius: 0 0 .25rem .25rem;
-}
-
-.botao-reservar {
-    padding: .5rem 1.25rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: .25rem;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: background-color .3s ease;
-}
-
-/* .botao-reservar:hover {
-    background-color: #0056b3;
-} */
-
-.card-deck {
-    .card {
-        margin-bottom: 1rem;
-    }
-
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -1rem;
-    margin-left: -1rem;
-
-    .card {
-        flex: 1 0 0%;
-        margin-right: 1rem;
-        margin-left: 1rem;
-    }
-}
-
-.card-group {
-    display: flex;
-    flex-wrap: wrap;
-
-    >.card {
-        margin-bottom: 1rem;
-    }
-}
-
-.card-columns {
-    .card {
-        margin-bottom: 1rem;
-    }
-
-    column-count: 3;
-    column-gap: 1rem;
-
-    .card {
-        display: inline-block;
-        width: 100%;
-    }
-}
-
-.card-body h6.text-muted {
-    margin-left: 0.5rem;
-}
-
-.accordion {
-    >.card {
-        overflow: hidden;
-
-        &:not(:last-of-type) {
-            border-bottom: 0;
-        }
-
-        >.card-header {
-            margin-bottom: 0;
-        }
-    }
-}
-
-.card-footer {
-    padding: 0.5rem 1.25rem;
-}
-
-.card-footer .btn {
-    transition: color 0.3s ease;
-}
-
-.card-footer .btn:hover {
-    color: #D19C97 !important;
-}
-
-.card-footer .fas {
-    color: #D19C97 !important;
-    margin-right: 5px;
-}
-
-.product-img img {
-    height: 100%;
-    object-fit: contain;
-}
-
-.justify-content-between {
-    justify-content: space-between !important;
-}
-
-.text-center {
-    text-align: center !important;
-}
-
-.pt-4, .py-4 {
-    padding-top: 1.5rem !important;
-}
-
-.pb-3, .py-3 {
-    padding-bottom: 1rem !important;
-}
-
-.border-left {
-    border-left: 1px solid #EDF1FF !important;
-}
-
-.border-right {
-    border-right: 1px solid #EDF1FF !important;
+.icon-soft-gray {
+    color: #D3D3D3;  /* Cinza mais suave */
 }
