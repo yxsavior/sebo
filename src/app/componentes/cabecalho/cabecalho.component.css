@@ -1,3 +1,7 @@
+.navbar {
+  border-bottom: 1px solid #ddd;
+}
+
 .navbar-toggler-icon {
   background-color: transparent; /* Remove qualquer fundo */
   position: relative;

@@ -1,264 +1,130 @@
-/* ================================================
-   Estilos para a Barra Lateral
-   ================================================ */
-
-/* Barra lateral fixa à esquerda em telas grandes */
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 100%;
-    background-color: white;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    padding-top: 60px;
-    padding-left: 20px;
-    padding-right: 20px;
-    transition: transform 0.2s ease-in-out;
-    z-index: 1051; /* Define um z-index mais alto para garantir que a barra lateral fique acima do conteúdo */
+/* Resetando margens e padding */
+body, html {
+    margin: 0;
+    padding: 0;
 }
 
-.navbar {
-    position: relative; /* Garantir que a navbar tenha o contexto de empilhamento */
-    z-index: 1050; /* Defina um valor mais alto para garantir que a navbar fique acima */
+.row {
+    padding: 0 8px;
 }
-
-
-.navbar-toggler {
-    z-index: 1050; /* Garante que o botão de hamburguer fique acima de outros elementos */
-    position: relative;
-}
-
-
-/* Estilos para o nome da marca (ou título) na barra lateral */
-.sidebar .navbar-brand {
-  display: flex;
-    text-align: center;
-    justify-content: center;
-    font-size: 24px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-}
-
-/* Lista de itens da barra lateral */
-.sidebar ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-/* Estilos para os itens da lista */
-.sidebar ul li {
-    margin-bottom: 20px; /* Espaçamento entre os itens */
-}
-
-/* Estilos para os ícones ao lado do texto nos itens */
-.sidebar ul li i {
-    margin-right: 10px; /* Adiciona um pequeno espaço entre o ícone e o texto */
-}
-
-/* .sidebar-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px;  
-}
-
-.sidebar-header h2 {
-    margin: 0;  
-    font-size: 1.5rem; 
-} */
-
-/* Reduzir o tamanho da imagem do livro */
-.sidebar .navbar-brand img.logo-img {
-    height: 40px;           /* Reduzir o tamanho da imagem */
-    margin-right: 8px;     /* Espaço entre a imagem e o título */
-    transform: translateY(-14px);
-}
-
-/* Ajustar o título para ser um h4, que é menor */
-.sidebar .navbar-brand h3 {
-    font-size: 1.25rem;     /* Tamanho reduzido do título */
-    margin: 0;              /* Remover margens do título */
-     line-height: 1; 
-}
-
-/* ================================================
-   Estilos para os Links
-   ================================================ */
-
-/* Estilos gerais dos links na barra lateral */
-.link-lateral {
-    padding: 5px;
-    font-size: 0.9rem;
-    color: #797979;
-    text-decoration: none;
-    /* text-align: center; */
-    /* display: inline-block; */
-}
-
-.alinhar-links {
-  margin-left: 20px;
-  padding: 5px;
-}
-
-/* Estilos para o botão de adicionar */
-.btn-add {
-    display: block;
-    padding: 10px;
-    font-size: 0.9rem;
-    text-decoration: none;
-    background-color: black;
-    color: white;
-    border-radius: 5px;
-    text-align: center;
-}
-
-/* Estilos para o hover do botão de adicionar */
-.btn-add:hover {
-    background-color: #444;
-}
-
-
-/* ================================================
-   Estilos para a Imagem na Barra Lateral
-   ================================================ */
-
-/* Estilo para a imagem na barra lateral */
-.logo-img {
-    margin-top: 10px;
-    height: 100px;
-}
-
-.rodape-img {
-  width: 100%;
-  border-radius: 10px;
-  margin-top: 100px;
-}
-
-
-/* ================================================
-   Estilos para o Conteúdo Principal
-   ================================================ */
-
-/* Ajuste para o conteúdo principal, evitando sobreposição com a barra lateral */
-.content {
-    margin-left: 250px; 
-    background-color: #e1cff5;
-     height: 100vh; /* Garante que ocupe toda a altura da tela */
-    padding: 20px; /* Adiciona padding para o conteúdo */
-     transition: margin-left 0.3s ease-in-out; /* Adicionando transição para suavizar o comportamento */
-}
-
-/* Adicionando espaçamento entre os itens da lista */
-.sidebar ul li + li {
-    margin-top: 10px;
-}
-
-/* ==============================================
-   Estilos para os Cards
-   ============================================== */
 
 .card {
-    border: none; /* Remove a borda padrão do card */
-    border-radius: 10px;
+    border-left-width: 5px; /* ou qualquer valor que você desejar */
+}
+.border-left-primary {
+    border-left-color: #4e73df; /* cor para 'primary' */
+}
+.border-left-success {
+    border-left-color: #1cc88a; /* cor para 'success' */
+}
+.border-left-info {
+    border-left-color: #36b9cc; /* cor para 'info' */
+}
+.border-left-warning {
+    border-left-color: #f6c23e; /* cor para 'warning' */
 }
 
-.card-body {
-    display: flex;
-    align-items: center;
+.text-xs {
+    font-size: 0.75rem;  /* Tamanho ainda menor */
 }
 
-.card-body i {
-    color: #D19C97; /* Cor do ícone */
+.icon-soft-gray {
+    color: #D3D3D3;  /* Cinza mais suave */
 }
 
-.card-body .h4 {
-    font-weight: bold;
-    color: #333; /* Cor do número em negrito */
+.sb-sidenav .nav-link {
+    color: #797979;
 }
 
-.card-body small {
-    color: #6c757d; /* Cor do texto abaixo */
+/* Estilo do botão Adicionar Livro */
+.btn-add {
+    background-color: #000;       /* Fundo preto */
+    color: #fff;                  /* Texto branco */
+    padding: 10px 20px;           /* Um pouco de espaçamento */
+    text-decoration: none;        /* Remove o underline */
+    border-radius: 5px;           /* Bordas arredondadas */
+    display: inline-flex;         /* Para o ícone e o texto ficarem alinhados */
+    align-items: center;          /* Alinhar o ícone com o texto */
 }
 
-.cards-topo {
-  padding: 5px;
-  /* text-align: center; */
-  align-items: center;
+.btn-add:hover {
+    background-color: #444;       /* Cor de fundo um pouco mais clara ao passar o mouse */
 }
 
-/* ================================================
-   Responsividade
-   ================================================ */
+.btn-add i {
+    margin-left: 8px;             /* Espaço entre o ícone e o texto */
+}
 
-/* Estilos para telas menores (menores que 768px) */
+/* ================= MENU LATERAL E TOPO ================== */
+
+
+/* Layout principal */
+.sb-topnav {
+    border-bottom: 1px solid #ddd;  /* Separador entre a navbar e o conteúdo */
+}
+
+.sb-sidenav {
+    background-color: white;  /* Fundo branco para a barra lateral */
+    border-right: 1px solid #ddd;  /* Borda sutil à direita da barra lateral */
+}
+
+.sb-sidenav-menu {
+    padding-top: 20px;
+}
+
+.sb-sidenav .nav-link {
+    color: #333;  /* Texto escuro */
+    font-size: 14px;  /* Tamanho de fonte mais legível */
+    padding: 10px 20px;
+}
+
+.sb-sidenav .nav-link:hover {
+    background-color: #f1f1f1;  /* Cor de fundo ao passar o mouse */
+    color: #0056b3;  /* Cor de texto ao passar o mouse */
+}
+
+
+
+/* Layout do conteúdo */
+main {
+    /* margin-left: 250px; */
+    padding: 20px;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
-    /* Barra lateral se ajusta para ocupar toda a largura */
-    .sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 250px;
-        height: 100%;
-        transform: translateX(-100%); /* Esconde a barra lateral por padrão */
-        transition: transform 0.3s ease-in-out;
+    main {
+        margin-left: 0;
+    }
+    .sb-sidenav {
+        display: none;  /* Barra lateral desaparece em telas pequenas */
+    }
+    .sb-topnav {
+        padding: 10px;
     }
 
-    .sidebar.show {
-        transform: translateX(0); /* Mostra a barra lateral quando a classe 'show' for adicionada */
-    }
-
-    .content {
-        margin-left: 0; /* Conteúdo ocupa toda a largura em telas pequenas */
-         padding-top: 60px; /* Ajustar para evitar que o conteúdo fique atrás da navbar */
-    }
-
-    .navbar-toggler {
-        display: block; /* Mostra o botão de hamburguer em telas pequenas */
-    }
-
-    .navbar-brand {
-        flex-grow: 1;
-    }
-
-    .logo-img 
-
-    .rodape-img {
-      display: none;
-    }
-
-    /* Responsividade para os Cards */
-    .row {
-        display: block;
-    }
 }
 
-/* Estilos para telas grandes (maiores que 991px) */
-
-/* Ocultar o botão de hamburguer em telas maiores que 991px */
-@media (min-width: 991px) {
-    .navbar-toggler {
-        display: none;
-    }
-
-    
+/* Sidebar styles */
+.sidebar {
+  width: 250px;
+  height: 100%;
 }
 
-/* Ajustes para a barra lateral em telas pequenas */
-@media (max-width: 991px) {
-    .sidebar {
-        transform: translateX(-100%); /* Esconde a barra lateral por padrão */
-    }
+.sidebar.collapsed {
+  width: 70px;
+}
 
-    .sidebar.show {
-        transform: translateX(0); /* Exibe a barra lateral quando a classe 'show' for adicionada */
-    }
+.sidebar .logo-text {
+  display: block;
+}
 
-    .content {
-        margin-left: 0; /* Conteúdo ocupa toda a largura em telas pequenas */
-    }
+.sidebar.collapsed .logo-text {
+  display: none;
+}
 
-    .navbar-toggler {
-        display: block; /* Mostra o botão de hamburguer em telas pequenas */
-    }
+/* Card hover effect */
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,32 +10,29 @@ import { RouterModule } from '@angular/router';
 })
 export class DashboardComponent {
 
-  // Variáveis para o controle do estado da barra lateral e tema
-  isSidebarActive: boolean = false;
-  isDarkMode: boolean = false;
+  isCollapsed = false;
 
-  // Função para alternar a barra lateral
   toggleSidebar() {
-    this.isSidebarActive = !this.isSidebarActive;
+    this.isCollapsed = !this.isCollapsed;
   }
 
-  // Função para alternar o tema claro/escuro
-  toggleTheme() {
-    this.isDarkMode = !this.isDarkMode;
-  }
-
-   menuVisible = false;
-
-  toggleMenu() {
-    this.menuVisible = !this.menuVisible;
-    const sidebar = document.getElementById('sidebar');
-    if (this.menuVisible) {
-      sidebar?.classList.add('show');
+  menuOnClick(): void {
+    const menuBar = document.getElementById("menu-bar");
+    const nav = document.getElementById("nav");
+    const menuBg = document.getElementById("menu-bg");
+  
+    if (menuBar && nav && menuBg) {
+      menuBar.classList.toggle("change");
+      nav.classList.toggle("change");
+      menuBg.classList.toggle("change-bg");
     } else {
-      sidebar?.classList.remove('show');
+      console.warn("Um ou mais elementos não foram encontrados no DOM.");
     }
   }
 
-  
+  constructor(private router: Router) {}
 
+  logout() {
+    this.router.navigate(['/login']);
+  }
 }

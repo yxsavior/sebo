@@ -1,23 +1,275 @@
+
+
+/* ================================================
+   Estilos para a Barra Lateral
+   ================================================ */
+
+
+/* Barra lateral fixa à esquerda em telas grandes */
+.sidebar {
+    position: fixed;
+    top: 60px;  /* A altura da navbar */
+    left: 0;
+    width: 250px;
+    height: calc(100vh - 60px);  /* Subtrai a altura da navbar da altura total da tela */
+    background-color: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: transform 0.2s ease-in-out;
+    z-index: 1051; /* Barra lateral acima do conteúdo */
+}
+
+/* Barra de navegação (navbar) */
+.navbar {
+    position: relative;
+    z-index: 1050;
+    height: 60px;
+}
+
+/* Certifique-se que o botão hamburguer está acima dos outros elementos */
+.navbar-toggler {
+    z-index: 1050;
+    position: relative;
+}
+
+/* Estilos do conteúdo principal (página) */
+.main-content {
+    padding-left: 250px; /* Adiciona espaço para a barra lateral */
+    transition: margin-left 0.2s ease-in-out;
+}
+
+/* Estilos para o nome da marca (ou título) na barra lateral */
+.sidebar .navbar-brand {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+/* Lista de itens da barra lateral */
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Estilos para os itens da lista */
+.sidebar ul li {
+    margin-bottom: 20px;
+}
+
+/* Estilos para os ícones ao lado do texto nos itens */
+.sidebar ul li i {
+    margin-right: 10px;
+}
+
+.sidebar .navbar-brand img.logo-img {
+    height: 40px;
+    margin-right: 8px;
+    transform: translateY(-14px);
+}
+
+.sidebar .navbar-brand h3 {
+    font-size: 1.25rem;
+    margin: 0;
+    line-height: 1;
+}
+
+
+/* ================================================
+   Estilos para os Links
+   ================================================ */
+
+/* Estilos gerais dos links na barra lateral */
+.link-lateral {
+    padding: 5px;
+    font-size: 0.9rem;
+    color: #797979;
+    text-decoration: none;
+    /* text-align: center; */
+    /* display: inline-block; */
+}
+
+.alinhar-links {
+    margin-left: 20px;
+    padding: 5px;
+}
+
+/* Estilos para o botão de adicionar */
+.btn-add {
+    display: block;
+    padding: 10px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Estilos para o hover do botão de adicionar */
+.btn-add:hover {
+    background-color: #444;
+}
+
+
+/* ================================================
+   Estilos para a Imagem na Barra Lateral
+   ================================================ */
+
+/* Estilo para a imagem na barra lateral */
+.logo-img {
+    margin-top: 10px;
+    height: 100px;
+}
+
+.rodape-img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 100px;
+}
+
+
+/* ================================================
+   Estilos para o Conteúdo Principal
+   ================================================ */
+
+/* Ajuste para o conteúdo principal, evitando sobreposição com a barra lateral */
+.content {
+    margin-left: 250px;
+    background-color: #e1cff5;
+    height: 100vh;
+    /* Garante que ocupe toda a altura da tela */
+    padding: 20px;
+    /* Adiciona padding para o conteúdo */
+    transition: margin-left 0.3s ease-in-out;
+    /* Adicionando transição para suavizar o comportamento */
+}
+
+/* Adicionando espaçamento entre os itens da lista */
+.sidebar ul li+li {
+    margin-top: 10px;
+}
+
+/* ==============================================
+   Estilos para os Cards
+   ============================================== */
+
 .card {
-    border-left-width: 5px; /* ou qualquer valor que você desejar */
-}
-.border-left-primary {
-    border-left-color: #4e73df; /* cor para 'primary' */
-}
-.border-left-success {
-    border-left-color: #1cc88a; /* cor para 'success' */
-}
-.border-left-info {
-    border-left-color: #36b9cc; /* cor para 'info' */
-}
-.border-left-warning {
-    border-left-color: #f6c23e; /* cor para 'warning' */
+    border: none;
+    /* Remove a borda padrão do card */
+    border-radius: 10px;
 }
 
-.text-xs {
-    font-size: 0.75rem;  /* Tamanho ainda menor */
+.card-body {
+    display: flex;
+    align-items: center;
 }
 
-.icon-soft-gray {
-    color: #D3D3D3;  /* Cinza mais suave */
+.card-body i {
+    color: #D19C97;
+    /* Cor do ícone */
+}
+
+.card-body .h4 {
+    font-weight: bold;
+    color: #333;
+    /* Cor do número em negrito */
+}
+
+.card-body small {
+    color: #6c757d;
+    /* Cor do texto abaixo */
+}
+
+.cards-topo {
+    padding: 5px;
+    /* text-align: center; */
+    align-items: center;
+}
+
+/* ================================================
+   Responsividade
+   ================================================ */
+
+/* Estilos para telas menores (menores que 768px) */
+@media (max-width: 768px) {
+
+    /* Barra lateral se ajusta para ocupar toda a largura */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        transform: translateX(-100%);
+        /* Esconde a barra lateral por padrão */
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+        /* Mostra a barra lateral quando a classe 'show' for adicionada */
+    }
+
+    .content {
+        margin-left: 0;
+        /* Conteúdo ocupa toda a largura em telas pequenas */
+        padding-top: 60px;
+        /* Ajustar para evitar que o conteúdo fique atrás da navbar */
+    }
+
+    .navbar-toggler {
+        display: block;
+        /* Mostra o botão de hamburguer em telas pequenas */
+    }
+
+    .navbar-brand {
+        flex-grow: 1;
+    }
+
+    .logo-img .rodape-img {
+        display: none;
+    }
+
+    /* Responsividade para os Cards */
+    .row {
+        display: block;
+    }
+}
+
+/* Estilos para telas grandes (maiores que 991px) */
+
+/* Ocultar o botão de hamburguer em telas maiores que 991px */
+@media (min-width: 991px) {
+    .navbar-toggler {
+        display: none;
+    }
+
+
+}
+
+/* Ajustes para a barra lateral em telas pequenas */
+@media (max-width: 991px) {
+    .sidebar {
+        transform: translateX(-100%);
+        /* Esconde a barra lateral por padrão */
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+        /* Exibe a barra lateral quando a classe 'show' for adicionada */
+    }
+
+    .content {
+        margin-left: 0;
+        /* Conteúdo ocupa toda a largura em telas pequenas */
+    }
+
+    .navbar-toggler {
+        display: block;
+        /* Mostra o botão de hamburguer em telas pequenas */
+    }
 }
