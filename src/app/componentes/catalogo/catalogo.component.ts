@@ -74,7 +74,7 @@ export class CatalogoComponent {
   livros: Livro[] = livros;  // lista original
   livrosFiltrados: Livro[] = livros;  // lista que será exibida
   filtroAtivo: string = '*';  // Filtro de categoria ativo
-  itensPorPagina: number = 12;  // Quantidade de itens por página
+  itensPorPagina: number = 8;  // Quantidade de itens por página
   paginaAtual: number = 1;  // Página atual
 
   // Variáveis de controle de paginação

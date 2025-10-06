@@ -15,7 +15,8 @@
 
             <!-- Filtros -->
             <div class="col-md-3 col-sm-12">
-                <div class="card p-3">
+                <div class="card-filtros">
+                    <!-- <div class="card p-3"> -->
                     <h3 class="card-title">Filtrar por:</h3>
 
                     <!-- Filtro de Preço -->
@@ -58,14 +59,16 @@
 
             <!-- Conteúdo Principal (Livros) -->
             <main class="col-md-9">
-                <div class="row my-5">
+                <div>
+                    <!-- <div class="row my-5"> -->
                     <!-- Header do Catálogo -->
-                    <div class="bg-white p-4 rounded shadow-sm mb-6 d-flex justify-content-between align-items-center">
-                        <p class="text-muted mb-2">Mostrando {{ (paginaAtual - 1) * itensPorPagina + 1 }}-{{
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <!-- <div class="bg-white p-4 rounded shadow-sm mb-6 d-flex justify-content-between align-items-center"> -->
+                        <p class="text-muted mb-0">Mostrando {{ (paginaAtual - 1) * itensPorPagina + 1 }}-{{
                             (paginaAtual * itensPorPagina) > livrosFiltrados.length ? livrosFiltrados.length :
                             paginaAtual * itensPorPagina }} de {{ livrosFiltrados.length }} resultados</p>
                         <div class="d-flex align-items-center">
-                            <select class="form-select" aria-label="Ordenar por">
+                            <select class="form-select form-select-sm" aria-label="Ordenar por">
                                 <option selected>Todos</option>
                                 <option>Novidades</option>
                                 <option>Preço: menor para maior</option>
@@ -74,14 +77,16 @@
                         </div>
                     </div>
 
+                    <hr class="mt-2 mb-4"/>
+
                     <!-- Conteúdo do Catálogo -->
                     <div class="col-12">
                         <div class="container pt-1">
                             <!-- <div class="container-fluid pt-1"> -->
                             <!-- <div class="row pb-3"> -->
-                                <div class="row px-xl-5 pb-3">
+                            <div class="row px-xl-5 pb-3">
                                 <div *ngFor="let livro of livrosParaExibir" class="col-lg-3 col-md-4 col-sm-6 pb-4">
-                                <!-- <div *ngFor="let livro of livrosParaExibir" class="col-lg-4 col-md-6 col-sm-12 pb-4"> -->
+                                    <!-- <div *ngFor="let livro of livrosParaExibir" class="col-lg-4 col-md-6 col-sm-12 pb-4"> -->
 
                                     <div class="card product-item border-0 mb-4">
                                         <!-- <div class="card product-item border-0 mb-4" style="min-width: 250px;"> -->
@@ -91,11 +96,11 @@
                                             <img class="img-fluid w-100" [src]="livro.imagem" [alt]="livro.titulo" />
                                         </div>
                                         <div class="card-body text-center p-0 pt-4 pb-3">
-                                            <h6 class="mb-3">{{ livro.titulo }}</h6>
+                                            <!-- <h6 class="mb-3">{{ livro.titulo }}</h6> -->
                                             <h6 class="mb-3 text-muted">{{ livro.autoria }}</h6>
-<!-- 
+
                                             <h6 class="text-truncate mb-3">{{ livro.titulo }}</h6>
-                                            <h6 class="text-truncate mb-3 text-muted">{{ livro.autoria }}</h6> -->
+                                            <!-- <h6 class="text-truncate mb-3 text-muted">{{ livro.autoria }}</h6> -->
 
                                             <div class="d-flex justify-content-center">
                                                 <h6>{{ livro.preco }}</h6>
@@ -104,7 +109,9 @@
                                         </div>
                                         <div class="card-footer d-flex justify-content-between bg-light border">
                                             <button (click)="abrirFormularioReserva(livro)"
-                                                class="btn btn-sm text-dark p-0" *ngIf="!livro.reservado">
+                                                class="btn btn-sm text-dark p-0 botao-reservar"
+                                                *ngIf="!livro.reservado">
+                                                <!-- class="btn btn-sm text-dark p-0" *ngIf="!livro.reservado"> -->
                                                 <i class="fas fa-heart"></i> Reservar
                                             </button>
                                             <span *ngIf="livro.reservado" class="text-danger">
