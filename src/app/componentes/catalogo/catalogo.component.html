@@ -14,43 +14,39 @@
         <div class="row g-5 d-flex align-items-stretch">
 
             <!-- Filtros -->
-            <div class="col-md-3 col-sm-12">
-                <div class="card-filtros">
-                    <!-- <div class="card p-3"> -->
-                    <h3 class="card-title">Filtrar por:</h3>
+<div class="col-md-3 col-sm-12">
+  <div class="card-filtros">
+    <h3 class="card-title">Filtrar por:</h3>
 
-                    <!-- Filtro de Preço -->
-                    <div class="filter-section mb-4">
-                        <h4>PREÇO</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Menos de R$20 (35)</a></li>
-                            <li><a href="#">R$20 - R$30 (40)</a></li>
-                            <li><a href="#">R$30 - R$40 (22)</a></li>
-                            <li><a href="#">R$40 - R$50 (5)</a></li>
-                        </ul>
-                    </div>
+    <!-- Filtro de Preço -->
+    <div class="filter-section mb-4">
+      <h4>PREÇO</h4>
+      <ul class="list-unstyled">
+        <li *ngFor="let preco of filtrosPreco">
+          <a href="#">{{ preco.faixa }} ({{ preco.quantidade }})</a>
+        </li>
+      </ul>
+    </div>
 
-                    <!-- Filtro de Editora -->
-                    <div class="filter-section mb-4">
-                        <h4>EDITORA</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Morro Branco (2)</a></li>
-                            <li><a href="#">Editora 34 (66)</a></li>
-                            <li><a href="#">Suma (7)</a></li>
-                            <li><a href="#">Companhia das Letras (100)</a></li>
-                        </ul>
-                    </div>
+    <!-- Filtro de Editora -->
+    <div class="filter-section mb-4">
+      <h4>EDITORA</h4>
+      <ul class="list-unstyled">
+        <li *ngFor="let editora of filtrosEditora">
+          <a href="#">{{ editora.editora }} ({{ editora.quantidade }})</a>
+        </li>
+      </ul>
+    </div>
 
-                    <!-- Filtro de Condição -->
-                    <div class="filter-section mb-4">
-                        <h4>CONDIÇÃO</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Novo (99)</a></li>
-                            <li><a href="#">Ótimo (27)</a></li>
-                            <li><a href="#">Bom (15)</a></li>
-                            <li><a href="#">Regular (1)</a></li>
-                        </ul>
-                    </div>
+    <!-- Filtro de Condição -->
+    <div class="filter-section mb-4">
+      <h4>CONDIÇÃO</h4>
+      <ul class="list-unstyled">
+        <li *ngFor="let condicao of filtrosCondicao">
+          <a href="#">{{ condicao.condicao | titlecase }} ({{ condicao.quantidade }})</a>
+        </li>
+      </ul>
+    </div>
 
                     <!-- Botão de Aplicar Filtros -->
                     <button class="btn btn-dark w-100 py-2">Aplicar Filtros</button>
