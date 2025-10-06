@@ -1,22 +1,33 @@
 <h2 class="container d-flex flex-column flex-md-row justify-content-between my-3 my-xl-5 align-items-center">
-  <span class="me-5">Novidades</span>
+  <span class="me-5">Novidades da Semana</span>
   <div class="mb-4 mb-md-0 ms-5">
     <p class="m-0 d-flex flex-wrap justify-content-center">
+      <!-- Botão de 'Todos' que agora mostra apenas livros com novidade: true -->
       <a href="#" class="filter-button me-4 mb-2 mb-md-0 fs-6" (click)="filtrar('*', $event)"
         [ngClass]="{ 'active': filtroAtivo === '*' }">Todos</a>
 
-      <a href="#" class="filter-button me-4 mb-2 mb-md-0 fs-6" (click)="filtrar('romance', $event)"
-        [ngClass]="{ 'active': filtroAtivo === 'romance' }">Romance</a>
+      <!-- <a href="#" class="filter-button me-4 mb-2 mb-md-0 fs-6" (click)="filtrar('classico', $event)"
+        [ngClass]="{ 'active': filtroAtivo === 'classico' }">Clássicos</a> -->
 
-      <a href="#" class="filter-button me-4 mb-2 mb-md-0 fs-6" (click)="filtrar('misterio', $event)"
-        [ngClass]="{ 'active': filtroAtivo === 'misterio' }">Mistério</a>
+      <a href="#" class="filter-button me-4 mb-2 mb-md-0 fs-6" (click)="filtrar('suspense', $event)"
+        [ngClass]="{ 'active': filtroAtivo === 'suspense' }">Suspense</a>
 
       <a href="#" class="filter-button me-4 mb-2 mb-md-0 fs-6" (click)="filtrar('fantasia', $event)"
         [ngClass]="{ 'active': filtroAtivo === 'fantasia' }">Fantasia</a>
 
+      <a href="#" class="filter-button me-4 mb-2 mb-md-0 fs-6" (click)="filtrar('ficcao-cientifica', $event)"
+        [ngClass]="{ 'active': filtroAtivo === 'ficcao-cientifica' }">Sci-Fi</a>
+
+      <!-- <a href="#" class="filter-button me-4 mb-2 mb-md-0 fs-6" (click)="filtrar('contemporaneo', $event)"
+        [ngClass]="{ 'active': filtroAtivo === 'contemporaneo'}">Contemporâneo</a> -->
+
+      <a href="#" class="filter-button me-4 mb-2 mb-md-0 fs-6" (click)="filtrar('terror', $event)"
+        [ngClass]="{ 'active': filtroAtivo === 'terror'}">Terror</a>
+
     </p>
   </div>
 </h2>
+
 
 <div class="container-fluid pt-1">
   <div class="row px-xl-5 pb-3">

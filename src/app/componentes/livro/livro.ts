@@ -8,6 +8,7 @@ export interface Livro {
   condicao: string;
   generoAutoria: string;
   editora: string;
+  novidade: boolean;
 }
 
 export interface GeneroLiterario {

@@ -1,11 +1,15 @@
 .icone-customizado {
   color: #D19C97;
-  height: 50px; /* Ajuste a altura do ícone conforme necessário */
-  width: 50px; /* Certifique-se de que a largura do ícone é consistente */
+  height: 50px;
+  width: 50px;
 }
 
 .titulo-preto {
   color: black;
+}
+
+.texto-menor {
+  margin-top: 5px;
 }
 
 .divs-facilidades {
@@ -17,9 +21,105 @@
 }
 
 .divs-facilidades i {
-  margin-bottom: 10px; /* Margem inferior para espaçar o ícone do título */
+  margin-bottom: 10px;
 }
 
-.texto-menor {
-  margin-top: 5px; /* Ajuste o espaço entre o título e o texto */
+/* Estilos para a parte do swiper */
+.swiper-container {
+  position: relative;
+  /* Para que os botões sejam posicionados em relação a esta div */
+  width: 100%;
+  /* height: auto; */
+  overflow: hidden;
+  /* Evitar que os itens que saem da área visível apareçam */
+  background-color: #fcf5f5;
+}
+
+.swiper-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  /* Não deixa os itens quebrarem linha */
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Ajuste a responsividade */
+@media (max-width: 1023px) {
+  .swiper-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    /* Adicionado aqui para garantir que o overflow seja sempre escondido */
+  }
+
+  .swiper-slide {
+    width: 100%;
+    /* Cada slide ocupa toda a tela */
+  }
+
+  /* Estilos personalizados para as setas */
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #b91e10;
+    /* Cor das setas */
+    font-size: 24px;
+    /* Tamanho do ícone */
+    width: 50px;
+    /* Largura das setas */
+    height: 50px;
+    /* Altura das setas */
+    background-color: transparent;
+    /* Remover o fundo */
+    border: none;
+    /* Remover a borda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    /* Para garantir que fiquem sobre os slides */
+    cursor: pointer;
+  }
+
+  .swiper-button-next {
+    right: 10px;
+    /* Coloca a seta para a direita */
+    color: #b91e10;
+    width: 40px;
+    /* Ajusta o tamanho das setas em telas menores */
+    height: 40px;
+  }
+
+  .swiper-button-prev {
+    left: 10px;
+    /* Coloca a seta para a esquerda */
+  }
+
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    color: #D19C97;
+    /* Muda a cor ao passar o mouse */
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .swiper-slide {
+    width: calc(33.33% - 20px);
+    /* 3 slides por linha com espaçamento */
+  }
+
+  .swiper-button-next,
+.swiper-button-prev {
+  display: none;
+}
 }

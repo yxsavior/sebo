@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+/* @import 'swiper/swiper-bundle.min.css'; */
+
+
 /* Global: Aplicando a fonte 'Prata' em todo o site */
 body {
   /* font-family: 'Prata', serif; */

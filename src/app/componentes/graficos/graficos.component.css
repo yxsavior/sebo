@@ -1,4 +1,7 @@
 canvas {
-  width: 50%;
-  height: 50px;
+  max-width: 100%; /* Garante que o gráfico ocupe 100% da largura disponível */
+  height: auto;    /* A altura será ajustada automaticamente para manter a proporção */
+  /* width: 50%; */
+  /* height: 50px; */
 }
+

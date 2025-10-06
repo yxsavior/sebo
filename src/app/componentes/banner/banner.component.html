@@ -1,98 +1,10 @@
-<!-- Barra de navegação (topo) -->
-<header class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-    <div class="container-fluid">
-        <div class="navbar-brand">UniSebo</div>
-        <button class="navbar-toggler" type="button" (click)="toggleMenu()">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</header>
+<!-- catalogo.component.html -->
 
-<!-- Barra lateral (Side Navigation) -->
-<div class="sidebar" id="sidebar">
-    <div class="navbar-brand">
-        <!-- Logo e título -->
-    </div>
-    <ul>
-        <div class="menu">
-            <li><a [routerLink]="['/dashboard']" class="btn-add">Adicionar livro <i class="bi bi-plus"></i></a></li>
-            <div class="alinhar-links">
-                <li><i class="bi bi-bar-chart-fill fs-5"></i><a [routerLink]="['/dashboard']" class="link-lateral">Dashboard</a></li>
-            </div>
-            <div class="alinhar-links">
-                <li><i class="bi bi-bookmarks-fill fs-5"></i><a [routerLink]="['/dashboard']" class="link-lateral">Livros</a></li>
-            </div>
-            <div class="alinhar-links">
-                <li><i class="bi bi-file-earmark-text fs-5"></i><a [routerLink]="['/dashboard']" class="link-lateral">Histórico</a></li>
-            </div>
-            <div class="alinhar-links">
-                <li><i class="bi bi-gear fs-5"></i><a [routerLink]="['/dashboard']" class="link-lateral">Configurações</a></li>
-            </div>
-        </div>
-    </ul>
-</div>
+<!-- Cabecalho -->
+<app-cabecalho></app-cabecalho>
 
-<!-- Conteúdo principal -->
-<div class="main-content">
-    <!-- Aqui vai o conteúdo principal da sua página -->
-    <h1>Conteúdo da Página</h1>
-    <p>O conteúdo da página não ficará atrás da barra lateral agora.</p>
-</div>
+<!-- Carrossel -->
+<app-graficos></app-graficos>
 
-<main class="content">
-    <!-- Cards do Dashboard -->
-    <div class="row">
-        <!-- Card 1: Livros Totais -->
-        <div class="col-md-3 mb-4">
-            <div class="card shadow-sm cards-topo">
-                <div class="card-body d-flex align-items-center">
-                    <i class="bi bi-book fs-3 me-3"></i>
-                    <div>
-                        <div class="h4 mb-0 font-weight-bold">52</div>
-                        <small class="text-muted">Livros Totais</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 2: Livros Reservados -->
-        <div class="col-md-3 mb-4">
-            <div class="card shadow-sm cards-topo">
-                <div class="card-body d-flex align-items-center">
-                    <i class="bi bi-bookmark-check fs-4 me-3"></i>
-                    <div>
-                        <div class="h4 mb-0 font-weight-bold">7</div>
-                        <small class="text-muted">Livros Reservados</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 3: Receita Estimada -->
-        <div class="col-md-3 mb-4">
-            <div class="card shadow-sm cards-topo">
-                <div class="card-body d-flex align-items-center">
-                    <i class="bi bi-cash fs-3 me-3"></i>
-                    <div>
-                        <div class="h4 mb-0 font-weight-bold">R$ 115,00</div>
-                        <small class="text-muted">Receita Estimada</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 4: Em aberto -->
-        <div class="col-md-3 mb-4">
-            <div class="card shadow-sm cards-topo">
-                <div class="card-body d-flex align-items-center">
-                    <i class="bi bi-hourglass-split fs-3 me-3"></i>
-                    <div>
-                        <div class="h4 mb-0 font-weight-bold">34</div>
-                        <small class="text-muted">Tarefas Pendentes</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</main>
-
+<!-- Rodapé -->
+<app-rodape></app-rodape>

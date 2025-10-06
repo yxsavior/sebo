@@ -6,11 +6,15 @@ Branch de desenvolvimento do dashboard.
 - [x] Home page
 - [x] Carrossel
 - [x] ~~api.js~~
+- [x] Adicionar mais livros a aba "Novidades"
+- [x] Integrar lógica (forms, reservado, filtro) 
+- [x] Ajuste dos componentes
 
+- [/] Catálogo
+- [/] Dashboard
 - [ ] Login admin com auth 
-- [ ] Integrar lógica (forms, reservado, filtro) 
-- [ ] Ajuste dos componentes
-- [ ] Adicionar mais livros a aba "Novidades"
-- [ ] Dashboard
-- [ ] Página demo
 - [ ] Editar design (imagens/refinamento)
+
+Extras:
+- [ ] Página demo
+- [ ] Setas app-info

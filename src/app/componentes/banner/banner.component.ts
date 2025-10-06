@@ -1,38 +1,16 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { CabecalhoComponent } from "../cabecalho/cabecalho.component";
+import { RodapeComponent } from "../rodape/rodape.component";
+import { GraficosComponent } from "../graficos/graficos.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-banner',
-  imports: [RouterModule],
+   imports: [CommonModule, RouterModule, CabecalhoComponent, RodapeComponent, GraficosComponent],
   templateUrl: './banner.component.html',
   styleUrl: './banner.component.css'
 })
 export class BannerComponent {
- // Variáveis para o controle do estado da barra lateral e tema
-  isSidebarActive: boolean = false;
-  isDarkMode: boolean = false;
-
-  // Função para alternar a barra lateral
-  toggleSidebar() {
-    this.isSidebarActive = !this.isSidebarActive;
-  }
-
-  // Função para alternar o tema claro/escuro
-  toggleTheme() {
-    this.isDarkMode = !this.isDarkMode;
-  }
-
-   menuVisible = false;
-
-  toggleMenu() {
-    this.menuVisible = !this.menuVisible;
-    const sidebar = document.getElementById('sidebar');
-    if (this.menuVisible) {
-      sidebar?.classList.add('show');
-    } else {
-      sidebar?.classList.remove('show');
-    }
-  }
-
-
+ 
 }

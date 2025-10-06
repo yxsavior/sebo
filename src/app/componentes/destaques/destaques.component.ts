@@ -46,7 +46,7 @@ function validarHorario(control: AbstractControl) {
 
 function validarTelefoneCompleto(control: AbstractControl) {
   const valor = control.value?.replace(/\D/g, '') || ''; // remove não-dígitos
-  
+
   // Se o campo estiver vazio, não deve disparar erro
   if (!valor) {
     return null;
@@ -56,7 +56,7 @@ function validarTelefoneCompleto(control: AbstractControl) {
   if (valor.length !== 11) {
     return { telefoneInvalido: true };
   }
-  
+
   return null;
 }
 
@@ -75,16 +75,35 @@ export class DestaquesComponent {
 
   filtroAtivo: string = '*';  // Começa com "Todos"
 
-  filtrar(categoria: string, event: Event) {
-    event.preventDefault();
-    this.filtroAtivo = categoria;
+  // filtrar(categoria: string, event: Event) {
+  //   event.preventDefault();
+  //   this.filtroAtivo = categoria;
 
-    if (categoria === '*') {
-      this.livrosFiltrados = this.livros;
-    } else {
-      this.livrosFiltrados = this.livros.filter(livro => livro.genero.id === categoria);
-    }
+  //   if (categoria === '*') {
+  //     this.livrosFiltrados = this.livros;
+  //   } else {
+  //     this.livrosFiltrados = this.livros.filter(livro => livro.genero.id === categoria);
+  //   }
+  // }
+
+    filtrar(categoria: string, event: Event) {
+  event.preventDefault();
+  this.filtroAtivo = categoria;
+
+  // Filtra apenas os livros com novidade: true
+  if (categoria === '*') {
+    // Mostrar todos os livros com novidade: true
+    this.livrosFiltrados = this.livros.filter(livro => livro.novidade === true);
+  } else if (categoria === 'novidade') {
+    // Mostrar todos os livros com novidade: true (mesmo comportamento de "*")
+    this.livrosFiltrados = this.livros.filter(livro => livro.novidade === true);
+  } else {
+    // Filtrar por gênero, mas apenas para os livros com novidade: true
+    this.livrosFiltrados = this.livros.filter(
+      livro => livro.novidade === true && livro.genero.id === categoria
+    );
   }
+}
 
   alternarReserva(livro: Livro) {
     livro.reservado = !livro.reservado;
@@ -95,34 +114,39 @@ export class DestaquesComponent {
 
   form: FormGroup;
 
-constructor(private fb: FormBuilder) {
-  this.form = this.fb.group({
-    nome: ['', [Validators.required, Validators.pattern(/^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/)]],
-whatsapp: ['', [Validators.required, validarTelefoneCompleto]],
-    livro: [{ value: '', disabled: true }],
-    entrega: ['', Validators.required],
-data: ['', [Validators.required, validarDataNaoFimDeSemana]],
-horario: ['', [Validators.required, validarHorario]],
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({
+      nome: ['', [Validators.required, Validators.pattern(/^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/)]],
+      whatsapp: ['', [Validators.required, validarTelefoneCompleto]],
+      livro: [{ value: '', disabled: true }],
+      entrega: ['', Validators.required],
+      data: ['', [Validators.required, validarDataNaoFimDeSemana]],
+      horario: ['', [Validators.required, validarHorario]],
+      aceite: [false, Validators.requiredTrue]
+    });
 
-    aceite: [false, Validators.requiredTrue]
-  });
-}
+  // Inicializa a lista de livros filtrados com apenas os livros "novidade: true"
+  this.livrosFiltrados = this.livros.filter(livro => livro.novidade === true);
+  }
+
+
+
 
   abrirFormularioReserva(livro: Livro) {
     console.log('Abrindo modal para livro:', livro.titulo);
     this.livroSelecionado = livro;
     // this.mostrarFormulario = true;
-  //     this.form.patchValue({
-  //   livro: livro.titulo
-  // });
+    //     this.form.patchValue({
+    //   livro: livro.titulo
+    // });
 
     // Reseta o formulário e seta o título do livro selecionado
-  this.form.reset({
-    livro: livro.titulo,
-    aceite: false // garante que o checkbox fique desmarcado
-  });
+    this.form.reset({
+      livro: livro.titulo,
+      aceite: false // garante que o checkbox fique desmarcado
+    });
 
-  this.mostrarFormulario = true;
+    this.mostrarFormulario = true;
   }
 
   fecharFormulario() {
@@ -144,27 +168,27 @@ horario: ['', [Validators.required, validarHorario]],
   }
 
   formatarTelefone() {
-  const controle = this.form.get('whatsapp');
-  if (!controle) return;
+    const controle = this.form.get('whatsapp');
+    if (!controle) return;
 
-  let valor = controle.value.replace(/\D/g, ''); // remove tudo que não for número
+    let valor = controle.value.replace(/\D/g, ''); // remove tudo que não for número
 
-  if (valor.length > 11) valor = valor.slice(0, 11); // limita 11 dígitos
+    if (valor.length > 11) valor = valor.slice(0, 11); // limita 11 dígitos
 
-  // aplica máscara (00)00000-0000
-  if (valor.length > 6) {
-    valor = `(${valor.slice(0, 2)})${valor.slice(2, 7)}-${valor.slice(7)}`;
-  } else if (valor.length > 2) {
-    valor = `(${valor.slice(0, 2)})${valor.slice(2)}`;
-  } else if (valor.length > 0) {
-    valor = `(${valor}`;
+    // aplica máscara (00)00000-0000
+    if (valor.length > 6) {
+      valor = `(${valor.slice(0, 2)})${valor.slice(2, 7)}-${valor.slice(7)}`;
+    } else if (valor.length > 2) {
+      valor = `(${valor.slice(0, 2)})${valor.slice(2)}`;
+    } else if (valor.length > 0) {
+      valor = `(${valor}`;
+    }
+
+    controle.setValue(valor, { emitEvent: false }); // atualiza sem disparar outro input
   }
 
-  controle.setValue(valor, { emitEvent: false }); // atualiza sem disparar outro input
-}
 
 
-  
 
 }
 

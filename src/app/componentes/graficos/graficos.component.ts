@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto';
-import { livros } from '../../mock-livros';
+import { DadosService } from '../../services/dados.service';
+import ChartDataLabels from 'chartjs-plugin-datalabels';  // Importe o plugin
 
 @Component({
   selector: 'app-graficos',
@@ -8,142 +9,204 @@ import { livros } from '../../mock-livros';
   styleUrls: ['./graficos.component.css']
 })
 export class GraficosComponent implements OnInit {
-  // Função para contar o total de livros reservados
-  contarLivrosReservados(): number {
-    return livros.filter(livro => livro.reservado === true).length;
-  }
 
-  // Função para contar o total de livros (não reservados ou reservados)
-  contarTotalLivros(): number {
-    return livros.length;
-  }
+  totalLivros = 0;
+  livrosReservados = 0;
 
-  // Gráfico de Gênero de Autoria (Feminino vs Masculino)
-  public graficoGeneroAutoriaData: any[] = [
-    { data: [this.contarPorGeneroAutoria('feminino'), this.contarPorGeneroAutoria('masculino')], label: 'Gênero da Autoria' }
-  ];
+  constructor(private dadosService: DadosService) {}
 
-  // Opções do gráfico
-  public graficoOptions: any = {
-    responsive: true,
-  };
-
-  public graficoGeneroAutoriaLabels: string[] = ['Feminino', 'Masculino'];
-
-  // Função para contar livros por gênero da autoria
-  contarPorGeneroAutoria(generoAutoria: string): number {
-    return livros.filter(livro => livro.generoAutoria === generoAutoria).length;
-  }
-
-  // Gráfico por Gênero
-  public graficoGeneroData: any[] = [
-    { data: this.contarPorGenero('romance'), label: 'Romance' },
-    { data: this.contarPorGenero('fantasia'), label: 'Fantasia' },
-    { data: this.contarPorGenero('misterio'), label: 'Misterio' }
-  ];
-
-  public graficoLabels: string[] = ['Romance', 'Fantasia', 'Misterio'];
-
-  // Função para contar livros por gênero
-  contarPorGenero(generoId: string): number {
-    return livros.filter(livro => livro.genero.id === generoId).length;
-  }
-
-  // Gráfico de Preço Médio
-  public graficoPrecoData: any[] = [
-    { data: [this.calcularPrecoMedio('romance'), this.calcularPrecoMedio('fantasia'), this.calcularPrecoMedio('misterio')], label: 'Preço Médio' }
-  ];
-
-  public graficoPrecoLabels: string[] = ['Romance', 'Fantasia', 'Misterio'];
-
-  // Função para calcular o preço médio por gênero
-  calcularPrecoMedio(generoId: string): string {
-    const livrosPorGenero = livros.filter(livro => livro.genero.id === generoId);
-    const somaPreco = livrosPorGenero.reduce((acc, livro) => acc + parseFloat(livro.preco.replace('R$ ', '').replace(',', '.')), 0);
-    return (somaPreco / livrosPorGenero.length).toFixed(2);
-  }
-
-  // Gráfico de Quantidade Total de Livros
-  public graficoQuantidadeData: number[] = [livros.length];
-  public graficoQuantidadeLabels: string[] = ['Total de Livros'];
-
-  ngOnInit() {
+  ngOnInit(): void {
+    this.totalLivros = this.dadosService.contarTotalLivros();
+    this.livrosReservados = this.dadosService.contarLivrosReservados();
     this.iniciarGraficos();
   }
 
-  iniciarGraficos() {
-    // Gráfico de Gênero de Autoria
+  iniciarGraficos(): void {
+    // Gráfico de Gênero da Autoria
     new Chart('canvasGeneroAutoria', {
       type: 'pie',
       data: {
-        labels: this.graficoGeneroAutoriaLabels,
+        labels: ['Feminino', 'Masculino'],
         datasets: [{
           label: 'Gênero da Autoria',
-          data: [this.contarPorGeneroAutoria('feminino'), this.contarPorGeneroAutoria('masculino')],
-          backgroundColor: ['#FF6384', '#36A2EB'],
+          data: [
+            this.dadosService.contarPorGeneroAutoria('feminino'),
+            this.dadosService.contarPorGeneroAutoria('masculino')
+          ],
+          backgroundColor: ['#FF6384', '#36A2EB']
         }]
       },
-      options: this.graficoOptions
+      options: {
+        responsive: true,
+        plugins: {
+          // Não aplicamos datalabels aqui
+        }
+      }
     });
 
-    // Gráfico de Gênero
-new Chart('canvasGenero', {
-  type: 'pie',
-  data: {
-    labels: this.graficoLabels,
-    datasets: [{
-      label: 'Gênero dos Livros',
-      data: this.graficoGeneroData.map(item => item.data), // Garanta que é um array com os dados corretos
-      backgroundColor: ['#FF6347', '#FFD700', '#20B2AA'], // Cores para cada gênero
-    }]
-  },
-  options: this.graficoOptions
-});
+    // Gráfico de Gênero dos Livros
+    new Chart('canvasGenero', {
+      type: 'polarArea',
+      data: {
+        labels: ['Romance', 'Fantasia', 'Misterio'],
+        datasets: [{
+          label: 'Quantidade',
+          data: [
+            this.dadosService.contarPorGenero('romance'),
+            this.dadosService.contarPorGenero('fantasia'),
+            this.dadosService.contarPorGenero('misterio')
+          ],
+          backgroundColor: ['#FF6347', '#FFD700', '#20B2AA']
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          r: {
+            ticks: {
+              display: false // Desabilita os números no eixo Y (radial)
+            }
+          }
+        },
+        plugins: {
+          // Não aplicamos datalabels aqui
+        }
+      }
+    });
 
     // Gráfico de Preço Médio
     new Chart('canvasPreco', {
-      type: 'bar',
+      type: 'line',
       data: {
-        labels: this.graficoPrecoLabels,
-        datasets: this.graficoPrecoData.map(item => ({
-          label: item.label,
-          data: [parseFloat(item.data)], // Garantir que o preço seja numérico
-          backgroundColor: '#8E44AD', // Cor para o gráfico de barras
-        }))
+        labels: ['Romance', 'Fantasia', 'Misterio'],
+        datasets: [{
+          label: 'Preço Médio',
+          data: [
+            this.dadosService.calcularPrecoMedio('romance'),
+            this.dadosService.calcularPrecoMedio('fantasia'),
+            this.dadosService.calcularPrecoMedio('misterio')
+          ],
+          backgroundColor: '#8E44AD'
+        }]
       },
-      options: this.graficoOptions
+      options: {
+        responsive: true,
+        plugins: {
+          // Não aplicamos datalabels aqui
+        }
+      }
     });
 
     // Gráfico de Quantidade Total de Livros
     new Chart('canvasQuantidade', {
-      type: 'doughnut',
+      type: 'bar',
       data: {
-        labels: this.graficoQuantidadeLabels,
+        labels: ['Total de Livros'],
         datasets: [{
-          label: 'Quantidade de Livros',
-          data: this.graficoQuantidadeData,
-          backgroundColor: ['#1F77B4'], // Cor para o gráfico de rosca
+          label: 'Quantidade',
+          data: [this.totalLivros],
+          backgroundColor: ['#1F77B4']
         }]
       },
-      options: this.graficoOptions
+      options: {
+        responsive: true,
+        indexAxis: 'y', // Muda para barras horizontais
+        plugins: {
+          // Não aplicamos datalabels aqui
+        },
+        scales: {
+          x: {
+            beginAtZero: true
+          },
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
     });
 
-
-  // Gráfico de Total de Livros vs Livros Reservados
+    // Gráfico de Livros Totais vs Reservados
     new Chart('canvasLivrosReservados', {
       type: 'bar',
       data: {
-        labels: ['Total de Livros', 'Livros Reservados'],  // Labels do gráfico
+        labels: ['Total de Livros', 'Livros Reservados'],
         datasets: [{
-          label: 'Quantidade de Livros',
-          data: [
-            this.contarTotalLivros(), // Total de livros
-            this.contarLivrosReservados() // Livros reservados
-          ],
-          backgroundColor: ['#3498db', '#e74c3c'], // Cor para as barras
+          label: 'Quantidade',
+          data: [this.totalLivros, this.livrosReservados],
+          backgroundColor: ['#3498db', '#e74c3c']
         }]
       },
-      options: this.graficoOptions
+      options: {
+        responsive: true,
+        plugins: {
+          // Não aplicamos datalabels aqui
+        }
+      }
     });
+
+    // Gráfico de Livros Totais vs Reservados com percentual (Doughnut)
+    const totalLivros = this.totalLivros;
+    const livrosReservados = this.livrosReservados;
+    const livrosNaoReservados = totalLivros - livrosReservados;
+    
+  new Chart('canvasLivrosReservadosDonut', {
+  type: 'doughnut', // Tipo do gráfico: doughnut (rosca)
+  data: {
+    labels: ['Reservados', 'Não Reservados'], // Labels
+    datasets: [{
+      label: 'Livros Reservados',
+      data: [livrosReservados, livrosNaoReservados], // Dados
+      backgroundColor: ['#ad36bdff', '#36b3a2ff'], // Cores
+      borderWidth: 0 // Retira as bordas
+    }]
+  },
+  options: {
+    responsive: true, // Responsividade
+    maintainAspectRatio: false, // Mantém o aspecto da proporção
+    cutout: '80%', // Controla o tamanho do buraco do gráfico
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: (tooltipItem) => {
+            let value = tooltipItem.raw as number;
+            return `${value} livros`;
+          }
+        }
+      },
+      legend: {
+        position: 'top'
+      },
+      datalabels: {
+        formatter: (value: number, ctx: any) => {
+          const total = ctx.dataset.data.reduce((acc: number, currentValue: number) => acc + currentValue, 0);
+          const percentage = (value / total) * 100;
+          return percentage.toFixed(2) + '%'; // Exibe o percentual com duas casas decimais
+        },
+        color: '#fff', // Cor do texto (branco)
+        font: {
+          weight: 'bold',
+          size: 20
+        }
+      }
+    },
+    animation: {
+      onComplete: function () {
+        const chartInstance = this as Chart; // Fazemos um cast explícito para Chart
+        const ctx = chartInstance.ctx;
+        const centerX = chartInstance.width / 2;
+        const centerY = chartInstance.height / 2;
+        const fontSize = 38;
+        const fontWeight = 'bold';
+        ctx.font = `${fontWeight} ${fontSize}px Prata`;
+        ctx.fillStyle = '#260038ff'; // Cor do texto
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(`${livrosReservados} / ${totalLivros}`, centerX, centerY);
+      }
+    }
+  }
+});
+
+
   }
 }
