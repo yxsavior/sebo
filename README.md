@@ -1,6 +1,6 @@
 #UniSebo
 Projeto final em Angular 19.
-Branch de desenvolvimento do dashboard.
+Branch principal.
 
 ### Checklist:
 - [x] Home page
