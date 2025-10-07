@@ -33,6 +33,7 @@
   overflow: hidden;
   /* Evitar que os itens que saem da área visível apareçam */
   background-color: #fcf5f5;
+  /* background-color: #DFD9E2;; */
 }
 
 .swiper-wrapper {

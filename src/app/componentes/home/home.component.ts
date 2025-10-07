@@ -27,8 +27,7 @@ import { RodapeComponent } from "../rodape/rodape.component";
     DestaquesComponent,
     FaqComponent,
     RouterModule,
-    RodapeComponent,
-    GenerosComponent
+    RodapeComponent
 ],
   templateUrl: './home.component.html',  // Link para o template HTML
   styleUrls: ['./home.component.css']  // Link para os estilos
