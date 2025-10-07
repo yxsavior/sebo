@@ -171,7 +171,6 @@ h2.container {
     padding: 1rem;
     margin-bottom: 0;
     color: #fff;
-    background-color: #007bff;
     border-bottom: 1px solid #ddd;
     border-radius: .25rem .25rem 0 0;
     padding-bottom: 1rem;
@@ -283,7 +282,16 @@ h2.container {
 
 .card-footer {
     padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
 }
+
+.card-footer .text-danger {
+
+    font-weight: 400;
+    /* line-height: 1.5; */
+    color: #D19C97 !important;
+}
+
 
 .card-footer .btn {
     transition: color 0.3s ease;
@@ -295,7 +303,7 @@ h2.container {
 
 .card-footer .fas {
     color: #D19C97 !important;
-    margin-right: 5px;
+    margin-right: 1px;
 }
 
 .product-img img {
@@ -328,6 +336,7 @@ h2.container {
 .border-right {
     border-right: 1px solid #EDF1FF !important;
 }
+
 
 /* Form */
 /* overlay/modal */

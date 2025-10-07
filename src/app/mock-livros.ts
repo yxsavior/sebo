@@ -97,7 +97,7 @@ export const livros: Livro[] = [
     generoAutoria: 'masculino',
     condicao: 'novo',
     editora: 'Todavia',
-    novidade: true
+    novidade: false
   },
   {
     titulo: 'O apanhador no campo de centeio',
@@ -129,7 +129,7 @@ export const livros: Livro[] = [
     generoAutoria: 'masculino',
     condicao: 'bom',
     editora: 'Zahar',
-    novidade: false
+    novidade: true
   },
   {
     titulo: 'O Jardim Secreto',

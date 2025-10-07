@@ -6,6 +6,10 @@ body {
 /* Cor personalizada para banners e detalhes */
 .bg-custom {
     background-color: #D19C97;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35vh;
 }
 
 /* ------------------------------------------- */
@@ -124,7 +128,7 @@ body {
 /* Paginação */
 .pagination .page-link {
     color: #000;
-    border: 1px solid #ddd;
+    border: none;
 }
 
 .pagination .page-link.active,
@@ -132,6 +136,7 @@ body {
     background-color: #D19C97;
     border-color: #D19C97;
     color: #fff;
+    border: none;
 }
 
 /* ------------------------------------------- */

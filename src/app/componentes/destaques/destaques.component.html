@@ -41,20 +41,22 @@
           <h6 class="text-truncate mb-3 text-muted">{{ livro.autoria }}</h6>
           <div class="d-flex justify-content-center">
             <h6>{{ livro.preco }}</h6>
-            <h6 class="text-muted ml-2"><del>12,00</del></h6>
+            <!-- <h6 class="text-muted ml-2"><del>12,00</del></h6> -->
           </div>
         </div>
         <div class="card-footer d-flex justify-content-between bg-light border">
 
           <button (click)="abrirFormularioReserva(livro)" class="btn btn-sm text-dark p-0" *ngIf="!livro.reservado">
-            <i class="fas fa-heart"></i> Reservar
+            <i class="fas fa-heart text-primary"></i> Reservar
           </button>
           <span *ngIf="livro.reservado" class="text-danger">
-            <i class="fas fa-heart"></i> Reservado
+            <!-- <i class="fas fa-heart text-primary"></i> -->
+             Reservado
           </span>
 
           <a href="#" class="btn btn-sm text-dark p-0">
-            <i class="fas fa-shopping-cart text-primary mr-1"></i> Carrinho
+            <!-- <i class="fas fa-shopping-cart text-primary mr-1"></i> Detalhes -->
+            <i class="fas fa-eye text-primary"></i> Detalhes
           </a>
         </div>
       </div>

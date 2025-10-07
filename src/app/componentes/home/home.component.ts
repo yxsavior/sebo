@@ -21,14 +21,14 @@ import { RodapeComponent } from "../rodape/rodape.component";
   imports: [
     CommonModule,
     FormsModule,
-    CabecalhoComponent, 
+    CabecalhoComponent,
     CarrosselComponent,
     InfoComponent,
     DestaquesComponent,
-    QuotesComponent,
     FaqComponent,
     RouterModule,
-    RodapeComponent
+    RodapeComponent,
+    GenerosComponent
 ],
   templateUrl: './home.component.html',  // Link para o template HTML
   styleUrls: ['./home.component.css']  // Link para os estilos
