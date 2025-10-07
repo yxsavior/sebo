@@ -9,12 +9,13 @@ Branch de desenvolvimento do dashboard.
 - [x] Adicionar mais livros a aba "Novidades"
 - [x] Integrar lógica (forms, reservado, filtro) 
 - [x] Ajuste dos componentes
+- [x] Catálogo
 
-- [/] Catálogo
 - [/] Dashboard
-- [ ] Login admin com auth 
-- [ ] Editar design (imagens/refinamento)
+- [/] Login admin com auth 
+- [ ] Editar design (home/dashboard/forms)
 
 Extras:
-- [ ] Página demo
+- [/] Página demo
 - [ ] Setas app-info
+- [ ] Diversificar dados do mock (status, preço)

@@ -99,7 +99,7 @@
             <span *ngIf="livro.reservado" class="text-danger">
                 Reservado
             </span>
-            <a href="#" class="btn btn-sm text-dark p-0">
+            <a [routerLink]="['/demo']" class="btn btn-sm text-dark p-0">
                 <i class="fas fa-eye text-primary"></i> Detalhes
             </a>
         </div>
