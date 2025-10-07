@@ -1,258 +1,66 @@
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
-
+/* Estilo base */
 body {
-    font-family: Prata, serif;
-    /* line-height: 1.6; */
+    font-family: 'Prata', serif;
 }
 
+/* Cor personalizada para banners e detalhes */
 .bg-custom {
     background-color: #D19C97;
-}
-
-
-/* .container {
-    width: 80%;
-    margin: 0 auto;
-} */
-
-main {
     display: flex;
-    /* margin-top: 50px; */
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
 }
 
-/* .sidebar {
-    width: 20%;
-    padding-right: 20px;
-} */
-
-/* .sidebar h3 {
-    font-size: 1.5em;
-} */
-/* 
-.filter-section {
-    margin-bottom: 10px;
-} */
-
-/* .catalogo-content {
-    width: 75%;
-    padding-left: 20px; 
-} */
-
-
-
-
-/* }======================================================================================================= */
-/* NÃO PODE SER ALTERADO DE JEITO NENHUM! */
-
-/* .btn {
-    margin-right: 10px;
-} */
-
-
-a {
-    /* display: inline; */
-    margin-right: 15px;
-    text-decoration: none;
-}
-
-.catalogo-link {
-    text-decoration: underline;
-    color: black;
-    text-transform: uppercase;
-    text-underline-offset: 4px;
-    font-size: 0.75rem;
-}
-
-.botao-reservar {
-    /* background-color: #d145ca; */
-    background-color: black;
-}
-
-.detalhes-cor {
-    color: black;
+.bg-custom h2 {
+    color: white !important;
 }
 
 
-/* Estilo para os botões */
-.filter-button {
-    color: #000;
-    /* Cor do texto preta */
-    text-decoration: none;
-    /* Remove o sublinhado */
-    padding-bottom: 5px;
-    position: relative;
-    /* Necessário para o pseudo-elemento */
-    font-weight: 600;
-    transition: color 0.3s, border-bottom 0.3s;
-    /* Transição suave para a cor e o sublinhado */
-}
-
-/* Barra inferior cinza, visível ao passar o mouse */
-.filter-button::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #ccc;
-    /* Barra inferior cinza */
-    transition: background-color 0.3s;
-    /* Transição para a cor da barra */
-}
-
-/* Muda a cor da barra para rosa ao passar o mouse */
-.filter-button:hover::after {
-    background-color: #D19C97;
-    /* Cor rosa ao passar o mouse */
-}
-
-/* Estilo para o botão ativo (selecionado) */
-.filter-button.active {
-    color: #D19C97;
-    /* Texto rosa para o botão ativo */
-    font-weight: bold;
-    /* Deixa o texto mais forte */
-}
-
-.filter-button.active::after {
-    background-color: #D19C97;
-    /* Barra rosa abaixo do botão ativo */
-}
-
-h2.container {
-    /* padding-left: 25x;
-    padding-right: 5px; 
-    padding: 0px 25px; */
-    font-family: 'Prata', serif;
-    /* gap: 20px;  */
-    padding-left: 0;
-    /* Resetando possíveis paddings */
-    padding-right: 0;
-}
-
-/* h2.container span {
-    margin-right: 30px; 
-} */
-
-
-.card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    height: auto;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
+/* ------------------------------------------- */
+/* Estilização dos filtros */
+.card-filtros {
     border: 1px solid #ddd;
     border-radius: .25rem;
-
-    >hr {
-        margin-right: 0;
-        margin-left: 0;
-    }
-
-    >.list-group {
-        border-top: inherit;
-        border-bottom: inherit;
-
-        &:first-child {
-            border-top-width: 0;
-            border-radius: .25rem .25rem 0 0;
-        }
-
-        &:last-child {
-            border-bottom-width: 0;
-            border-radius: 0 0 .25rem .25rem;
-        }
-    }
-
-    >.card-header+.list-group,
-    >.list-group+.card-footer {
-        border-top: 0;
-    }
+    padding: 1rem;
 }
 
-.card-body {
-    flex: 1 1 auto;
-    min-height: 60px;
-    padding: 0.25rem;
-    color: #333;
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-}
-
-.card-title {
-    margin-bottom: .75rem;
-    font-weight: 600;
+.card-filtros h3 {
     font-size: 1.25rem;
+    margin-bottom: 1rem;
 }
 
-.card-subtitle {
-    margin-top: -.25rem;
-    margin-bottom: 0;
+.filter-section h4 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
 }
 
-.card-text:last-child {
-    margin-bottom: 0;
-}
-
-.card-link {
-    color: #007bff;
+.filter-section ul li a {
+    color: #000;
     text-decoration: none;
-
-    &:hover {
-        text-decoration: underline;
-    }
-
-    +.card-link {
-        margin-left: 1rem;
-    }
+    transition: color 0.3s ease;
 }
+
+.filter-section ul li a:hover {
+    color: #D19C97;
+}
+
+/* ------------------------------------------- */
+/* Estilização dos cards de livros */
 
 .card-header {
     padding: 1rem;
     margin-bottom: 0;
     color: #fff;
-    background-color: #007bff;
     border-bottom: 1px solid #ddd;
     border-radius: .25rem .25rem 0 0;
     padding-bottom: 1rem;
     height: 250px;
 }
 
-.card-footer {
-    display: flex;
-    justify-content: space-between;
-    background-color: #f8f9fa;
-    padding: 1rem;
-    color: #fff;
-    background-color: #f8f9fa;
-    border-top: 1px solid #ddd;
-    border-radius: 0 0 .25rem .25rem;
-}
-
-/* .botao-reservar {
-    padding: .5rem 1.25rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: .25rem;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: background-color .3s ease;
-} */
-
 .botao-reservar {
     width: 100%;
-    /* botão ocupa toda a largura */
     padding: 12px;
     background-color: black;
     color: white;
@@ -270,75 +78,14 @@ h2.container {
     cursor: not-allowed;
 }
 
-
-/* .botao-reservar:hover {
-    background-color: #0056b3;
-} */
-
-.card-deck {
-    .card {
-        margin-bottom: 1rem;
-    }
-
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -1rem;
-    margin-left: -1rem;
-
-    .card {
-        flex: 1 0 0%;
-        margin-right: 1rem;
-        margin-left: 1rem;
-    }
-}
-
-.card-group {
-    display: flex;
-    flex-wrap: wrap;
-
-    >.card {
-        margin-bottom: 1rem;
-    }
-}
-
-.card-columns {
-    .card {
-        margin-bottom: 1rem;
-    }
-
-    column-count: 3;
-    column-gap: 1rem;
-
-    .card {
-        display: inline-block;
-        width: 100%;
-    }
-}
-
-.card-body h6.text-muted {
-    margin-left: 0.5rem;
-}
-
-.accordion {
-    >.card {
-        overflow: hidden;
-
-        &:not(:last-of-type) {
-            border-bottom: 0;
-        }
-
-        >.card-header {
-            margin-bottom: 0;
-        }
-    }
-}
-
 .card-footer {
     padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
 }
 
-.card-footer .btn {
-    transition: color 0.3s ease;
+.card-footer .text-danger {
+    font-weight: 400;
+    color: #D19C97 !important;
 }
 
 .card-footer .btn:hover {
@@ -347,30 +94,12 @@ h2.container {
 
 .card-footer .fas {
     color: #D19C97 !important;
-    margin-right: 5px;
+    margin-right: 2px;
 }
 
 .product-img img {
     height: 100%;
     object-fit: contain;
-}
-
-.justify-content-between {
-    justify-content: space-between !important;
-}
-
-.text-center {
-    text-align: center !important;
-}
-
-.pt-4,
-.py-4 {
-    padding-top: 1.5rem !important;
-}
-
-.pb-3,
-.py-3 {
-    padding-bottom: 1rem !important;
 }
 
 .border-left {
@@ -381,8 +110,40 @@ h2.container {
     border-right: 1px solid #EDF1FF !important;
 }
 
-/* Form */
-/* overlay/modal */
+/* Estilo para o card-footer em telas pequenas (<=768px) */
+@media (max-width: 768px) {
+    .card-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding:0.5rem;
+        text-align: center;
+    }
+
+    .card-footer .btn, .card-footer .text-danger {
+        width: 100%;
+        margin-bottom: 0rem; /* Espaço entre os elementos */
+    }
+
+}
+
+/* ------------------------------------------- */
+/* Paginação */
+.pagination .page-link {
+    color: #000;
+    border: none;
+}
+
+.pagination .page-link.active,
+.pagination .page-link:hover {
+    background-color: #D19C97;
+    border-color: #D19C97;
+    color: #fff;
+    border: none;
+}
+
+/* ------------------------------------------- */
+/* Modal de reserva */
 .overlay {
     position: fixed;
     inset: 0;
@@ -390,223 +151,88 @@ h2.container {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 99999;
-    /* bem alto para não ficar atrás do card */
+    z-index: 9999;
 }
 
-/* modal com mesmo padrão visual do card */
 .modal {
     background: #fff;
     border-radius: 8px;
     padding: 20px;
     max-width: 450px;
     max-height: 90vh;
-    /* usa até 90% da altura da janela */
     overflow-y: auto;
-    /* ativa scroll apenas se necessário */
-    border-top: 24px solid var(--color-secundaria, #2b2b2b);
+    border-top: 24px solid #2b2b2b;
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    box-sizing: border-box;
-    position: relative;
-    z-index: 100000;
 }
 
-/* título centralizado e sempre visível */
 .modal-titulo {
-    margin: 0;
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 1.25rem;
+    font-weight: bold;
     text-align: center;
-    color: var(--color-secundaria, #222);
+    margin: 0;
 }
-
-/* Botão de fechar */
-/* .fechar-btn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  border: none;
-  background: transparent;
-  font-size: 10px;
-  cursor: pointer;
-  color: var(--color-secundaria);
-} */
-
 
 .fechar-btn {
     position: absolute;
     top: 10px;
     right: 10px;
+    background: none;
     border: none;
-    background: transparent;
     font-size: 1.25rem;
-    /* tamanho pequeno e elegante */
-    font-weight: bold;
-    line-height: 1;
     cursor: pointer;
     color: #333;
-    /* cor discreta */
-    padding: 0;
-    margin: 0;
-    z-index: 1;
 }
 
 .fechar-btn:hover {
     color: #D19C97;
-    /* muda para rosa ao passar o mouse */
 }
 
-
-/* Inputs */
-/* .modal input,
-.modal select {
-  width: 100%;
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 14px;
-  font-family: var(--font-montserrat);
-  box-sizing: border-box; 
-} */
-
-/* inputs + evitar overflow (correção do vazamento) */
 .modal input,
 .modal select,
 .modal textarea {
     width: 100%;
-    box-sizing: border-box;
-    /* ESSENCIAL */
-    padding: 8px 10px;
+    padding: 0.5rem;
     border: 1px solid #ddd;
     border-radius: 6px;
-    font-family: var(--font-montserrat);
 }
 
-.modal label {
-    display: flex;
-    flex-direction: column;
-    font-size: 14px;
-    color: var(--color-secundaria);
-    gap: 10px;
-    padding: 8px;
-}
-
-/* Checkbox */
-/* .modal input[type="checkbox"] {
-  width: auto;
-  margin-right: 8px;
-} */
-
-/* .checkbox-label {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center;
-  gap: 2px;
-  white-space: nowrap;
-  width: auto;
-} */
-.checkbox-container {
-    display: inline-block;
-    white-space: nowrap;
-    gap: 8px;
-    /* controla o espaço entre checkbox e texto */
-    font-size: 14px;
-    color: #333;
-    margin-top: 10px;
-}
-
-.checkbox-container input[type="checkbox"] {
-    /* tira a aparência padrão para customizar */
-    appearance: none;
-    /* remove o estilo default */
-    -webkit-appearance: none;
-    width: 10px;
-    height: 10px;
-    border: 1px solid rgb(43, 43, 43);
-    border-radius: 4px;
-    background-color: white;
-    cursor: pointer;
-    position: relative;
-    margin: 0;
-    /* remove margens extras */
-}
-
-/* quando marcado, muda cor e mostra o "check" */
-.checkbox-container input[type="checkbox"]:checked {
-    background-color: #D19C97;
-    border-color: #D19C97;
-}
-
-/* cria o "check" */
-.checkbox-container input[type="checkbox"]:checked::after {
-    content: "";
-    position: absolute;
-    left: 5px;
-    top: 3px;
-    width: 6px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-}
-
-/* label */
-.checkbox-label {
-    cursor: pointer;
-    user-select: none;
-    font-size: 10px;
-    color: inherit;
-    white-space: normal !important;
-    display: inline;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-
-
-/* Botão Enviar */
 .modal button[type="submit"] {
-    margin-top: 8px;
-    padding: 10px 16px;
-    border: none;
+    background-color: black;
+    color: white;
+    padding: 0.5rem 1rem;
     border-radius: 6px;
-    background-color: #000000;
-    color: #fff;
-    font-size: 14px;
+    border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
+.modal button[type="submit"]:hover {
+    background-color: #222;
+}
+
 .modal button[type="submit"]:disabled {
-    cursor: not-allowed;
     background-color: #ccc;
-}
-
-.erro {
-    font-size: 12px;
-    color: red;
-    margin-top: 4px;
-}
-
-/* .erro { color: #c00; font-size: 12px; margin-top: 6px; } */
-
-body.modal-aberto {
-    overflow: hidden;
-}
-
-.checkbox-label a {
-    color: #D19C97;
-    text-decoration: underline;
+    cursor: not-allowed;
 }
 
 .mensagem-erro {
     color: red;
     font-size: 0.875rem;
-    /* equivalente a 14px */
     margin-top: 4px;
-    margin-bottom: 8px;
-    display: block;
 }
-/* }======================================================================================================= */
+
+/* ------------------------------------------- */
+/* Responsividade */
+@media (max-width: 768px) {
+    .product-img img {
+        height: 200px;
+    }
+
+    .card-footer {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

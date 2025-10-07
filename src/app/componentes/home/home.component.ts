@@ -21,11 +21,10 @@ import { RodapeComponent } from "../rodape/rodape.component";
   imports: [
     CommonModule,
     FormsModule,
-    CabecalhoComponent, 
+    CabecalhoComponent,
     CarrosselComponent,
     InfoComponent,
     DestaquesComponent,
-    QuotesComponent,
     FaqComponent,
     RouterModule,
     RodapeComponent

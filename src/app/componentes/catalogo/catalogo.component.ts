@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CabecalhoComponent } from '../cabecalho/cabecalho.component';
 import { RodapeComponent } from "../rodape/rodape.component";
@@ -48,7 +48,7 @@ function validarHorario(control: AbstractControl) {
 
 function validarTelefoneCompleto(control: AbstractControl) {
   const valor = control.value?.replace(/\D/g, '') || ''; // remove não-dígitos
-  
+
   // Se o campo estiver vazio, não deve disparar erro
   if (!valor) {
     return null;
@@ -58,7 +58,7 @@ function validarTelefoneCompleto(control: AbstractControl) {
   if (valor.length !== 11) {
     return { telefoneInvalido: true };
   }
-  
+
   return null;
 }
 
@@ -70,11 +70,11 @@ function validarTelefoneCompleto(control: AbstractControl) {
   templateUrl: './catalogo.component.html',
   styleUrl: './catalogo.component.css'
 })
-export class CatalogoComponent {
+export class CatalogoComponent implements OnInit {
   livros: Livro[] = livros;  // lista original
   livrosFiltrados: Livro[] = livros;  // lista que será exibida
   filtroAtivo: string = '*';  // Filtro de categoria ativo
-  itensPorPagina: number = 12;  // Quantidade de itens por página
+  itensPorPagina: number = 8;  // Quantidade de itens por página
   paginaAtual: number = 1;  // Página atual
 
   // Variáveis de controle de paginação
@@ -186,26 +186,70 @@ export class CatalogoComponent {
   }
 
   formatarTelefone() {
-  const controle = this.form.get('whatsapp');
-  if (!controle) return;
+    const controle = this.form.get('whatsapp');
+    if (!controle) return;
 
-  let valor = controle.value.replace(/\D/g, ''); // remove tudo que não for número
+    let valor = controle.value.replace(/\D/g, ''); // remove tudo que não for número
 
-  if (valor.length > 11) valor = valor.slice(0, 11); // limita 11 dígitos
+    if (valor.length > 11) valor = valor.slice(0, 11); // limita 11 dígitos
 
-  // aplica máscara (00)00000-0000
-  if (valor.length > 6) {
-    valor = `(${valor.slice(0, 2)})${valor.slice(2, 7)}-${valor.slice(7)}`;
-  } else if (valor.length > 2) {
-    valor = `(${valor.slice(0, 2)})${valor.slice(2)}`;
-  } else if (valor.length > 0) {
-    valor = `(${valor}`;
+    // aplica máscara (00)00000-0000
+    if (valor.length > 6) {
+      valor = `(${valor.slice(0, 2)})${valor.slice(2, 7)}-${valor.slice(7)}`;
+    } else if (valor.length > 2) {
+      valor = `(${valor.slice(0, 2)})${valor.slice(2)}`;
+    } else if (valor.length > 0) {
+      valor = `(${valor}`;
+    }
+
+    controle.setValue(valor, { emitEvent: false }); // atualiza sem disparar outro input
   }
 
-  controle.setValue(valor, { emitEvent: false }); // atualiza sem disparar outro input
+  // Filtros dinâmicos
+  filtrosPreco: { faixa: string, quantidade: number }[] = [];
+  filtrosEditora: { editora: string, quantidade: number }[] = [];
+  filtrosCondicao: { condicao: string, quantidade: number }[] = [];
+
+  ngOnInit() {
+    this.gerarFiltrosDinamicos();
+  }
+
+  gerarFiltrosDinamicos() {
+    const precos = [
+      { faixa: 'Menos de R$20', min: 0, max: 19.99 },
+      { faixa: 'R$20 - R$30', min: 20, max: 30 },
+      { faixa: 'R$30 - R$40', min: 30, max: 40 },
+      { faixa: 'R$40 - R$50', min: 40, max: 50 }
+    ];
+
+    this.filtrosPreco = precos.map(faixa => {
+      const quantidade = this.livros.filter(livro => {
+        const valor = parseFloat(livro.preco.replace('R$', '').replace(',', '.').trim());
+        return valor >= faixa.min && valor <= faixa.max;
+      }).length;
+      return { faixa: faixa.faixa, quantidade };
+    });
+
+    // Editoras
+    const editorasMap = new Map<string, number>();
+    this.livros.forEach(livro => {
+      const editora = livro.editora.trim();
+      editorasMap.set(editora, (editorasMap.get(editora) || 0) + 1);
+    });
+    this.filtrosEditora = Array.from(editorasMap.entries()).map(([editora, quantidade]) => ({
+      editora, quantidade
+    })).sort((a, b) => a.editora.localeCompare(b.editora));;
+
+    // Condições
+    const condicoesMap = new Map<string, number>();
+    this.livros.forEach(livro => {
+      const condicao = livro.condicao.trim().toLowerCase();
+      condicoesMap.set(condicao, (condicoesMap.get(condicao) || 0) + 1);
+    });
+    // Convertendo o Map para um array e ordenando por condição
+    this.filtrosCondicao = Array.from(condicoesMap.entries())
+      .map(([condicao, quantidade]) => ({ condicao, quantidade }))
+      .sort((a, b) => a.condicao.localeCompare(b.condicao)); // Ordenação alfabética
+  }
 }
 
-
-  
-
-}

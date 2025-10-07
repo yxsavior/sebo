@@ -1,7 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-custom">
+<!-- <nav class="navbar navbar-expand-lg navbar-custom"> -->
+<nav class="navbar navbar-expand-md navbar-custom alig"> <!-- "md" em vez de "lg" -->
+
   <div class="container-fluid">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Book_SVG.svg" alt="Logo UniSebo" width="60px">
-    
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Book_SVG.svg" alt="Logo UniSebo" width="40px"
+      style="align-items: center;">
+    <span>UniSebo</span>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -9,49 +13,47 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Centraliza os links -->
-      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav mx-auto mb-lg-0">
+        <!-- <ul class="navbar-nav d-flex justify-content-center align-items-center mb-2 mb-lg-0"> -->
+
         <li class="nav-item me-4">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="#">Início</a>
         </li>
         <li class="nav-item me-4">
           <a class="nav-link" [routerLink]="['/catalogo']">Catálogo</a>
         </li>
+        <li class="nav-item me-4">
+          <a class="nav-link" aria-current="page" href="#">Promoções</a>
+        </li>
       </ul>
 
-      <!-- Barra de Pesquisa -->
-      <form class="d-flex me-3">
-        <input class="form-control rounded-pill" type="search" placeholder="Pesquisar livro" aria-label="Search">
-      </form>
-
-      <!-- Botão de Login -->
-      <button class="btn" data-bs-toggle="modal" data-bs-target="#loginModal">
-        <i class="bi bi-person"></i>
+      <!-- Barra de Pesquisa (transformada em lupa) -->
+      <button class="btn" id="searchButton" data-bs-toggle="modal" data-bs-target="#searchModal">
+        <i class="bi bi-search"></i>
       </button>
 
-      <!-- Modal de Login -->
-      <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <!-- Modal para Pesquisa -->
+      <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="loginModalLabel">Área do Administrador</h5>
+              <!-- <h5 class="modal-title" id="searchModalLabel">Pesquisar Livro</h5> -->
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <form>
-                <div class="mb-3">
-                  <label for="usuario" class="form-label">Usuário</label>
-                  <input type="text" class="form-control" id="usuario" placeholder="Digite seu usuário" required>
-                </div>
-                <div class="mb-3">
-                  <label for="senha" class="form-label">Senha</label>
-                  <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" required>
-                </div>
-                <button type="submit" class="btn btn-dark w-100">Entrar</button>
+                <input class="form-control rounded-pill custom-search" type="search" placeholder="Pesquisar livro"
+                  aria-label="Search">
               </form>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Botão de Login (Agora com routerLink) -->
+      <button class="btn" [routerLink]="'/login'">
+        <i class="bi bi-person"></i>
+      </button>
 
     </div>
   </div>

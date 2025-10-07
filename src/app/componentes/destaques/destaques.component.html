@@ -1,7 +1,7 @@
 <h2 class="container d-flex flex-column flex-md-row justify-content-between my-3 my-xl-5 align-items-center">
-  <span class="me-5">Novidades da Semana</span>
-  <div class="mb-4 mb-md-0 ms-5">
-    <p class="m-0 d-flex flex-wrap justify-content-center">
+  <span class="me-5">Novidades</span>
+  <div class="mb-4 mb-md-0">
+    <p class="m-0 d-flex flex-wrap justify-content-end"> <!-- Alinha os filtros à direita -->
       <!-- Botão de 'Todos' que agora mostra apenas livros com novidade: true -->
       <a href="#" class="filter-button me-4 mb-2 mb-md-0 fs-6" (click)="filtrar('*', $event)"
         [ngClass]="{ 'active': filtroAtivo === '*' }">Todos</a>
@@ -41,20 +41,21 @@
           <h6 class="text-truncate mb-3 text-muted">{{ livro.autoria }}</h6>
           <div class="d-flex justify-content-center">
             <h6>{{ livro.preco }}</h6>
-            <h6 class="text-muted ml-2"><del>12,00</del></h6>
+            <!-- <h6 class="text-muted ml-2"><del>12,00</del></h6> -->
           </div>
         </div>
         <div class="card-footer d-flex justify-content-between bg-light border">
 
           <button (click)="abrirFormularioReserva(livro)" class="btn btn-sm text-dark p-0" *ngIf="!livro.reservado">
-            <i class="fas fa-heart"></i> Reservar
+            <i class="fas fa-heart text-primary"></i> Reservar
           </button>
           <span *ngIf="livro.reservado" class="text-danger">
-            <i class="fas fa-heart"></i> Reservado
+            <!-- <i class="fas fa-heart text-primary"></i> -->
+             Reservado
           </span>
 
-          <a href="#" class="btn btn-sm text-dark p-0">
-            <i class="fas fa-shopping-cart text-primary mr-1"></i> Carrinho
+            <a [routerLink]="['/demo']" class="btn btn-sm text-dark p-0">
+                <i class="fas fa-eye text-primary"></i> Detalhes
           </a>
         </div>
       </div>
