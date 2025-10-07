@@ -6,11 +6,16 @@ body {
 /* Cor personalizada para banners e detalhes */
 .bg-custom {
     background-color: #D19C97;
-        display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    height: 35vh;
+    height: 30vh;
 }
+
+.bg-custom h2 {
+    color: white !important;
+}
+
 
 /* ------------------------------------------- */
 /* Estilização dos filtros */
@@ -44,74 +49,28 @@ body {
 /* ------------------------------------------- */
 /* Estilização dos cards de livros */
 
-.product-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: .25rem;
-    transition: box-shadow 0.3s ease;
-}
-
-.product-item:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.product-img img {
+.card-header {
+    padding: 1rem;
+    margin-bottom: 0;
+    color: #fff;
+    border-bottom: 1px solid #ddd;
+    border-radius: .25rem .25rem 0 0;
+    padding-bottom: 1rem;
     height: 250px;
-    object-fit: contain;
 }
 
-.card-body h6 {
-    margin: 0.25rem 0;
-}
-
-.card-body h6.text-muted {
-    font-size: 0.875rem;
-    color: #6c757d;
-}
-
-.card-footer {
-    background-color: #f8f9fa;
-    border-top: 1px solid #ddd;
-    padding: 0.75rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 0 0 .25rem .25rem;
-}
-
-.card-footer .btn {
-    font-size: 0.875rem;
-    color: #333;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.card-footer .btn:hover {
-    color: #D19C97;
-}
-
-.card-footer .fas {
-    margin-right: 5px;
-    color: #D19C97;
-}
-
-/* Botão Reservar */
 .botao-reservar {
+    width: 100%;
+    padding: 12px;
     background-color: black;
     color: white;
     border: none;
     border-radius: 6px;
+    font-size: 16px;
     font-weight: 600;
-    padding: 0.5rem 1rem;
     cursor: pointer;
+    margin-top: 10px;
     transition: background-color 0.3s ease;
-}
-
-.botao-reservar:hover {
-    background-color: #333;
 }
 
 .botao-reservar:disabled {
@@ -119,9 +78,53 @@ body {
     cursor: not-allowed;
 }
 
-/* Texto 'Reservado' */
+.card-footer {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+}
+
 .card-footer .text-danger {
-    font-weight: 500;
+    font-weight: 400;
+    color: #D19C97 !important;
+}
+
+.card-footer .btn:hover {
+    color: #D19C97 !important;
+}
+
+.card-footer .fas {
+    color: #D19C97 !important;
+    margin-right: 2px;
+}
+
+.product-img img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.border-left {
+    border-left: 1px solid #EDF1FF !important;
+}
+
+.border-right {
+    border-right: 1px solid #EDF1FF !important;
+}
+
+/* Estilo para o card-footer em telas pequenas (<=768px) */
+@media (max-width: 768px) {
+    .card-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding:0.5rem;
+        text-align: center;
+    }
+
+    .card-footer .btn, .card-footer .text-danger {
+        width: 100%;
+        margin-bottom: 0rem; /* Espaço entre os elementos */
+    }
+
 }
 
 /* ------------------------------------------- */

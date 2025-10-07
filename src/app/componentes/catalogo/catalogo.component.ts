@@ -48,7 +48,7 @@ function validarHorario(control: AbstractControl) {
 
 function validarTelefoneCompleto(control: AbstractControl) {
   const valor = control.value?.replace(/\D/g, '') || ''; // remove não-dígitos
-  
+
   // Se o campo estiver vazio, não deve disparar erro
   if (!valor) {
     return null;
@@ -58,7 +58,7 @@ function validarTelefoneCompleto(control: AbstractControl) {
   if (valor.length !== 11) {
     return { telefoneInvalido: true };
   }
-  
+
   return null;
 }
 
@@ -186,26 +186,26 @@ export class CatalogoComponent implements OnInit {
   }
 
   formatarTelefone() {
-  const controle = this.form.get('whatsapp');
-  if (!controle) return;
+    const controle = this.form.get('whatsapp');
+    if (!controle) return;
 
-  let valor = controle.value.replace(/\D/g, ''); // remove tudo que não for número
+    let valor = controle.value.replace(/\D/g, ''); // remove tudo que não for número
 
-  if (valor.length > 11) valor = valor.slice(0, 11); // limita 11 dígitos
+    if (valor.length > 11) valor = valor.slice(0, 11); // limita 11 dígitos
 
-  // aplica máscara (00)00000-0000
-  if (valor.length > 6) {
-    valor = `(${valor.slice(0, 2)})${valor.slice(2, 7)}-${valor.slice(7)}`;
-  } else if (valor.length > 2) {
-    valor = `(${valor.slice(0, 2)})${valor.slice(2)}`;
-  } else if (valor.length > 0) {
-    valor = `(${valor}`;
+    // aplica máscara (00)00000-0000
+    if (valor.length > 6) {
+      valor = `(${valor.slice(0, 2)})${valor.slice(2, 7)}-${valor.slice(7)}`;
+    } else if (valor.length > 2) {
+      valor = `(${valor.slice(0, 2)})${valor.slice(2)}`;
+    } else if (valor.length > 0) {
+      valor = `(${valor}`;
+    }
+
+    controle.setValue(valor, { emitEvent: false }); // atualiza sem disparar outro input
   }
 
-  controle.setValue(valor, { emitEvent: false }); // atualiza sem disparar outro input
-}
-
-// Filtros dinâmicos
+  // Filtros dinâmicos
   filtrosPreco: { faixa: string, quantidade: number }[] = [];
   filtrosEditora: { editora: string, quantidade: number }[] = [];
   filtrosCondicao: { condicao: string, quantidade: number }[] = [];
@@ -238,7 +238,7 @@ export class CatalogoComponent implements OnInit {
     });
     this.filtrosEditora = Array.from(editorasMap.entries()).map(([editora, quantidade]) => ({
       editora, quantidade
-    }));
+    })).sort((a, b) => a.editora.localeCompare(b.editora));;
 
     // Condições
     const condicoesMap = new Map<string, number>();
@@ -246,9 +246,10 @@ export class CatalogoComponent implements OnInit {
       const condicao = livro.condicao.trim().toLowerCase();
       condicoesMap.set(condicao, (condicoesMap.get(condicao) || 0) + 1);
     });
-    this.filtrosCondicao = Array.from(condicoesMap.entries()).map(([condicao, quantidade]) => ({
-      condicao, quantidade
-    }));
+    // Convertendo o Map para um array e ordenando por condição
+    this.filtrosCondicao = Array.from(condicoesMap.entries())
+      .map(([condicao, quantidade]) => ({ condicao, quantidade }))
+      .sort((a, b) => a.condicao.localeCompare(b.condicao)); // Ordenação alfabética
   }
 }
 
