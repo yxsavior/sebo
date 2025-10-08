@@ -1,0 +1,158 @@
+.datatable-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.datatable-pagination {
+  display: flex;
+}
+
+.datatable-pagination-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.datatable-pagination-list-item {
+  margin: 0 5px;
+}
+
+.datatable-pagination-list-item a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #D19C97 !important;
+}
+
+.datatable-pagination-list-item.datatable-disabled a {
+  color: #ccc;
+  pointer-events: none;
+}
+
+.datatable-pagination-list-item.datatable-active a {
+  font-weight: bold;
+}
+
+.datatable-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.datatable-input::placeholder {
+    color: #D19C97 !important;  /* Altere para a cor desejada */
+}
+
+/* Aplica espaçamento suave entre as colunas usando border-spacing */
+.datatable-table {
+  border-spacing: 0 5px;  /* 0 entre as linhas e 5px entre as colunas */
+  width: 100%; /* Garante que a tabela utilize toda a largura disponível */
+}
+
+/* Ajuste o padding das células para manter o espaçamento mais compacto */
+.datatable-table th, .datatable-table td {
+  padding: 0px 12px;  /* Padding ajustado para ficar mais compacto */
+  text-align: left; /* Alinha o texto à esquerda, pode mudar se preferir outro alinhamento */
+}
+
+/* Evitar que o conteúdo quebre a linha dentro das células */
+.datatable-table th, .datatable-table td {
+  white-space: nowrap; /* Impede quebra de linha */
+}
+
+/* Ajustar as larguras das colunas (opcional) para melhorar a distribuição do espaço */
+.datatable-table th:nth-child(1), .datatable-table td:nth-child(1) {
+  width: 25%; /* Ajuste para a coluna com mais conteúdo */
+}
+
+.datatable-table th:nth-child(2), .datatable-table td:nth-child(2) {
+  width: 20%; /* Ajuste para colunas mais estreitas */
+}
+
+.datatable-dropdown {
+  margin-right: 1rem;
+}
+
+.datatable-input {
+  padding: 8px 12px; /* Espaçamento interno confortável */
+  font-size: 14px; /* Fonte mais suave */
+  border-radius: 25px; /* Bordas arredondadas */
+  border: 1px solid #ccc; /* Borda leve */
+  background-color: #f9f9f9; /* Cor de fundo suave */
+  transition: all 0.3s ease; /* Transição suave em foco */
+  width: 250px; /* Largura do input */
+}
+
+.datatable-input:focus {
+  outline: none; /* Remove o contorno padrão */
+  border-color: #D19C97; /* Cor da borda ao focar */
+  box-shadow: 0 0 8px rgba(209, 156, 151, 0.5); /* Sombra suave */
+}
+
+
+.datatable-selector {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 25px;
+  border: 1px solid #ccc; /* Borda mais sutil */
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.datatable-selector:focus {
+  outline: none;
+  border-color: #D19C97; /* Cor da borda ao focar */
+  box-shadow: 0 0 8px rgba(209, 156, 151, 0.5); /* Sombra suave */
+}
+
+.datatable-dropdown label {
+  font-size: 14px;
+  color: #333; /* Cor mais suave */
+  font-weight: 600; /* Levemente mais pesado para contraste */
+}
+
+.datatable-dropdown {
+  margin-right: 1rem;
+}
+.datatable-selector {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.datatable-selector:focus {
+  outline: none;
+  border-color: #D19C97; /* Cor da borda ao focar */
+  box-shadow: 0 0 8px rgba(209, 156, 151, 0.5);
+}
+
+.datatable-dropdown label {
+  font-size: 13px;
+  color: #D19C97; /* Cor mais suave */
+  /* font-weight: 600; */
+}
+
+.datatable-dropdown {
+  margin-right: 1rem;
+}
+
+/* OVERFLOW */
+.datatable-container {
+  overflow-x: auto; /* Permite rolagem horizontal se necessário */
+  -webkit-overflow-scrolling: touch; /* Habilita rolagem suave em dispositivos móveis */
+}
+
+.datatable-table {
+  min-width: 700px; /* Defina uma largura mínima para a tabela, o que a tornará rolável */
+  border-spacing: 0 5px; /* Já está definido */
+  width: 100%;
+  table-layout: fixed; /* Força o layout fixo para controlar as larguras das colunas */
+}

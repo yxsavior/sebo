@@ -1,0 +1,75 @@
+<div class="card mb-4">
+  <div class="card-header">
+    Catálogo completo
+  </div>
+
+  <!-- <div>
+    <input [(ngModel)]="filters.titulo" (input)="onSearch($event)" placeholder="Buscar livros..." />
+  </div> -->
+
+  <div class="datatable-top mb-3 ms-3 mt-3">
+    <div class="datatable-search">
+        <input [(ngModel)]="filters.titulo" (input)="onSearch($event)" class="datatable-input" placeholder="Buscar livros..." type="search" title="Search within table" aria-controls="datatablesSimple">
+    </div>
+
+        <div class="datatable-dropdown">
+        <label>
+            <select class="datatable-selector" [(ngModel)]="pageSize" (change)="changePageSize(pageSize)">
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="15">15</option>
+                <!-- <option value="20">20</option>
+                <option value="25">25</option> -->
+            </select>
+            <!-- livros por página -->
+        </label>
+    </div>
+</div>
+
+  <!-- Tabela -->
+  <div class="datatable-container ms-3">
+    <table class="datatable-table">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Autoria</th>
+          <th>Gênero</th>
+          <th>Preço</th>
+          <th>Editora</th>
+          <th>Condição</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let livro of displayedBooks">
+          <td>{{ livro.titulo }}</td>
+          <td>{{ livro.autoria }}</td>
+          <td>{{ livro.genero.value }}</td>
+          <td>{{ livro.preco }}</td>
+          <td>{{ livro.editora }}</td>
+          <td>{{ livro.condicao }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Rodapé com informações de paginação -->
+  <div class="datatable-bottom ms-3 mb-3">
+    <div class="datatable-info">
+      Mostrando livros {{ firstItem }} a {{ lastItem }} de {{ totalEntries }}
+    </div>
+
+    <nav class="datatable-pagination">
+      <ul class="datatable-pagination-list">
+        <li class="datatable-pagination-list-item" [class.datatable-disabled]="currentPage === 1">
+          <a (click)="changePage(currentPage - 1)" class="datatable-pagination-list-item-link">‹</a>
+        </li>
+        <li class="datatable-pagination-list-item" *ngFor="let page of pageNumbers()" [class.datatable-active]="page === currentPage">
+          <a (click)="changePage(page)" class="datatable-pagination-list-item-link">{{ page }}</a>
+        </li>
+        <li class="datatable-pagination-list-item" [class.datatable-disabled]="currentPage === totalPages()">
+          <a (click)="changePage(currentPage + 1)" class="datatable-pagination-list-item-link">›</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

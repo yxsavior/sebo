@@ -3,6 +3,22 @@ import { Livro } from "./componentes/livro/livro";
 export const livros: Livro[] = [
   //=======================================================//
   //Literatura e Ficção
+    {
+    titulo: 'Peter Pan',
+    autoria: 'J.M. Barrie',
+    genero: {
+      id: 'classico',
+      value: 'Clássicos',
+      livros: []
+    },
+    reservado: true,
+    preco: 'R$ 40,00',
+    imagem: 'peter.jpg',
+    generoAutoria: 'masculino',
+    condicao: 'bom',
+    editora: 'Zahar',
+    novidade: false
+  },
   {
     titulo: 'A Redoma de Vidro',
     autoria: 'Sylvia Plath',
@@ -52,7 +68,7 @@ export const livros: Livro[] = [
     novidade: false
   },
   {
-    titulo: 'Grande sertão: veredas',
+    titulo: 'Grande Sertão: Veredas',
     autoria: 'João Guimarães Rosa',
     genero: {
       id: 'classico',
@@ -67,8 +83,24 @@ export const livros: Livro[] = [
     editora: 'Companhia das Letras',
     novidade: false
   },
+    {
+    titulo: 'Demian',
+    autoria: 'Hermann Hesse',
+    genero: {
+      id: 'classico',
+      value: 'Clássicos',
+      livros: []
+    },
+    reservado: true,
+    preco: 'R$ 10,00',
+    imagem: 'demian.jpg',
+    generoAutoria: 'masculino',
+    condicao: 'bom',
+    editora: 'Record',
+    novidade: false
+  },
   {
-    titulo: 'Nove histórias',
+    titulo: 'Nove Histórias',
     autoria: 'J.D. Salinger',
     genero: {
       id: 'classico',
@@ -100,23 +132,7 @@ export const livros: Livro[] = [
     novidade: false
   },
   {
-    titulo: 'O apanhador no campo de centeio',
-    autoria: 'J.D. Salinger',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 50,00',
-    imagem: 'apanhador.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'novo',
-    editora: 'Todavia',
-    novidade: false
-  },
-  {
-    titulo: 'O corcunda de Notre Dame',
+    titulo: 'O Corcunda de Notre Dame',
     autoria: 'Victor Hugo',
     genero: {
       id: 'classico',
@@ -148,7 +164,7 @@ export const livros: Livro[] = [
     novidade: false
   },
   {
-    titulo: 'O conde de Monte Cristo',
+    titulo: 'O Conde de Monte Cristo',
     autoria: 'Alexandre Dumas',
     genero: {
       id: 'classico',
@@ -164,23 +180,7 @@ export const livros: Livro[] = [
     novidade: false
   },
   {
-    titulo: 'Peter Pan',
-    autoria: 'J.M. Barrie',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 40,00',
-    imagem: 'peter.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'bom',
-    editora: 'Zahar',
-    novidade: false
-  },
-  {
-    titulo: 'A máquina do tempo',
+    titulo: 'A Máquina do Tempo',
     autoria: 'H.G. Wells',
     genero: {
       id: 'classico',
@@ -212,7 +212,7 @@ export const livros: Livro[] = [
     novidade: false
   },
   {
-    titulo: 'O morro dos ventos uivantes',
+    titulo: 'O Morro dos Ventos Uivantes',
     autoria: 'Emily Brontë',
     genero: {
       id: 'classico',
@@ -257,22 +257,6 @@ export const livros: Livro[] = [
     generoAutoria: 'masculino',
     condicao: 'bom',
     editora: 'Alfaguara',
-    novidade: false
-  },
-  {
-    titulo: 'Demian',
-    autoria: 'Hermann Hesse',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'demian.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'bom',
-    editora: 'Record',
     novidade: false
   },
   {
@@ -406,7 +390,7 @@ export const livros: Livro[] = [
 
   //Clarice Lispector
   {
-    titulo: 'A paixão segundo G. H.',
+    titulo: 'A Paixão Segundo G. H.',
     autoria: 'Clarice Lispector',
     genero: {
       id: 'classico',
@@ -506,7 +490,7 @@ export const livros: Livro[] = [
     novidade: false
   },
   {
-    titulo: 'Pra não esquecer',
+    titulo: 'Pra Não Esquecer',
     autoria: 'Clarice Lispector',
     genero: {
       id: 'classico',
@@ -781,7 +765,7 @@ export const livros: Livro[] = [
     novidade: false
   },
   {
-    titulo: 'A outra volta do parafuso',
+    titulo: 'A Outra Volta do Parafuso',
     autoria: 'Henry James',
     genero: {
       id: 'classico',
@@ -879,7 +863,7 @@ export const livros: Livro[] = [
     novidade: false
   },
   {
-    titulo: 'Daisy Jones and The Six',
+    titulo: 'Daisy Jones & The Six',
     autoria: 'Taylor Jenkins Reid',
     genero: {
       id: 'contemporaneo',
@@ -1030,7 +1014,7 @@ export const livros: Livro[] = [
   },
 
   {
-    titulo: 'Árvore e folha',
+    titulo: 'Árvore e Folha',
     autoria: 'J.R.R. Tolkien',
     genero: {
       id: 'fantasia',
@@ -1065,7 +1049,7 @@ export const livros: Livro[] = [
     novidade: false
   },
   {
-    titulo: 'A paciente silenciosa',
+    titulo: 'A Paciente Silenciosa',
     autoria: 'Alex Michaelides',
     genero: {
       id: 'suspense',
@@ -1081,7 +1065,7 @@ export const livros: Livro[] = [
     novidade: false
   },
   {
-    titulo: 'O massacre da família Hope',
+    titulo: 'O Massacre da Família Hope',
     autoria: 'Riley Sager',
     genero: {
       id: 'suspense',
@@ -1113,7 +1097,7 @@ export const livros: Livro[] = [
     novidade: false
   },
   {
-    titulo: 'Um mistério no Caribe',
+    titulo: 'Um Mistério no Caribe',
     autoria: 'Agatha Christie',
     genero: {
       id: 'suspense',
@@ -1145,7 +1129,7 @@ export const livros: Livro[] = [
     novidade: true
   },
   {
-    titulo: 'Misery: Louca obsessão',
+    titulo: 'Misery: Louca Obsessão',
     autoria: 'Stephen King',
     genero: {
       id: 'suspense',
@@ -1161,7 +1145,7 @@ export const livros: Livro[] = [
     novidade: false
   },
   {
-    titulo: 'Sob a redoma',
+    titulo: 'Sob a Redoma',
     autoria: 'Stephen King',
     genero: {
       id: 'suspense',
@@ -1212,7 +1196,7 @@ export const livros: Livro[] = [
     novidade: false
   },
   {
-    titulo: 'A hora do lobisomem',
+    titulo: 'A Hora do Lobisomem',
     autoria: 'Stephen King',
     genero: {
       id: 'terror',
@@ -1228,7 +1212,7 @@ export const livros: Livro[] = [
     novidade: true
   },
   {
-    titulo: 'A dança da morte',
+    titulo: 'A Dança da Morte',
     autoria: 'Stephen King',
     genero: {
       id: 'terror',
@@ -1276,7 +1260,7 @@ export const livros: Livro[] = [
     novidade: false
   },
   {
-    titulo: 'O iluminado',
+    titulo: 'O Iluminado',
     autoria: 'Stephen King',
     genero: {
       id: 'terror',

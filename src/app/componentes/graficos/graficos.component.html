@@ -1,30 +1,99 @@
-<div style="width: 100%; height: 400px;">
-  <!-- Gráfico de Gênero da Autoria -->
-  <canvas id="canvasGeneroAutoria" width="100" height="100"></canvas>
+<!-- Navbar no topo -->
+<nav class="sb-topnav navbar navbar-expand navbar-light bg-white shadow-sm">
+  <div class="container-fluid">
+    <!-- UniSebo à esquerda -->
+    <a class="navbar-brand ps-3" href="#">UniSebo</a>
 
+    <!-- Ícones à direita -->
+    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <!-- Ícone de notificações -->
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fas fa-bell fa-fw"></i>
+          <span class="badge rounded-pill bg-danger">3</span> <!-- Exemplo de número de notificações -->
+        </a>
+      </li>
 
+      <!-- Ícone de usuário (dropdown) -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown">
+          <i class="fas fa-user fa-fw"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#!">Perfil</a></li>
+          <li><a class="dropdown-item" routerLink="/login">Sair</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-  <!-- Gráfico de Gênero -->
-  <canvas id="canvasGenero" width="400" height="400"></canvas>
+<div class="d-flex" style="height: 100vh;">
+  <!-- Sidebar -->
+  <div [ngClass]="{'sidebar': true, 'collapsed': isCollapsed}" class="bg-white shadow-lg"
+    style="transition: all 0.3s ease;">
+    <!-- Logo -->
+    <div class="p-4 d-flex align-items-center">
+      <div class="bg-primary p-2 rounded">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Book_SVG.svg" alt="" width="40px">
+      </div>
+    </div>
 
-  <!-- Gráfico de Preço Médio -->
-  <canvas id="canvasPreco" width="400" height="400"></canvas>
+    <!-- Toggle Button -->
+    <div class="px-4 py-2 d-flex justify-content-end">
+      <button (click)="toggleSidebar()" class="btn text-gray-500">
+        <i class="bi" [ngClass]="isCollapsed ? 'bi-chevron-right' : 'bi-chevron-left'"></i>
+      </button>
+    </div>
 
-  <!-- Gráfico de Quantidade Total de Livros -->
-  <canvas id="canvasQuantidade" width="400" height="400"></canvas>
+    <!-- Navigation -->
+    <nav class="flex-grow-1 px-2">
+      <a routerLink="/dashboard" class="d-flex align-items-center px-4 py-3 text-blue-600 bg-blue-50 rounded mb-1">
+        <i class="bi bi-house-door-fill text-blue-600"></i>
+        <span *ngIf="!isCollapsed" class="ms-3">Dashboard</span>
+      </a>
+      <a routerLink="/graficos" class="d-flex align-items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded mb-1">
+        <i class="bi bi-graph-up"></i>
+        <span *ngIf="!isCollapsed" class="ms-3">Analytics</span>
+      </a>
+      <a href="#" class="d-flex align-items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded mb-1">
+        <i class="bi bi-envelope"></i>
+        <span *ngIf="!isCollapsed" class="ms-3">Messages</span>
+      </a>
+      <a href="#" class="d-flex align-items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded mb-1">
+        <i class="bi bi-person"></i>
+        <span *ngIf="!isCollapsed" class="ms-3">Users</span>
+      </a>
+      <a href="#" class="d-flex align-items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded mb-1">
+        <i class="bi bi-gear"></i>
+        <span *ngIf="!isCollapsed" class="ms-3">Settings</span>
+      </a>
+    </nav>
+  </div>
 
-  <!-- Gráfico de Total de Livros vs Livros Reservados -->
-<canvas id="canvasLivrosReservados" width="400" height="300"></canvas>
+  <!-- Conteúdo Principal -->
 
-  <!-- Gráfico de Livros Totais vs Livros Reservados donut -->
-  <canvas id="canvasLivrosReservadosDonut" width="400" height="400"></canvas>
+  <main>
+    <div style="width: 100%; height: 200px;">
+      <!-- Gráfico de Gênero da Autoria -->
+      <canvas id="canvasGeneroAutoria" width="100" height="100"></canvas>
 
+      <!-- Gráfico de Gênero -->
+      <!-- <canvas id="canvasGenero" width="400" height="400"></canvas> -->
 
+      <!-- Gráfico de Preço Médio -->
+      <canvas id="canvasPreco" width="400" height="400"></canvas>
+
+      <!-- Gráfico de Quantidade Total de Livros -->
+      <canvas id="canvasQuantidade" width="400" height="400"></canvas>
+
+      <!-- Gráfico de Total de Livros vs Livros Reservados -->
+      <canvas id="canvasLivrosReservados" width="400" height="300"></canvas>
+
+      <!-- Gráfico de Livros Totais vs Livros Reservados donut -->
+      <canvas id="canvasLivrosReservadosDonut" width="400" height="400"></canvas>
+    </div>
+
+  </main>
 
 </div>
-
-<!-- <p>Componente de gráficos carregado!</p>
-<p>Total de livros: {{ totalLivros }}</p>
-<p>Livros reservados: {{ livrosReservados }}</p> -->
-
-

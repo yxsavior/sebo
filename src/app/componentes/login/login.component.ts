@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { Usuario } from '../../models/usuario.model'; // Modelo de usuário importado
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -31,7 +31,7 @@ export class LoginComponent {
       this.router.navigate(['/dashboard']); // Redireciona após o login
     } else {
       console.log("Falha no login");
-      this.loginError = 'Usuário ou senha inválidos.';
+      this.loginError = 'Parece que você bebeu a poção de encolhimento, mas esqueceu de trazer a chave.';
     }
 
     this.isLoggingIn = false; // Finaliza o processo de login
