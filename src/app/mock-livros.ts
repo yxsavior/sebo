@@ -99,22 +99,22 @@ export const livros: Livro[] = [
     editora: 'Todavia',
     novidade: false
   },
-  {
-    titulo: 'O apanhador no campo de centeio',
-    autoria: 'J.D. Salinger',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 50,00',
-    imagem: 'apanhador.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'novo',
-    editora: 'Todavia',
-    novidade: false
-  },
+  // {
+  //   titulo: 'O apanhador no campo de centeio',
+  //   autoria: 'J.D. Salinger',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 50,00',
+  //   imagem: 'apanhador.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'novo',
+  //   editora: 'Todavia',
+  //   novidade: false
+  // },
   {
     titulo: 'O corcunda de Notre Dame',
     autoria: 'Victor Hugo',

@@ -5,11 +5,13 @@ import { Livro } from '../livro/livro';
 import { livros } from '../../mock-livros';
 import { DadosService } from '../../services/dados.service';
 import { BannerComponent } from "../banner/banner.component";
+import { GraficosComponent } from "../graficos/graficos.component";
+import { DatatableComponent } from "../../datatable/datatable.component";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true, // Marca o componente como standalone
-  imports: [CommonModule, RouterModule, BannerComponent],
+  imports: [CommonModule, RouterModule, DatatableComponent],
   providers: [DadosService],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
