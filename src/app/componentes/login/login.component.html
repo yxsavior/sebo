@@ -3,18 +3,24 @@
     <!-- Formulário de Login (Esquerda) -->
     <div class="col-md-6 login-box">
       <h2 class="text-center mb-4"><strong>Oops!</strong></h2>
-      <p>Parece que você bebeu a poção de encolhimento, mas esqueceu de trazer a chave! Enquanto isso, o País das Maravilhas continua restrito ao administrador.</p>
+      <p class="text-center">O País das Maravilhas é restrito ao administrador.</p>
 
       <form (ngSubmit)="login($event)">
         <div class="mb-3 form-floating">
-          <input type="text" class="form-control" id="username" placeholder="Digite seu usuário" [(ngModel)]="usuario.nome" name="username" required />
+          <input type="text" class="form-control" id="username" placeholder="Digite seu usuário"
+            [(ngModel)]="usuario.nome" name="username" required />
           <label for="username">Usuário</label>
         </div>
         <div class="mb-3 form-floating">
-          <input type="password" class="form-control" id="password" placeholder="Digite sua senha" [(ngModel)]="usuario.senha" name="password" required />
+          <input type="password" class="form-control" id="password" placeholder="Digite sua senha"
+            [(ngModel)]="usuario.senha" name="password" required />
           <label for="password">Senha</label>
         </div>
         <button type="submit" class="btn btn-primary w-100" [disabled]="isLoggingIn">Entrar</button>
+
+        <div class="text-center mt-3">
+          <a routerLink="/home" class="voltar-home"> ↑ Sair da toca do Coelho</a>
+        </div>
       </form>
 
       <!-- Exibir mensagem de erro -->
