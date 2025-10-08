@@ -6,7 +6,8 @@ import { livros } from '../../mock-livros';
 import { DadosService } from '../../services/dados.service';
 import { BannerComponent } from "../banner/banner.component";
 import { GraficosComponent } from "../graficos/graficos.component";
-import { DatatableComponent } from "../../datatable/datatable.component";
+import { DatatableComponent } from '../datatable/datatable.component';
+
 
 @Component({
   selector: 'app-dashboard',

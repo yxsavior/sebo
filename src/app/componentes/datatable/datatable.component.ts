@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { livros } from './../mock-livros';
+import { livros } from '../../mock-livros';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 

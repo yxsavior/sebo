@@ -12,7 +12,7 @@ Branch principal.
 - [x] Catálogo
 
 - [/] Dashboard
-- [/] Login admin com auth 
+- [/] Login admin com auth (acesso direto via barra após logout permanece)
 - [ ] Editar design (home/dashboard/forms)
 
 Extras:
