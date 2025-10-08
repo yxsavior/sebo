@@ -7,6 +7,8 @@ import { DadosService } from '../../services/dados.service';
 import { BannerComponent } from "../banner/banner.component";
 import { GraficosComponent } from "../graficos/graficos.component";
 import { DatatableComponent } from '../datatable/datatable.component';
+import { AuthService } from '../../services/auth.service';
+
 
 
 @Component({
@@ -25,7 +27,11 @@ export class DashboardComponent implements OnInit {
   confirmacoesPendentes: number = 0;
   porcentagemReservados: number = 0;
 
-constructor(private dadosService: DadosService, private router: Router) {}
+constructor(private auth: AuthService, private dadosService: DadosService, private router: Router) {
+      if (!this.auth.isLoggedIn()) {
+      this.router.navigate(['/login']);
+    }
+}
 
   ngOnInit(): void {
     this.totalLivros = this.dadosService.contarTotalLivros();

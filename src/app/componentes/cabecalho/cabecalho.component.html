@@ -1,60 +1,96 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-custom"> -->
-<nav class="navbar navbar-expand-md navbar-custom alig"> <!-- "md" em vez de "lg" -->
-
+<nav class="navbar navbar-expand-md navbar-custom alig">
   <div class="container-fluid">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Book_SVG.svg" alt="Logo UniSebo" width="40px"
-      style="align-items: center;">
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/8/81/Book_SVG.svg"
+      alt="Logo UniSebo"
+      width="40px"
+      style="align-items: center;"
+    />
     <span>UniSebo</span>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Centraliza os links -->
       <ul class="navbar-nav mx-auto mb-lg-0">
-        <!-- <ul class="navbar-nav d-flex justify-content-center align-items-center mb-2 mb-lg-0"> -->
-
         <li class="nav-item me-4">
-          <a class="nav-link active" aria-current="page" href="#">Início</a>
+          <a class="nav-link active" aria-current="page" [routerLink]="['/home']">Início</a>
         </li>
         <li class="nav-item me-4">
           <a class="nav-link" [routerLink]="['/catalogo']">Catálogo</a>
         </li>
         <li class="nav-item me-4">
-          <a class="nav-link" aria-current="page" href="#">Promoções</a>
+          <a class="nav-link" [routerLink]="['/promo']">Promoções</a>
         </li>
       </ul>
 
-      <!-- Barra de Pesquisa (transformada em lupa) -->
+      <!-- Botão de busca -->
       <button class="btn" id="searchButton" data-bs-toggle="modal" data-bs-target="#searchModal">
         <i class="bi bi-search"></i>
       </button>
 
-      <!-- Modal para Pesquisa -->
-      <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+      <!-- Modal de pesquisa -->
+      <div
+        class="modal fade"
+        id="searchModal"
+        tabindex="-1"
+        aria-labelledby="searchModalLabel"
+        aria-hidden="true"
+      >
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <!-- <h5 class="modal-title" id="searchModalLabel">Pesquisar Livro</h5> -->
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <form>
-                <input class="form-control rounded-pill custom-search" type="search" placeholder="Pesquisar livro"
-                  aria-label="Search">
+                <input
+                  class="form-control rounded-pill custom-search"
+                  type="search"
+                  placeholder="Pesquisar livro"
+                  aria-label="Search"
+                />
               </form>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Botão de Login (Agora com routerLink) -->
-      <button class="btn" [routerLink]="'/login'">
-        <i class="bi bi-person"></i>
-      </button>
+<!-- Barra vertical -->
+<div class="vr mx-2"></div>
 
+      <!-- Área condicional de autenticação -->
+      <div class="d-flex align-items-center ms-3">
+        <!-- Se logado -->
+        <ng-container *ngIf="(user$ | async) as user; else notLogged">
+
+  <button class="btn" [routerLink]="'/dashboard'">
+    <i class="bi bi-speedometer2"></i>
+  </button>
+
+<button class="btn" (click)="logout()">
+  <i class="bi bi-box-arrow-right"></i>
+</button>
+
+        </ng-container>
+
+        <!-- Se não logado -->
+        <ng-template #notLogged>
+          <button class="btn" [routerLink]="'/login'">
+            <i class="bi bi-person"></i>
+          </button>
+        </ng-template>
+      </div>
     </div>
   </div>
 </nav>

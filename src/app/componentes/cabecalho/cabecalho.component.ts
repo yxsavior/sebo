@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-cabecalho',
@@ -10,17 +11,14 @@ import { CommonModule } from '@angular/common';
   templateUrl: './cabecalho.component.html',
   styleUrl: './cabecalho.component.css'
 })
-export class CabecalhoComponent implements OnInit {
-  isLoggedIn: boolean = false;
+export class CabecalhoComponent {
+   user$: Observable<any>;
 
-  constructor(private authService: AuthService) {}
-
-  ngOnInit() {
-    this.isLoggedIn = this.authService.isLoggedIn();  // Checa se o usuário está logado
+  constructor(private auth: AuthService) {
+    this.user$ = this.auth.currentUser$;
   }
 
   logout() {
-    this.authService.logout();  // Chama o logout
-    this.isLoggedIn = false;  // Atualiza a variável de login
+    this.auth.logout();
   }
 }

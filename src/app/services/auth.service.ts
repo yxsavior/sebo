@@ -1,32 +1,48 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
 
-const USER_KEY = 'auth_token';
+export interface User {
+  username: string;
+}
+
+const USER_KEY = 'currentUser';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  private currentUserSubject = new BehaviorSubject<User | null>(null);
+  public currentUser$ = this.currentUserSubject.asObservable();
 
-  private isAuthenticated = false;
+  constructor(private router: Router) {
+    // Quando o app é carregado, tenta restaurar o usuário logado
+    const userJson = sessionStorage.getItem(USER_KEY);
+    if (userJson) {
+      this.currentUserSubject.next(JSON.parse(userJson));
+    }
+  }
 
-  constructor() {}
-
+  /** Login simples com usuário fixo */
   login(username: string, password: string): boolean {
-    // Simula um login sem comunicação com API
     if (username === 'admin' && password === '123456') {
-      this.isAuthenticated = true;
-      sessionStorage.setItem(USER_KEY, 'authenticated');
+      const user = { username };
+      sessionStorage.setItem(USER_KEY, JSON.stringify(user));
+      this.currentUserSubject.next(user);
       return true;
     }
     return false;
   }
 
+  /** Faz logout e notifica toda a aplicação */
   logout(): void {
-    this.isAuthenticated = false;
     sessionStorage.removeItem(USER_KEY);
+    this.currentUserSubject.next(null);
+    this.router.navigate(['/login']);
   }
 
+  /** Consulta síncrona (ex: usada no AuthGuard) */
   isLoggedIn(): boolean {
-    return sessionStorage.getItem(USER_KEY) !== null;
+    return !!this.currentUserSubject.value;
   }
 }

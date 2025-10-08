@@ -10,9 +10,9 @@ Branch de ajuste dos gráficos.
 - [x] Integrar lógica (forms, reservado, filtro) 
 - [x] Ajuste dos componentes
 - [x] Catálogo
+- [x] Login admin com auth
 
 - [/] Dashboard
-- [/] Login admin com auth (acesso direto via barra após logout permanece)
 - [ ] Editar design (home/dashboard/forms)
 
 Extras:
