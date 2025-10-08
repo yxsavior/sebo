@@ -8,6 +8,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { AuthGuard } from './guard/auth.guard';
 import { AuthService } from './services/auth.service';
 import { DemoComponent } from './componentes/demo/demo.component';
+import { GraficosComponent } from './componentes/graficos/graficos.component';
 
 export const routes: Routes = [
     { path: "", pathMatch: 'full', redirectTo: 'home' },
@@ -15,7 +16,8 @@ export const routes: Routes = [
     { path: 'catalogo', component: CatalogoComponent },
     { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent},
-    { path: 'demo', component: DemoComponent}
+    { path: 'demo', component: DemoComponent},
+    { path: 'graficos', component: GraficosComponent}
 ];
 
 // bootstrapApplication(DestaquesComponent, {

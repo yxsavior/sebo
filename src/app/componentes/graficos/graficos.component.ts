@@ -2,9 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto';
 import { DadosService } from '../../services/dados.service';
 import ChartDataLabels from 'chartjs-plugin-datalabels';  // Importe o plugin
+import { CommonModule } from '@angular/common';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-graficos',
+  imports: [CommonModule, RouterModule],
   templateUrl: './graficos.component.html',
   styleUrls: ['./graficos.component.css']
 })
@@ -13,12 +16,36 @@ export class GraficosComponent implements OnInit {
   totalLivros = 0;
   livrosReservados = 0;
 
-  constructor(private dadosService: DadosService) {}
+constructor(private dadosService: DadosService, private router: Router) {}
 
   ngOnInit(): void {
     this.totalLivros = this.dadosService.contarTotalLivros();
     this.livrosReservados = this.dadosService.contarLivrosReservados();
     this.iniciarGraficos();
+  }
+
+   isCollapsed = false;
+
+  toggleSidebar() {
+    this.isCollapsed = !this.isCollapsed;
+  }
+
+  menuOnClick(): void {
+    const menuBar = document.getElementById("menu-bar");
+    const nav = document.getElementById("nav");
+    const menuBg = document.getElementById("menu-bg");
+  
+    if (menuBar && nav && menuBg) {
+      menuBar.classList.toggle("change");
+      nav.classList.toggle("change");
+      menuBg.classList.toggle("change-bg");
+    } else {
+      console.warn("Um ou mais elementos não foram encontrados no DOM.");
+    }
+  }
+
+  logout() {
+    this.router.navigate(['/login']);
   }
 
   iniciarGraficos(): void {

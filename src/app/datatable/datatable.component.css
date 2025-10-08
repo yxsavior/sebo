@@ -143,3 +143,16 @@
 .datatable-dropdown {
   margin-right: 1rem;
 }
+
+/* OVERFLOW */
+.datatable-container {
+  overflow-x: auto; /* Permite rolagem horizontal se necessário */
+  -webkit-overflow-scrolling: touch; /* Habilita rolagem suave em dispositivos móveis */
+}
+
+.datatable-table {
+  min-width: 700px; /* Defina uma largura mínima para a tabela, o que a tornará rolável */
+  border-spacing: 0 5px; /* Já está definido */
+  width: 100%;
+  table-layout: fixed; /* Força o layout fixo para controlar as larguras das colunas */
+}
