@@ -1,6 +1,6 @@
 #UniSebo
 Projeto final em Angular 19.
-Branch principal.
+Branch de ajuste dos gráficos.
 
 ### Checklist:
 - [x] Home page
