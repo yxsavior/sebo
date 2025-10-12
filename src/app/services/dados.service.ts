@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { livros } from '../mock-livros';
 import { Livro } from '../componentes/livro/livro';
 
+// DadosService
 @Injectable({
   providedIn: 'root'
 })
-
 export class DadosService {
 
   constructor() { }
@@ -35,6 +35,29 @@ export class DadosService {
     return livros.filter(l => l.genero.id === generoId).length;
   }
 
+  // Vendas por Gênero
+  vendasPorGenero(generoId: string): number {
+    // Aqui você precisaria adaptar a lógica para contabilizar as vendas dos livros
+    return livros.filter(l => l.genero.id === generoId && l.reservado).length;
+  }
+
+  // Contar editoras com 3 ou mais livros
+  obterEditorasCom3OuMaisLivros(): { editora: string, quantidade: number }[] {
+    // Tipando explicitamente o acumulador
+    const editoras: { [key: string]: number } = livros.reduce((acc, livro) => {
+      acc[livro.editora] = (acc[livro.editora] || 0) + 1;
+      return acc;
+    }, {} as { [key: string]: number });  // Tipo explícito para o acumulador
+
+    // Filtra as editoras com 3 ou mais livros
+    return Object.keys(editoras)
+      .filter(editora => editoras[editora] >= 3)
+      .map(editora => ({
+        editora,
+        quantidade: editoras[editora]
+      }));
+  }
+
   // Calcular preço médio de um gênero
   calcularPrecoMedio(generoId: string): number {
     const livrosGenero = livros.filter(l => l.genero.id === generoId);
@@ -48,7 +71,6 @@ export class DadosService {
     return parseFloat((total / livrosGenero.length).toFixed(2));
   }
 
-  // DADOS PARA O DASHBOARD
   // Calcular receita estimada para livros reservados
   calcularReceitaTotalReservados(): string {
     const total = livros
@@ -61,14 +83,10 @@ export class DadosService {
     return `R$ ${total.toFixed(2)}`;
   }
 
-
   // Calcular a porcentagem de livros reservados
   calcularPorcentagemReservados(): number {
     const totalLivros = this.contarTotalLivros();
     const livrosReservados = this.contarLivrosReservados();
     return (livrosReservados / totalLivros) * 100;
   }
-
-
-
 }

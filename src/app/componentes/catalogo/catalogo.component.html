@@ -3,7 +3,6 @@
 <app-cabecalho></app-cabecalho>
 
 <!-- Banner -->
-<!-- <div class="bg-custom text-white py-5"> -->
 <div class="bg-custom">
     <div class="container text-center">
         <h2 class="display-5 ">Catálogo</h2>
@@ -24,7 +23,7 @@
                         <h4>PREÇO</h4>
                         <ul class="list-unstyled">
                             <li *ngFor="let preco of filtrosPreco">
-                                <a href="#">{{ preco.faixa }} ({{ preco.quantidade }})</a>
+                                <span (click)="filtrar(preco.faixa, $event)" class="clickable">{{ preco.faixa }} ({{ preco.quantidade }})</span>
                             </li>
                         </ul>
                     </div>
@@ -34,7 +33,7 @@
                         <h4>EDITORA</h4>
                         <ul class="list-unstyled">
                             <li *ngFor="let editora of filtrosEditora">
-                                <a href="#">{{ editora.editora }} ({{ editora.quantidade }})</a>
+                                <span (click)="filtrar(editora.editora, $event)" class="clickable">{{ editora.editora }} ({{ editora.quantidade }})</span>
                             </li>
                         </ul>
                     </div>
@@ -44,27 +43,19 @@
                         <h4>CONDIÇÃO</h4>
                         <ul class="list-unstyled">
                             <li *ngFor="let condicao of filtrosCondicao">
-                                <a href="#">{{ condicao.condicao | titlecase }} ({{ condicao.quantidade }})</a>
+                                <span (click)="filtrar(condicao.condicao, $event)" class="clickable">{{ condicao.condicao | titlecase }} ({{ condicao.quantidade }})</span>
                             </li>
                         </ul>
                     </div>
-
-                    <!-- Botão de Aplicar Filtros -->
-                    <!-- <button class="btn btn-dark w-100 py-2">Aplicar Filtros</button> -->
                 </div>
             </div>
-
 
             <!-- Conteúdo Principal (Livros) -->
             <main class="col-md-9">
                 <div>
-                    <!-- <div class="row my-5"> -->
                     <!-- Header do Catálogo -->
                     <div class="d-flex justify-content-between align-items-center mb-4">
-                        <!-- <div class="bg-white p-4 rounded shadow-sm mb-6 d-flex justify-content-between align-items-center"> -->
-                        <p class="text-muted mb-0">Mostrando {{ (paginaAtual - 1) * itensPorPagina + 1 }}-{{
-                            (paginaAtual * itensPorPagina) > livrosFiltrados.length ? livrosFiltrados.length :
-                            paginaAtual * itensPorPagina }} de {{ livrosFiltrados.length }} resultados</p>
+                        <p class="text-muted mb-0">Mostrando {{ (paginaAtual - 1) * itensPorPagina + 1 }}-{{ (paginaAtual * itensPorPagina) > livrosFiltrados.length ? livrosFiltrados.length : paginaAtual * itensPorPagina }} de {{ livrosFiltrados.length }} resultados</p>
                         <div class="d-flex align-items-center">
                             <select class="form-select form-select-sm" aria-label="Ordenar por">
                                 <option selected>Todos</option>
@@ -82,57 +73,51 @@
                     <!-- Conteúdo do Catálogo -->
                     <div class="col-12">
                         <div class="row pb-3">
-<div *ngFor="let livro of livrosParaExibir" class="col-lg-4 col-md-6 col-sm-6 pb-1">
-    <div class="card product-item border-0 mb-4">
-        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-            <img class="img-fluid w-100" [src]="livro.imagem" [alt]="livro.titulo" />
-        </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-            <h6 class="text-truncate mb-3">{{ livro.titulo }}</h6>
-            <h6 class="text-truncate mb-3 text-muted">{{ livro.autoria }}</h6>
-            <div class="d-flex justify-content-center">
-                <h6>{{ livro.preco }}</h6>
-            </div>
-        </div>
-        <div class="card-footer d-flex justify-content-between bg-light border">
-            <button (click)="abrirFormularioReserva(livro)" class="btn btn-sm text-dark p-0" *ngIf="!livro.reservado">
-                <i class="fas fa-heart text-primary"></i> Reservar
-            </button>
-            <span *ngIf="livro.reservado" class="text-danger">
-                Reservado
-            </span>
-            <a [routerLink]="['/demo']" class="btn btn-sm text-dark p-0">
-                <i class="fas fa-eye text-primary"></i> Detalhes
-            </a>
-        </div>
-    </div>
-</div>
-
+                            <div *ngFor="let livro of livrosParaExibir" class="col-lg-4 col-md-6 col-sm-6 pb-1">
+                                <div class="card product-item border-0 mb-4">
+                                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                        <img class="img-fluid w-100" [src]="livro.imagem" [alt]="livro.titulo" />
+                                    </div>
+                                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                        <h6 class="text-truncate mb-3">{{ livro.titulo }}</h6>
+                                        <h6 class="text-truncate mb-3 text-muted">{{ livro.autoria }}</h6>
+                                        <div class="d-flex justify-content-center">
+                                            <h6>{{ livro.preco }}</h6>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-between bg-light border">
+                                        <button (click)="abrirFormularioReserva(livro)" class="btn btn-sm text-dark p-0" *ngIf="!livro.reservado">
+                                            <i class="fas fa-heart text-primary"></i> Reservar
+                                        </button>
+                                        <span *ngIf="livro.reservado" class="text-danger">
+                                            Reservado
+                                        </span>
+                                        <a [routerLink]="['/demo']" class="btn btn-sm text-dark p-0">
+                                            <i class="fas fa-eye text-primary"></i> Detalhes
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
 
                         <!-- Paginação -->
                         <nav aria-label="Page navigation" class="d-flex justify-content-center mt-2">
                             <ul class="pagination pagination-sm">
                                 <li class="page-item" [class.disabled]="paginaAtual === 1">
-                                    <a class="page-link" href="#" (click)="alterarPagina(paginaAtual - 1)"
-                                        aria-label="Previous">
+                                    <button class="page-link" (click)="alterarPagina(paginaAtual - 1)" aria-label="Previous">
                                         <i class="bi bi-arrow-left"></i>
-                                    </a>
+                                    </button>
                                 </li>
 
                                 <!-- Paginação dinâmica -->
-                                <li class="page-item"
-                                    *ngFor="let page of [].constructor(totalDePaginas); let i = index">
-                                    <a class="page-link" href="#" (click)="alterarPagina(i + 1)"
-                                        [class.active]="paginaAtual === i + 1">{{ i + 1 }}</a>
+                                <li class="page-item" *ngFor="let page of [].constructor(totalDePaginas); let i = index">
+                                    <button class="page-link" (click)="alterarPagina(i + 1)" [class.active]="paginaAtual === i + 1">{{ i + 1 }}</button>
                                 </li>
 
                                 <li class="page-item" [class.disabled]="paginaAtual === totalDePaginas">
-                                    <a class="page-link" href="#" (click)="alterarPagina(paginaAtual + 1)"
-                                        aria-label="Next">
+                                    <button class="page-link" (click)="alterarPagina(paginaAtual + 1)" aria-label="Next">
                                         <i class="bi bi-arrow-right"></i>
-                                    </a>
+                                    </button>
                                 </li>
                             </ul>
                         </nav>

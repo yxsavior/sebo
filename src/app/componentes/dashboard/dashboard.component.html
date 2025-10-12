@@ -29,46 +29,7 @@
 </nav>
 
 <div class="d-flex" style="height: 100vh;">
-  <!-- Sidebar -->
-  <div [ngClass]="{'sidebar': true, 'collapsed': isCollapsed}" class="bg-white shadow-lg" style="transition: all 0.3s ease;">
-    <!-- Logo -->
-    <div class="p-4 d-flex align-items-center">
-      <div class="bg-primary p-2 rounded">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Book_SVG.svg" alt="" width="40px">
-      </div>
-    </div>
-
-    <!-- Toggle Button -->
-    <div class="px-4 py-2 d-flex justify-content-end">
-      <button (click)="toggleSidebar()" class="btn text-gray-500">
-        <i class="bi" [ngClass]="isCollapsed ? 'bi-chevron-right' : 'bi-chevron-left'"></i>
-      </button>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="flex-grow-1 px-2">
-      <a routerLink="/dashboard" class="d-flex align-items-center px-4 py-3 text-blue-600 bg-blue-50 rounded mb-1">
-        <i class="bi bi-house-door-fill text-blue-600"></i>
-        <span *ngIf="!isCollapsed" class="ms-3">Dashboard</span>
-      </a>
-      <a routerLink="/graficos" class="d-flex align-items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded mb-1">
-        <i class="bi bi-graph-up"></i>
-        <span *ngIf="!isCollapsed" class="ms-3">Analytics</span>
-      </a>
-      <a href="#" class="d-flex align-items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded mb-1">
-        <i class="bi bi-envelope"></i>
-        <span *ngIf="!isCollapsed" class="ms-3">Messages</span>
-      </a>
-      <a href="#" class="d-flex align-items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded mb-1">
-        <i class="bi bi-person"></i>
-        <span *ngIf="!isCollapsed" class="ms-3">Users</span>
-      </a>
-      <a href="#" class="d-flex align-items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded mb-1">
-        <i class="bi bi-gear"></i>
-        <span *ngIf="!isCollapsed" class="ms-3">Settings</span>
-      </a>
-    </nav>
-  </div>
+ 
 
   <!-- Conteúdo Principal -->
   <main class="d-flex flex-column">
@@ -152,7 +113,37 @@
           </div>
         </div>
       </div>
-      
+
+      <!-- Gráficos -->
+          <!-- Adicionando o gráfico de livros por editora -->
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card card-editora shadow h-100 py-2">
+      <div class="card-body">
+        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Livros por Editora</div>
+        <canvas id="canvasLivrosPorEditora"></canvas> <!-- Gráfico -->
+      </div>
+    </div>
+  </div>
+
+            <!-- Adicionando o gráfico de livros por gênero -->
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card card-reservados shadow h-100 py-2">
+      <div class="card-body">
+        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Livros por Gênero</div>
+        <canvas id="canvasVendasGenero"></canvas> 
+      </div>
+    </div>
+  </div>
+
+<!-- Gráfico de vendas -->
+<div class="col-xl-6 col-md-12 mb-4">
+  <div class="card card-vendas shadow h-100 py-2">
+    <div class="card-body">
+      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Vendas dos Últimos 6 Meses</div>
+      <canvas id="canvasVendas"></canvas> <!-- Gráfico de vendas -->
+    </div>
+  </div>
+</div>
 
       <app-datatable></app-datatable>
 

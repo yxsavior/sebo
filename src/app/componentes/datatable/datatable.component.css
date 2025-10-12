@@ -37,39 +37,37 @@
 }
 
 .datatable-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .datatable-input::placeholder {
-    color: #D19C97 !important;  /* Altere para a cor desejada */
+  color: #D19C97 !important; /* Altere para a cor desejada */
 }
 
 /* Aplica espaçamento suave entre as colunas usando border-spacing */
 .datatable-table {
   border-spacing: 0 5px;  /* 0 entre as linhas e 5px entre as colunas */
   width: 100%; /* Garante que a tabela utilize toda a largura disponível */
+  table-layout: auto; /* Ajusta automaticamente a largura das colunas conforme o conteúdo */
 }
 
 /* Ajuste o padding das células para manter o espaçamento mais compacto */
 .datatable-table th, .datatable-table td {
   padding: 0px 12px;  /* Padding ajustado para ficar mais compacto */
-  text-align: left; /* Alinha o texto à esquerda, pode mudar se preferir outro alinhamento */
+  text-align: left; /* Alinha o texto à esquerda */
+  word-wrap: break-word; /* Permite quebra de linha */
+  overflow: hidden; /* Impede que o conteúdo ultrapasse os limites da célula */
 }
 
-/* Evitar que o conteúdo quebre a linha dentro das células */
-.datatable-table th, .datatable-table td {
-  white-space: nowrap; /* Impede quebra de linha */
-}
-
-/* Ajustar as larguras das colunas (opcional) para melhorar a distribuição do espaço */
+/* Ajustar as larguras das colunas com min-width para evitar encolher demais */
 .datatable-table th:nth-child(1), .datatable-table td:nth-child(1) {
-  width: 25%; /* Ajuste para a coluna com mais conteúdo */
+  min-width: 200px; /* Garante que a coluna "Título" não encolha muito */
 }
 
 .datatable-table th:nth-child(2), .datatable-table td:nth-child(2) {
-  width: 20%; /* Ajuste para colunas mais estreitas */
+  min-width: 150px; /* Coluna "Autoria" com largura mínima */
 }
 
 .datatable-dropdown {
@@ -91,7 +89,6 @@
   border-color: #D19C97; /* Cor da borda ao focar */
   box-shadow: 0 0 8px rgba(209, 156, 151, 0.5); /* Sombra suave */
 }
-
 
 .datatable-selector {
   padding: 8px 12px;
@@ -118,6 +115,7 @@
 .datatable-dropdown {
   margin-right: 1rem;
 }
+
 .datatable-selector {
   padding: 8px 12px;
   font-size: 14px;
@@ -137,22 +135,62 @@
 .datatable-dropdown label {
   font-size: 13px;
   color: #D19C97; /* Cor mais suave */
-  /* font-weight: 600; */
 }
 
 .datatable-dropdown {
   margin-right: 1rem;
 }
 
-/* OVERFLOW */
-.datatable-container {
-  overflow-x: auto; /* Permite rolagem horizontal se necessário */
-  -webkit-overflow-scrolling: touch; /* Habilita rolagem suave em dispositivos móveis */
+/* Estilo para a tabela e o contêiner de rolagem */
+.datatable-table-wrapper {
+  overflow-x: auto; /* Adiciona a rolagem horizontal */
+  -webkit-overflow-scrolling: touch; /* Suaviza a rolagem em dispositivos móveis */
+  margin-bottom: 20px; /* Espaçamento entre a tabela e o rodapé */
 }
 
 .datatable-table {
-  min-width: 700px; /* Defina uma largura mínima para a tabela, o que a tornará rolável */
-  border-spacing: 0 5px; /* Já está definido */
   width: 100%;
-  table-layout: fixed; /* Força o layout fixo para controlar as larguras das colunas */
+  border-collapse: collapse;
+  table-layout: auto; /* Ajusta automaticamente a largura das colunas conforme o conteúdo */
+}
+
+.datatable-table th, .datatable-table td {
+  padding: 10px;
+  text-align: left;
+  word-wrap: break-word; /* Permite quebra de linha no conteúdo das células */
+  overflow: hidden; /* Impede que o conteúdo ultrapasse os limites da célula */
+}
+
+.datatable-table th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+.datatable-table td {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  white-space: normal; /* Permite que o texto quebre linha */
+}
+
+/* Responsividade: Ajuste para telas menores */
+@media screen and (max-width: 768px) {
+  .datatable-table th, .datatable-table td {
+    font-size: 12px; /* Ajusta o tamanho da fonte para telas menores */
+  }
+
+  .datatable-table-wrapper {
+    overflow-x: auto; /* Garante a rolagem horizontal em dispositivos móveis */
+  }
+
+  .datatable-input {
+    width: 150px; /* Ajusta a largura do campo de busca em telas menores */
+  }
+
+  .datatable-selector {
+    width: 120px; /* Ajusta a largura do seletor de página */
+  }
+
+  .datatable-bottom {
+    font-size: 12px; /* Ajusta o tamanho da fonte do rodapé */
+  }
 }

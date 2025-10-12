@@ -57,7 +57,6 @@ body, html {
 
 /* ================= MENU LATERAL E TOPO ================== */
 
-
 /* Layout principal */
 .sb-topnav {
     border-bottom: 1px solid #ddd;  /* Separador entre a navbar e o conteúdo */
@@ -83,11 +82,8 @@ body, html {
     color: #0056b3;  /* Cor de texto ao passar o mouse */
 }
 
-
-
 /* Layout do conteúdo */
 main {
-    /* margin-left: 250px; */
     padding: 20px;
 }
 
@@ -102,7 +98,6 @@ main {
     .sb-topnav {
         padding: 10px;
     }
-
 }
 
 /* Sidebar styles */
@@ -127,4 +122,94 @@ main {
 .card-hover:hover {
   transform: translateY(-5px);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Ajustes para os gráficos */
+
+/* Gráficos gerais */
+#canvasLivrosPorEditora, #canvasVendasGenero {
+  width: 100% !important;
+  height: 250px !important; /* Ajuste a altura dos gráficos de pizza e linha */
+  max-width: 500px;
+  max-height: 250px; /* Limita a altura */
+  margin: 0 auto;    /* Centraliza o gráfico */
+  display: block;
+}
+
+#canvasVendas {
+  width: 100% !important;
+  height: 250px !important;  /* Ajusta a altura do gráfico de barra */
+  max-width: 600px;
+  max-height: 250px;
+  margin: 0 auto;    /* Centraliza o gráfico */
+  display: block;
+}
+
+/* Ajustes para os cards de gráficos */
+.card-reservados, .card-vendas {
+  padding: 10px 5px; /* Menos padding para reduzir o espaço no card */
+  height: auto !important; /* Permite que o card se ajuste automaticamente */
+  max-height: 400px; /* Limita a altura do card */
+}
+
+.card-body {
+  padding: 10px;  /* Reduzindo o padding para uma altura mais compacta */
+}
+
+/* Aumentar controle sobre o canvas */
+.card-body canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Evitar que o canvas ultrapasse o tamanho do card */
+.card {
+  max-width: 600px;  /* Define um tamanho fixo para o gráfico */
+  max-height: 400px;
+  margin: 0 auto;    /* Centraliza o gráfico */
+}
+
+/* Ajustes adicionais para garantir que os gráficos se ajustem ao espaço */
+.card-vendas {
+  padding: 10px 5px;  /* Menos padding para cards de gráfico de vendas */
+}
+
+.card-reservados, .card-vendas, .card .card-body {
+  height: auto;  /* Permitir que os cards se ajustem automaticamente */
+  max-height: 400px;
+}
+
+/* Responsividade para gráficos em telas menores */
+@media (max-width: 768px) {
+  #canvasLivrosPorEditora, #canvasVendasGenero, #canvasVendas {
+    height: 200px !important;  /* Menor altura para telas pequenas */
+    max-height: 200px;
+  }
+}
+
+/* Ajuste direto no card de vendas para ocupar 50% do espaço disponível */
+.card-vendas {
+  width: 100%;  /* Faz com que o card de vendas ocupe todo o espaço */
+  max-width: 200%; /* Limita a largura máxima do card */
+  margin: 0 auto; /* Centraliza o card */
+}
+
+/* Flexbox para a linha (row) */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Faz com que o gráfico de vendas ocupe o restante do espaço */
+.card-vendas {
+  flex-grow: 1;  /* O gráfico de vendas ocupa o restante do espaço */
+  margin: 0;     /* Remove margens extras */
+}
+
+/* Ajuste de altura e largura dos gráficos */
+#canvasVendas {
+  width: 100% !important;
+  height: 250px !important;  /* Ajuste a altura para o gráfico de vendas */
+  max-width: 100%;
 }

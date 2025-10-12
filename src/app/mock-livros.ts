@@ -11,7 +11,7 @@ export const livros: Livro[] = [
       value: 'Clássicos',
       livros: []
     },
-    reservado: true,
+    reservado: false,
     preco: 'R$ 40,00',
     imagem: 'peter.jpg',
     generoAutoria: 'masculino',
@@ -91,7 +91,7 @@ export const livros: Livro[] = [
       value: 'Clássicos',
       livros: []
     },
-    reservado: true,
+    reservado: false,
     preco: 'R$ 10,00',
     imagem: 'demian.jpg',
     generoAutoria: 'masculino',
@@ -99,38 +99,38 @@ export const livros: Livro[] = [
     editora: 'Record',
     novidade: false
   },
-  {
-    titulo: 'Nove Histórias',
-    autoria: 'J.D. Salinger',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 50,00',
-    imagem: 'nove.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'novo',
-    editora: 'Todavia',
-    novidade: false
-  },
-  {
-    titulo: 'Franny & Zooey',
-    autoria: 'J.D. Salinger',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 50,00',
-    imagem: 'franny.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'novo',
-    editora: 'Todavia',
-    novidade: false
-  },
+  // {
+  //   titulo: 'Nove Histórias',
+  //   autoria: 'J.D. Salinger',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 50,00',
+  //   imagem: 'nove.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'novo',
+  //   editora: 'Todavia',
+  //   novidade: false
+  // },
+  // {
+  //   titulo: 'Franny & Zooey',
+  //   autoria: 'J.D. Salinger',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 50,00',
+  //   imagem: 'franny.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'novo',
+  //   editora: 'Todavia',
+  //   novidade: false
+  // },
   {
     titulo: 'O Corcunda de Notre Dame',
     autoria: 'Victor Hugo',
@@ -155,7 +155,7 @@ export const livros: Livro[] = [
       value: 'Clássicos',
       livros: []
     },
-    reservado: true,
+    reservado: false,
     preco: 'R$ 50,00',
     imagem: 'jardim.jpg',
     generoAutoria: 'feminino',
@@ -187,7 +187,7 @@ export const livros: Livro[] = [
       value: 'Clássicos',
       livros: []
     },
-    reservado: true,
+    reservado: false,
     preco: 'R$ 25,00',
     imagem: 'maquina.jpg',
     generoAutoria: 'masculino',
@@ -259,118 +259,118 @@ export const livros: Livro[] = [
     editora: 'Alfaguara',
     novidade: false
   },
-  {
-    titulo: 'Júlio César',
-    autoria: 'William Shakespeare',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'julio.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'bom',
-    editora: 'Penguin',
-    novidade: false
-  },
-  {
-    titulo: 'Romeu e Julieta',
-    autoria: 'William Shakespeare',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'romeu.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'bom',
-    editora: 'Penguin',
-    novidade: false
-  },
-  {
-    titulo: 'Otelo',
-    autoria: 'William Shakespeare',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'otelo.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'bom',
-    editora: 'Penguin',
-    novidade: false
-  },
-  {
-    titulo: 'Hamlet',
-    autoria: 'William Shakespeare',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'hamlet.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'bom',
-    editora: 'Penguin',
-    novidade: false
-  },
-  {
-    titulo: 'Rei Lear',
-    autoria: 'William Shakespeare',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'lear.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'bom',
-    editora: 'Penguin',
-    novidade: false
-  },
-  {
-    titulo: 'Macbeth',
-    autoria: 'William Shakespeare',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'macbeth.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'bom',
-    editora: 'Penguin',
-    novidade: false
-  },
-  {
-    titulo: 'A Tempestade',
-    autoria: 'William Shakespeare',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'tempestade.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'bom',
-    editora: 'Penguin',
-    novidade: false
-  },
+  // {
+  //   titulo: 'Júlio César',
+  //   autoria: 'William Shakespeare',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'julio.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'bom',
+  //   editora: 'Penguin',
+  //   novidade: false
+  // },
+  // {
+  //   titulo: 'Romeu e Julieta',
+  //   autoria: 'William Shakespeare',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'romeu.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'bom',
+  //   editora: 'Penguin',
+  //   novidade: false
+  // },
+  // {
+  //   titulo: 'Otelo',
+  //   autoria: 'William Shakespeare',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'otelo.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'bom',
+  //   editora: 'Penguin',
+  //   novidade: false
+  // },
+  // {
+  //   titulo: 'Hamlet',
+  //   autoria: 'William Shakespeare',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'hamlet.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'bom',
+  //   editora: 'Penguin',
+  //   novidade: false
+  // },
+  // {
+  //   titulo: 'Rei Lear',
+  //   autoria: 'William Shakespeare',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'lear.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'bom',
+  //   editora: 'Penguin',
+  //   novidade: false
+  // },
+  // {
+  //   titulo: 'Macbeth',
+  //   autoria: 'William Shakespeare',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'macbeth.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'bom',
+  //   editora: 'Penguin',
+  //   novidade: false
+  // },
+  // {
+  //   titulo: 'A Tempestade',
+  //   autoria: 'William Shakespeare',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'tempestade.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'bom',
+  //   editora: 'Penguin',
+  //   novidade: false
+  // },
   {
     titulo: 'Dublinenses',
     autoria: 'James Joyce ',
@@ -379,7 +379,7 @@ export const livros: Livro[] = [
       value: 'Clássicos',
       livros: []
     },
-    reservado: true,
+    reservado: false,
     preco: 'R$ 10,00',
     imagem: 'dublinenses.jpg',
     generoAutoria: 'masculino',
@@ -405,381 +405,381 @@ export const livros: Livro[] = [
     editora: 'Rocco',
     novidade: true
   },
-  {
-    titulo: 'Água Viva',
-    autoria: 'Clarice Lispector',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'agua.jpg',
-    generoAutoria: 'feminino',
-    condicao: 'perfeito',
-    editora: 'Rocco',
-    novidade: false
-  },
+  // {
+  //   titulo: 'Água Viva',
+  //   autoria: 'Clarice Lispector',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'agua.jpg',
+  //   generoAutoria: 'feminino',
+  //   condicao: 'perfeito',
+  //   editora: 'Rocco',
+  //   novidade: false
+  // },
 
-  {
-    titulo: 'A Bela e a Fera',
-    autoria: 'Clarice Lispector',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'bela.jpg',
-    generoAutoria: 'feminino',
-    condicao: 'perfeito',
-    editora: 'Rocco',
-    novidade: false
-  },
+  // {
+  //   titulo: 'A Bela e a Fera',
+  //   autoria: 'Clarice Lispector',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'bela.jpg',
+  //   generoAutoria: 'feminino',
+  //   condicao: 'perfeito',
+  //   editora: 'Rocco',
+  //   novidade: false
+  // },
 
-  {
-    titulo: 'A Hora da Estrela',
-    autoria: 'Clarice Lispector',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'estrela.jpg',
-    generoAutoria: 'feminino',
-    condicao: 'perfeito',
-    editora: 'Rocco',
-    novidade: false
-  },
+  // {
+  //   titulo: 'A Hora da Estrela',
+  //   autoria: 'Clarice Lispector',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'estrela.jpg',
+  //   generoAutoria: 'feminino',
+  //   condicao: 'perfeito',
+  //   editora: 'Rocco',
+  //   novidade: false
+  // },
 
-  {
-    titulo: 'Felicidade Clandestina',
-    autoria: 'Clarice Lispector',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'felicidade.jpg',
-    generoAutoria: 'feminino',
-    condicao: 'perfeito',
-    editora: 'Rocco',
-    novidade: false
-  },
+  // {
+  //   titulo: 'Felicidade Clandestina',
+  //   autoria: 'Clarice Lispector',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'felicidade.jpg',
+  //   generoAutoria: 'feminino',
+  //   condicao: 'perfeito',
+  //   editora: 'Rocco',
+  //   novidade: false
+  // },
 
-  {
-    titulo: 'A Maça no Escuro',
-    autoria: 'Clarice Lispector',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'maca.jpg',
-    generoAutoria: 'feminino',
-    condicao: 'perfeito',
-    editora: 'Rocco',
-    novidade: false
-  },
-  {
-    titulo: 'Pra Não Esquecer',
-    autoria: 'Clarice Lispector',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: false,
-    preco: 'R$ 10,00',
-    imagem: 'esquecer.jpg',
-    generoAutoria: 'feminino',
-    condicao: 'perfeito',
-    editora: 'Rocco',
-    novidade: false
-  },
-  {
-    titulo: 'Perto do Coração Selvagem',
-    autoria: 'Clarice Lispector',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'perto.jpg',
-    generoAutoria: 'feminino',
-    condicao: 'perfeito',
-    editora: 'Rocco',
-    novidade: false
-  },
+  // {
+  //   titulo: 'A Maça no Escuro',
+  //   autoria: 'Clarice Lispector',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'maca.jpg',
+  //   generoAutoria: 'feminino',
+  //   condicao: 'perfeito',
+  //   editora: 'Rocco',
+  //   novidade: false
+  // },
+  // {
+  //   titulo: 'Pra Não Esquecer',
+  //   autoria: 'Clarice Lispector',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: false,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'esquecer.jpg',
+  //   generoAutoria: 'feminino',
+  //   condicao: 'perfeito',
+  //   editora: 'Rocco',
+  //   novidade: false
+  // },
+  // {
+  //   titulo: 'Perto do Coração Selvagem',
+  //   autoria: 'Clarice Lispector',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'perto.jpg',
+  //   generoAutoria: 'feminino',
+  //   condicao: 'perfeito',
+  //   editora: 'Rocco',
+  //   novidade: false
+  // },
 
-  {
-    titulo: 'Um Sopro de Vida',
-    autoria: 'Clarice Lispector',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'sopro.jpg',
-    generoAutoria: 'feminino',
-    condicao: 'perfeito',
-    editora: 'Rocco',
-    novidade: false
-  },
+  // {
+  //   titulo: 'Um Sopro de Vida',
+  //   autoria: 'Clarice Lispector',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'sopro.jpg',
+  //   generoAutoria: 'feminino',
+  //   condicao: 'perfeito',
+  //   editora: 'Rocco',
+  //   novidade: false
+  // },
 
   // Dostoiévski
-  {
-    titulo: 'Crime e Castigo',
-    autoria: 'Fiódor Dostoiévski',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'crime.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'bom',
-    editora: 'Editora 34',
-    novidade: false
-  },
-  {
-    titulo: 'Os Demônios',
-    autoria: 'Fiódor Dostoiévski',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'demonios.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'bom',
-    editora: 'Editora 34',
-    novidade: false
-  },
-  {
-    titulo: 'O Duplo',
-    autoria: 'Fiódor Dostoiévski',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'duplo.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'bom',
-    editora: 'Editora 34',
-    novidade: false
-  },
-  {
-    titulo: 'Escritos da Casa Morta',
-    autoria: ' Fiódor Dostoiévski',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'escritos.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'bom',
-    editora: 'Editora 34',
-    novidade: false
-  },
-  {
-    titulo: 'O Eterno Marido',
-    autoria: ' Fiódor Dostoiévski',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'eterno.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'bom',
-    editora: 'Editora 34',
-    novidade: false
-  },
-  {
-    titulo: 'Humilhados e Ofendidos',
-    autoria: ' Fiódor Dostoiévski',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'humilhados.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'bom',
-    editora: 'Editora 34',
-    novidade: false
-  },
-  {
-    titulo: 'O Idiota',
-    autoria: ' Fiódor Dostoiévski',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'idiota.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'bom',
-    editora: 'Editora 34',
-    novidade: false
-  },
-  {
-    titulo: 'Um Jogador',
-    autoria: ' Fiódor Dostoiévski',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'jogador.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'bom',
-    editora: 'Editora 34',
-    novidade: false
-  },
-  {
-    titulo: 'Os Irmãos Karamázov',
-    autoria: ' Fiódor Dostoiévski',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'karamazov.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'bom',
-    editora: 'Editora 34',
-    novidade: false
-  },
-  {
-    titulo: 'Memórias do Subsolo',
-    autoria: ' Fiódor Dostoiévski',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'memorias.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'bom',
-    editora: 'Editora 34',
-    novidade: false
-  },
-  {
-    titulo: 'Noites Brancas',
-    autoria: ' Fiódor Dostoiévski',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'noites.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'bom',
-    editora: 'Editora 34',
-    novidade: false
-  },
-  {
-    titulo: 'Um Pequeno Héroi',
-    autoria: ' Fiódor Dostoiévski',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'pequeno.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'bom',
-    editora: 'Editora 34',
-    novidade: false
-  },
-  {
-    titulo: 'Gente Pobre',
-    autoria: ' Fiódor Dostoiévski',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'pobre.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'bom',
-    editora: 'Editora 34',
-    novidade: false
-  },
-  {
-    titulo: 'A Senhoria',
-    autoria: ' Fiódor Dostoiévski',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'senhoria.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'bom',
-    editora: 'Editora 34',
-    novidade: false
-  },
-  {
-    titulo: 'A Outra Volta do Parafuso',
-    autoria: 'Henry James',
-    genero: {
-      id: 'classico',
-      value: 'Clássicos',
-      livros: []
-    },
-    reservado: true,
-    preco: 'R$ 10,00',
-    imagem: 'volta.jpg',
-    generoAutoria: 'masculino',
-    condicao: 'bom',
-    editora: 'Penguin',
-    novidade: false
-  },
+  // {
+  //   titulo: 'Crime e Castigo',
+  //   autoria: 'Fiódor Dostoiévski',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'crime.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'bom',
+  //   editora: 'Editora 34',
+  //   novidade: false
+  // },
+  // {
+  //   titulo: 'Os Demônios',
+  //   autoria: 'Fiódor Dostoiévski',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'demonios.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'bom',
+  //   editora: 'Editora 34',
+  //   novidade: false
+  // },
+  // {
+  //   titulo: 'O Duplo',
+  //   autoria: 'Fiódor Dostoiévski',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'duplo.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'bom',
+  //   editora: 'Editora 34',
+  //   novidade: false
+  // },
+  // {
+  //   titulo: 'Escritos da Casa Morta',
+  //   autoria: ' Fiódor Dostoiévski',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'escritos.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'bom',
+  //   editora: 'Editora 34',
+  //   novidade: false
+  // },
+  // {
+  //   titulo: 'O Eterno Marido',
+  //   autoria: ' Fiódor Dostoiévski',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'eterno.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'bom',
+  //   editora: 'Editora 34',
+  //   novidade: false
+  // },
+  // {
+  //   titulo: 'Humilhados e Ofendidos',
+  //   autoria: ' Fiódor Dostoiévski',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'humilhados.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'bom',
+  //   editora: 'Editora 34',
+  //   novidade: false
+  // },
+  // {
+  //   titulo: 'O Idiota',
+  //   autoria: ' Fiódor Dostoiévski',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'idiota.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'bom',
+  //   editora: 'Editora 34',
+  //   novidade: false
+  // },
+  // {
+  //   titulo: 'Um Jogador',
+  //   autoria: ' Fiódor Dostoiévski',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'jogador.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'bom',
+  //   editora: 'Editora 34',
+  //   novidade: false
+  // },
+  // {
+  //   titulo: 'Os Irmãos Karamázov',
+  //   autoria: ' Fiódor Dostoiévski',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'karamazov.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'bom',
+  //   editora: 'Editora 34',
+  //   novidade: false
+  // },
+  // {
+  //   titulo: 'Memórias do Subsolo',
+  //   autoria: ' Fiódor Dostoiévski',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'memorias.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'bom',
+  //   editora: 'Editora 34',
+  //   novidade: false
+  // },
+  // {
+  //   titulo: 'Noites Brancas',
+  //   autoria: ' Fiódor Dostoiévski',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'noites.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'bom',
+  //   editora: 'Editora 34',
+  //   novidade: false
+  // },
+  // {
+  //   titulo: 'Um Pequeno Héroi',
+  //   autoria: ' Fiódor Dostoiévski',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'pequeno.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'bom',
+  //   editora: 'Editora 34',
+  //   novidade: false
+  // },
+  // {
+  //   titulo: 'Gente Pobre',
+  //   autoria: ' Fiódor Dostoiévski',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'pobre.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'bom',
+  //   editora: 'Editora 34',
+  //   novidade: false
+  // },
+  // {
+  //   titulo: 'A Senhoria',
+  //   autoria: ' Fiódor Dostoiévski',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'senhoria.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'bom',
+  //   editora: 'Editora 34',
+  //   novidade: false
+  // },
+  // {
+  //   titulo: 'A Outra Volta do Parafuso',
+  //   autoria: 'Henry James',
+  //   genero: {
+  //     id: 'classico',
+  //     value: 'Clássicos',
+  //     livros: []
+  //   },
+  //   reservado: true,
+  //   preco: 'R$ 10,00',
+  //   imagem: 'volta.jpg',
+  //   generoAutoria: 'masculino',
+  //   condicao: 'bom',
+  //   editora: 'Penguin',
+  //   novidade: false
+  // },
   {
     titulo: 'Madame Bovary',
     autoria: 'Gustave Flaubert',
@@ -788,7 +788,7 @@ export const livros: Livro[] = [
       value: 'Clássicos',
       livros: []
     },
-    reservado: true,
+    reservado: false,
     preco: 'R$ 10,00',
     imagem: 'bovary.jpg',
     generoAutoria: 'masculino',
@@ -822,7 +822,7 @@ export const livros: Livro[] = [
       value: 'Contemporâneo',
       livros: []
     },
-    reservado: false,
+    reservado: true,
     preco: 'R$ 20,00',
     imagem: 'pessoas.jpg',
     generoAutoria: 'feminino',
@@ -854,7 +854,7 @@ export const livros: Livro[] = [
       value: 'Contemporâneo',
       livros: []
     },
-    reservado: false,
+    reservado: true,
     preco: 'R$ 20,00',
     imagem: 'cleo.jpg',
     generoAutoria: 'feminino',
@@ -956,7 +956,7 @@ export const livros: Livro[] = [
       value: 'Fantasia',
       livros: []
     },
-    reservado: false,
+    reservado: true,
     preco: 'R$ 30,00',
     imagem: 'circo.jpg',
     generoAutoria: 'feminino',
@@ -988,7 +988,7 @@ export const livros: Livro[] = [
       value: 'Fantasia',
       livros: []
     },
-    reservado: false,
+    reservado: true,
     preco: 'R$ 20,00',
     imagem: 'beren.jpg',
     generoAutoria: 'masculino',
@@ -1004,7 +1004,7 @@ export const livros: Livro[] = [
       value: 'Fantasia',
       livros: []
     },
-    reservado: false,
+    reservado: true,
     preco: 'R$ 20,00',
     imagem: 'hurin.jpg',
     generoAutoria: 'masculino',
@@ -1072,7 +1072,7 @@ export const livros: Livro[] = [
       value: 'Suspense',
       livros: []
     },
-    reservado: false,
+    reservado: true,
     preco: 'R$ 15,00',
     imagem: 'massacre.jpg',
     generoAutoria: 'masculino',
@@ -1168,7 +1168,7 @@ export const livros: Livro[] = [
       value: 'Suspense',
       livros: []
     },
-    reservado: false,
+    reservado: true,
     preco: 'R$ 10,00',
     imagem: 'empregada.jpg',
     generoAutoria: 'feminino',

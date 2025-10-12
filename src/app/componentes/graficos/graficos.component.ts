@@ -24,7 +24,7 @@ constructor(private dadosService: DadosService, private router: Router) {}
     this.iniciarGraficos();
   }
 
-   isCollapsed = false;
+   isCollapsed = true;
 
   toggleSidebar() {
     this.isCollapsed = !this.isCollapsed;
@@ -73,17 +73,19 @@ constructor(private dadosService: DadosService, private router: Router) {}
 
     // Gráfico de Gênero dos Livros
     new Chart('canvasGenero', {
-      type: 'polarArea',
+      type: 'bar',
       data: {
-        labels: ['Romance', 'Fantasia', 'Misterio'],
+        labels: ['Clássico', 'Contemporâneo', 'Fantasia', 'Suspense', 'Terror'],
         datasets: [{
-          label: 'Quantidade',
+          // label: 'Quantidade',
           data: [
-            this.dadosService.contarPorGenero('romance'),
+            this.dadosService.contarPorGenero('classico'),
+            this.dadosService.contarPorGenero('contemporaneo'),
             this.dadosService.contarPorGenero('fantasia'),
-            this.dadosService.contarPorGenero('misterio')
+            this.dadosService.contarPorGenero('suspense'),
+            this.dadosService.contarPorGenero('terror')
           ],
-          backgroundColor: ['#FF6347', '#FFD700', '#20B2AA']
+          backgroundColor: ['#31615aff', '#FFD700', '#8046a1ff', '#e63946ff', '#181009ff']
         }]
       },
       options: {
@@ -103,15 +105,15 @@ constructor(private dadosService: DadosService, private router: Router) {}
 
     // Gráfico de Preço Médio
     new Chart('canvasPreco', {
-      type: 'line',
+      type: 'bar',
       data: {
         labels: ['Romance', 'Fantasia', 'Misterio'],
         datasets: [{
           label: 'Preço Médio',
           data: [
-            this.dadosService.calcularPrecoMedio('romance'),
+            this.dadosService.calcularPrecoMedio('classico'),
             this.dadosService.calcularPrecoMedio('fantasia'),
-            this.dadosService.calcularPrecoMedio('misterio')
+            this.dadosService.calcularPrecoMedio('suspense')
           ],
           backgroundColor: '#8E44AD'
         }]
@@ -216,21 +218,21 @@ constructor(private dadosService: DadosService, private router: Router) {}
         }
       }
     },
-    animation: {
-      onComplete: function () {
-        const chartInstance = this as Chart; // Fazemos um cast explícito para Chart
-        const ctx = chartInstance.ctx;
-        const centerX = chartInstance.width / 2;
-        const centerY = chartInstance.height / 2;
-        const fontSize = 38;
-        const fontWeight = 'bold';
-        ctx.font = `${fontWeight} ${fontSize}px Prata`;
-        ctx.fillStyle = '#260038ff'; // Cor do texto
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText(`${livrosReservados} / ${totalLivros}`, centerX, centerY);
-      }
-    }
+    // animation: {
+    //   onComplete: function () {
+    //     const chartInstance = this as Chart; // Fazemos um cast explícito para Chart
+    //     const ctx = chartInstance.ctx;
+    //     const centerX = chartInstance.width / 2;
+    //     const centerY = chartInstance.height / 2;
+    //     const fontSize = 38;
+    //     const fontWeight = 'bold';
+    //     ctx.font = `${fontWeight} ${fontSize}px Prata`;
+    //     ctx.fillStyle = '#260038ff'; // Cor do texto
+    //     ctx.textAlign = 'center';
+    //     ctx.textBaseline = 'middle';
+    //     ctx.fillText(`${livrosReservados} / ${totalLivros}`, centerX, centerY);
+    //   }
+    // }
   }
 });
 
