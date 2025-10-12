@@ -1,6 +1,6 @@
 #UniSebo
 Projeto final em Angular 19.
-Branch de ajuste dos gráficos.
+Branch de principal.
 
 ### Checklist:
 - [x] Home page
@@ -11,11 +11,14 @@ Branch de ajuste dos gráficos.
 - [x] Ajuste dos componentes
 - [x] Catálogo
 - [x] Login admin com auth
+- [x] Dashboard
+- [/] Ajustar cabeçalho (100% responsivo)
+- [/] Melhorar métricas do gráfico de vendas e receita estimada
 
-- [/] Dashboard
-- [ ] Editar design (home/dashboard/forms)
-
-Extras:
 - [/] Página demo
+- [ ] Editar design (home/forms)
+- [ ] Adicionar forms no catálogo
 - [ ] Setas app-info
-- [ ] Diversificar dados do mock (status, preço)
+
+
+
