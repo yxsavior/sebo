@@ -1,0 +1,81 @@
+body, html {
+  overflow-x: hidden;  /* Impede a rolagem horizontal */
+}
+
+* {
+  box-sizing: border-box;  /* Garante que padding e border não ultrapassem a largura */
+}
+
+
+
+.navegacao {
+  color: #D19C97;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #D19C97;
+  border-color: #D19C97;
+}
+
+/* Mosaico de Imagens - Grid para telas grandes */
+.image-gallery {
+  position: relative;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  /* 2 colunas */
+  grid-template-rows: repeat(2, 1fr);     /* 2 linhas */
+
+}
+
+.image-item {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.thumb-image {
+  max-width: 100%;  /* As imagens ocupam 100% do espaço da célula */
+  height: 100%; /* A altura ocupa todo o espaço disponível */
+  object-fit: contain;  /* A imagem cobre o espaço sem distorcer */
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  /* Em telas médias (1024px) ainda será exibida a grid de 2x2 */
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);  /* 2 colunas em telas médias */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Esconder a grid em telas pequenas e exibir o carrossel */
+  .image-grid {
+    display: none;
+  }
+
+  /* Exibir o carrossel apenas em telas pequenas */
+  #carouselImages {
+    display: block;
+  }
+}
+
+/* Responsividade específica para telas muito pequenas */
+@media (max-width: 575px) {
+  /* Garantir que os itens não ultrapassem a largura da tela */
+  .image-gallery, .product-info {
+    width: 100%;
+    padding: 0 10px; /* Ajuste no padding para pequenas margens */
+  }
+
+  /* Ajuste para os textos e botões não ultrapassarem a tela */
+  .product-title, .item-title, .product-price, .product-action {
+    font-size: 16px; /* Ajustar fontes para telas pequenas */
+  }
+
+  .btn-primary {
+    width: 100%; /* Deixar os botões ocupando 100% da largura disponível */
+  }
+}

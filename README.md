@@ -17,8 +17,8 @@ Branch de principal.
 - [x] Setas app-info (removido)
 - [x] Ajustar cabeçalho do dashboard (100% responsivo)
 - [x] Melhorar métricas do gráfico de vendas e receita estimada
+- [x] Página demo
 
-- [/] Página demo
 - [ ] Editar design (home)
 
 
