@@ -12,13 +12,16 @@ Branch de principal.
 - [x] Catálogo
 - [x] Login admin com auth
 - [x] Dashboard
-- [/] Ajustar cabeçalho (100% responsivo)
-- [/] Melhorar métricas do gráfico de vendas e receita estimada
+- [x] Consertar checkbox do formulário
+- [x] Adicionar forms no catálogo
+- [x] Setas app-info (removido)
+- [x] Ajustar cabeçalho do dashboard (100% responsivo)
+- [x] Melhorar métricas do gráfico de vendas e receita estimada
 
 - [/] Página demo
-- [ ] Editar design (home/forms)
-- [ ] Adicionar forms no catálogo
-- [ ] Setas app-info
+- [ ] Editar design (home)
+
+
 
 
 

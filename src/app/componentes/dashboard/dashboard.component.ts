@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
   totalLivros: number = 0;
   livrosReservados: number = 0;
   receitaEstimadas: string = 'R$ 0,00';
-  confirmacoesPendentes: number = 0;
+  confirmacoesPendentes: number = 7;
   porcentagemReservados: number = 0;
 
   constructor(private auth: AuthService, private dadosService: DadosService, private router: Router) {
@@ -57,9 +57,9 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  logout() {
-    this.router.navigate(['/login']);
-  }
+logout() {
+  this.auth.logout();
+}
 
   iniciarGraficos(): void {
     // Gráfico de Livros Totais vs Reservados
@@ -93,9 +93,9 @@ export class DashboardComponent implements OnInit {
         labels: ['Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro'], // Meses
         datasets: [{
           label: 'Quantidade de Livros Vendidos',
-          data: [12, 7, 16, 18, 21, 5], // Dados de vendas fictícios
+          data: [12, 7, 16, 5, 21, 0], // Dados de vendas fictícios
           fill: false, // Não preenche a área abaixo da linha
-          borderColor: '#36A2EB', // Cor da linha
+          borderColor: '#005207ff', // Cor da linha
           tension: 0.1, // Suaviza a curva
           borderWidth: 2, // Largura da linha
         }]
@@ -128,7 +128,7 @@ export class DashboardComponent implements OnInit {
       data: {
         labels: ['Clássico', 'Contemporâneo', 'Fantasia', 'Suspense', 'Terror'],
         datasets: [{
-          label: 'Vendas por Gênero',
+          label: 'Reservados',
           data: [
             this.dadosService.vendasPorGenero('classico'),
             this.dadosService.vendasPorGenero('contemporaneo'),
@@ -136,7 +136,8 @@ export class DashboardComponent implements OnInit {
             this.dadosService.vendasPorGenero('suspense'),
             this.dadosService.vendasPorGenero('terror')
           ],
-          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#FF9F40', '#4BC0C0'],
+          // backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#FF9F40', '#4BC0C0'],
+          backgroundColor: ['#0e7c6cff', '#FFD700', '#8046a1ff', '#e63946ff', '#4BC0C0'],
         }]
       },
       options: {
@@ -157,10 +158,10 @@ export class DashboardComponent implements OnInit {
       data: {
         labels: labels,  // Editoras com 3 ou mais livros
         datasets: [{
-          label: 'Livros por Editora',
+          label: 'Estoque por Editora',
           data: data,  // Quantidade de livros por editora
-          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#FF9F40', '#4BC0C0'],
-          borderWidth: 1,
+  backgroundColor: ['#FF6384', '#FF9F40', '#FFCE56', '#00FF00', '#36A2EB', '#4B0082', '#8A2BE2'],
+        borderWidth: 1,
         }]
       },
       options: {

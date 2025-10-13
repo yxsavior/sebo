@@ -12,7 +12,7 @@ body, html {
     border-left-width: 5px; /* ou qualquer valor que você desejar */
 }
 .border-left-primary {
-    border-left-color: #4e73df; /* cor para 'primary' */
+    border-left-color: #df4eaf; /* cor para 'primary' */
 }
 .border-left-success {
     border-left-color: #1cc88a; /* cor para 'success' */
@@ -22,6 +22,14 @@ body, html {
 }
 .border-left-warning {
     border-left-color: #f6c23e; /* cor para 'warning' */
+}
+
+.text-custom-color {
+    color: #df4eaf !important; /* mesma cor da borda */
+}
+
+.card-reservados .card-vendas .card-editora {
+  border-left-color: #000 !important; /* cor preta para o card de vendas */
 }
 
 .text-xs {
@@ -62,6 +70,11 @@ body, html {
     border-bottom: 1px solid #ddd;  /* Separador entre a navbar e o conteúdo */
 }
 
+.sb-topnav .container-fluid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
 .sb-sidenav {
     background-color: white;  /* Fundo branco para a barra lateral */
     border-right: 1px solid #ddd;  /* Borda sutil à direita da barra lateral */
@@ -86,18 +99,22 @@ body, html {
 main {
     padding: 20px;
 }
+main {
+  padding-top: 70px; /* altura aproximada da navbar */
+}
+
 
 /* Responsividade */
 @media (max-width: 768px) {
     main {
         margin-left: 0;
     }
-    .sb-sidenav {
-        display: none;  /* Barra lateral desaparece em telas pequenas */
-    }
-    .sb-topnav {
+    /* .sb-sidenav {
+        display: none; 
+    } */
+    /* .sb-topnav {
         padding: 10px;
-    }
+    } */
 }
 
 /* Sidebar styles */
@@ -213,3 +230,9 @@ main {
   height: 250px !important;  /* Ajuste a altura para o gráfico de vendas */
   max-width: 100%;
 }
+
+.d-flex > main {
+    flex: 1;
+}
+
+

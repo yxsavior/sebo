@@ -12,7 +12,6 @@
 <div class="py-5">
     <div class="container">
         <div class="row g-5 d-flex align-items-stretch">
-
             <!-- Filtros -->
             <div class="col-md-3 col-sm-12 d-none d-md-block">
                 <div class="card-filtros">
@@ -121,12 +120,82 @@
                                 </li>
                             </ul>
                         </nav>
-
                     </div>
                 </div>
             </main>
         </div>
     </div>
 </div>
+
+<!-- Modal de reserva -->
+                        <div class="overlay" *ngIf="mostrarFormulario">
+                            <div class="modal">
+                                <button class="fechar-btn" (click)="fecharFormulario()"
+                                    aria-label="Fechar modal">&times;</button>
+
+                                <h5 class="modal-titulo">Reserve já seu exemplar!</h5>
+
+
+                                <form [formGroup]="form" (ngSubmit)="reservarLivro(form.getRawValue())">
+                                    <label class="form-label">Nome:
+                                        <input formControlName="nome" placeholder="Seu nome">
+                                    </label>
+
+                                    <div *ngIf="form.get('nome')?.hasError('pattern')" class="mensagem-erro">
+                                        O nome deve conter apenas letras.
+                                    </div>
+
+                                    <label class="form-label">WhatsApp:
+                                        <input type="text" formControlName="whatsapp" (input)="formatarTelefone()">
+                                    </label>
+
+                                    <div *ngIf="form.get('whatsapp')?.hasError('telefoneInvalido')"
+                                        class="mensagem-erro">
+                                        O número de WhatsApp deve ter 11 dígitos (com DDD).
+                                    </div>
+
+                                    <label class="form-label">Livro:
+                                        <input formControlName="livro" readonly>
+                                    </label>
+
+                                    <label class="form-label">Local de entrega:
+                                        <select formControlName="entrega">
+                                            <option value="">Escolha</option>
+                                            <option value="Canela">Canela</option>
+                                            <option value="Ondina">Ondina</option>
+                                        </select>
+                                    </label>
+
+                                    <label class="form-label">Data:
+                                        <input type="date" formControlName="data">
+                                    </label>
+
+                                    <div *ngIf="form.get('data')?.hasError('fimDeSemana')" class="mensagem-erro">
+                                        Não é permitido agendar para sábados ou domingos.
+                                    </div>
+
+                                    <label class="form-label">Horário:
+                                        <input type="time" formControlName="horario">
+                                    </label>
+
+                                    <div *ngIf="form.get('horario')?.hasError('horarioInvalido')" class="mensagem-erro">
+                                        O horário deve ser entre 18:30 e 22:00.
+                                    </div>
+
+                                    <div class="checkbox-terms">
+                                        <input type="checkbox" id="aceite" formControlName="aceite">
+                                        <label for="aceite" class="checkbox-label">
+                                            Aceito os <a
+                                                href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+                                                target="_blank" rel="noopener noreferrer">termos & condições</a>.
+                                        </label>
+                                    </div>
+
+                                    <button type="submit" [disabled]="form.invalid" class="botao-reservar">
+                                        Reservar
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
 
 <app-rodape></app-rodape>

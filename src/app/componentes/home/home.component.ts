@@ -11,7 +11,6 @@ import { DestaquesComponent } from '../destaques/destaques.component';
 import { QuotesComponent } from '../quotes/quotes.component';
 import { FaqComponent } from '../faq/faq.component';
 import { Livro } from '../livro/livro';
-import { BannerComponent } from '../banner/banner.component';
 import { Router, RouterModule } from '@angular/router';
 import { RodapeComponent } from "../rodape/rodape.component";
 

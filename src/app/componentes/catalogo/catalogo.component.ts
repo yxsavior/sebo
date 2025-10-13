@@ -3,9 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CabecalhoComponent } from '../cabecalho/cabecalho.component';
 import { RodapeComponent } from "../rodape/rodape.component";
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { livros } from '../../mock-livros';
 import { Livro } from '../livro/livro';
+
 
 
 //Funções
@@ -63,10 +64,11 @@ function validarTelefoneCompleto(control: AbstractControl) {
 }
 
 
+
 @Component({
   selector: 'app-catalogo',
   standalone: true,
-  imports: [CommonModule, RouterModule, CabecalhoComponent, RodapeComponent],
+  imports: [CommonModule, RouterModule, CabecalhoComponent, RodapeComponent, ReactiveFormsModule],
   templateUrl: './catalogo.component.html',
   styleUrl: './catalogo.component.css'
 })
@@ -119,54 +121,44 @@ export class CatalogoComponent implements OnInit {
 
 
 
+ alternarReserva(livro: Livro) {
+    livro.reservado = !livro.reservado;
+  }
+
+
   mostrarFormulario: boolean = false;
+
   form: FormGroup;
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       nome: ['', [Validators.required, Validators.pattern(/^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/)]],
-      whatsapp: ['', [Validators.required, this.validarTelefoneCompleto]],
+      whatsapp: ['', [Validators.required, validarTelefoneCompleto]],
       livro: [{ value: '', disabled: true }],
       entrega: ['', Validators.required],
-      data: ['', [Validators.required, this.validarDataNaoFimDeSemana]],
-      horario: ['', [Validators.required, this.validarHorario]],
+      data: ['', [Validators.required, validarDataNaoFimDeSemana]],
+      horario: ['', [Validators.required, validarHorario]],
       aceite: [false, Validators.requiredTrue]
     });
-  }
 
-  validarTelefoneCompleto(control: AbstractControl) {
-    const valor = control.value?.replace(/\D/g, '') || ''; // remove não-dígitos
-    if (!valor) return null;
-
-    if (valor.length !== 11) {
-      return { telefoneInvalido: true };
-    }
-    return null;
-  }
-
-  validarDataNaoFimDeSemana(control: AbstractControl) {
-    if (!control.value) return null;
-    const partes = control.value.split('-');
-    const data = new Date(Number(partes[0]), Number(partes[1]) - 1, Number(partes[2]));
-    const diaSemana = data.getDay();
-    return (diaSemana === 0 || diaSemana === 6) ? { fimDeSemana: true } : null;
-  }
-
-  validarHorario(control: AbstractControl) {
-    if (!control.value) return null;
-    const [hora, minuto] = control.value.split(':').map(Number);
-    const minutosTotais = hora * 60 + minuto;
-    const inicio = 18 * 60 + 30; // 18:30 = 1110
-    const fim = 22 * 60;         // 22:00 = 1320
-    return (minutosTotais < inicio || minutosTotais > fim) ? { horarioInvalido: true } : null;
+  // Inicializa a lista de livros
+  this.livrosFiltrados = this.livros;
   }
 
   abrirFormularioReserva(livro: Livro) {
+    console.log('Abrindo modal para livro:', livro.titulo);
     this.livroSelecionado = livro;
+    // this.mostrarFormulario = true;
+    //     this.form.patchValue({
+    //   livro: livro.titulo
+    // });
+
+    // Reseta o formulário e seta o título do livro selecionado
     this.form.reset({
       livro: livro.titulo,
-      aceite: false
+      aceite: false // garante que o checkbox fique desmarcado
     });
+
     this.mostrarFormulario = true;
   }
 
@@ -178,7 +170,10 @@ export class CatalogoComponent implements OnInit {
   reservarLivro(dados: any) {
     if (this.livroSelecionado) {
       this.livroSelecionado.reservado = true;
+
+      // Remove da lista exibida
       this.livrosFiltrados = this.livrosFiltrados.filter(l => l !== this.livroSelecionado);
+
       this.fecharFormulario();
 
       console.log('Reserva feita com sucesso!', dados);
@@ -204,6 +199,7 @@ export class CatalogoComponent implements OnInit {
 
     controle.setValue(valor, { emitEvent: false }); // atualiza sem disparar outro input
   }
+
 
   // Filtros dinâmicos
   filtrosPreco: { faixa: string, quantidade: number }[] = [];

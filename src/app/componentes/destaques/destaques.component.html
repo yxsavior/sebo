@@ -51,11 +51,11 @@
           </button>
           <span *ngIf="livro.reservado" class="text-danger">
             <!-- <i class="fas fa-heart text-primary"></i> -->
-             Reservado
+            Reservado
           </span>
 
-            <a [routerLink]="['/demo']" class="btn btn-sm text-dark p-0">
-                <i class="fas fa-eye text-primary"></i> Detalhes
+          <a [routerLink]="['/demo']" class="btn btn-sm text-dark p-0">
+            <i class="fas fa-eye text-primary"></i> Detalhes
           </a>
         </div>
       </div>
@@ -78,10 +78,11 @@
   <div class="modal">
     <button class="fechar-btn" (click)="fecharFormulario()" aria-label="Fechar modal">&times;</button>
 
-    <h5>Reserve já seu exemplar!</h5>
+    <h5 class="modal-titulo">Reserve já seu exemplar!</h5>
+
 
     <form [formGroup]="form" (ngSubmit)="reservarLivro(form.getRawValue())">
-      <label>Nome:
+      <label class="form-label">Nome:
         <input formControlName="nome" placeholder="Seu nome">
       </label>
 
@@ -89,7 +90,7 @@
         O nome deve conter apenas letras.
       </div>
 
-      <label>WhatsApp:
+      <label class="form-label">WhatsApp:
         <input type="text" formControlName="whatsapp" (input)="formatarTelefone()">
       </label>
 
@@ -97,12 +98,11 @@
         O número de WhatsApp deve ter 11 dígitos (com DDD).
       </div>
 
-
-      <label>Livro:
+      <label class="form-label">Livro:
         <input formControlName="livro" readonly>
       </label>
 
-      <label>Local de entrega:
+      <label class="form-label">Local de entrega:
         <select formControlName="entrega">
           <option value="">Escolha</option>
           <option value="Canela">Canela</option>
@@ -110,7 +110,7 @@
         </select>
       </label>
 
-      <label>Data:
+      <label class="form-label">Data:
         <input type="date" formControlName="data">
       </label>
 
@@ -118,7 +118,7 @@
         Não é permitido agendar para sábados ou domingos.
       </div>
 
-      <label>Horário:
+      <label class="form-label">Horário:
         <input type="time" formControlName="horario">
       </label>
 
@@ -126,23 +126,17 @@
         O horário deve ser entre 18:30 e 22:00.
       </div>
 
-
-      <div class="checkbox-container">
+      <div class="checkbox-terms">
         <input type="checkbox" id="aceite" formControlName="aceite">
         <label for="aceite" class="checkbox-label">
           Aceito os <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank"
-            rel="noopener noreferrer">
-            termos & condições</a>.
+            rel="noopener noreferrer">termos & condições</a>.
         </label>
-
       </div>
 
-
-      <!-- Botão ajustado -->
       <button type="submit" [disabled]="form.invalid" class="botao-reservar">
         Reservar
       </button>
-
     </form>
 
   </div>

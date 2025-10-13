@@ -1,14 +1,43 @@
-
-<!-- <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" /> -->
-
 <section class="pb-4 mt-5">
-    <!-- <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center gap-4 px-3"> -->
   <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center gap-4">
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <!-- Item 1 -->
-        <div class="swiper-slide">
-          <div class="divs-facilidades d-flex flex-column align-items-center text-center">
+    <!-- Card 1 -->
+    <div class="divs-facilidades">
+      <div><i class="bi bi-x-diamond fs-2 icone-customizado"></i></div>
+      <div>
+        <div class="mb-1 titulo-preto">Pague com PIX</div>
+        <div class="texto-menor">Pague somente na hora da entrega</div>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="divs-facilidades">
+      <div><i class="bi bi-calendar-check fs-2 icone-customizado"></i></div>
+      <div>
+        <div class="mb-1 titulo-preto">Rápido & Fácil</div>
+        <div class="texto-menor">Reserve em alguns segundos, sem precisar de cadastro.</div>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="divs-facilidades">
+      <div><i class="bi bi-book fs-2 icone-customizado"></i></div>
+      <div>
+        <div class="mb-1 titulo-preto">Livros novos & Usados</div>
+        <div class="texto-menor">Sempre no melhor estado de conservação.</div>
+      </div>
+    </div>
+
+    <!-- Carrossel (apenas visível em telas pequenas) -->
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+      <!-- Indicadores (opcional) -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <!-- Slides -->
+      <!-- <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="divs-facilidades">
             <div><i class="bi bi-x-diamond fs-2 icone-customizado"></i></div>
             <div>
               <div class="mb-1 titulo-preto">Pague com PIX</div>
@@ -16,10 +45,8 @@
             </div>
           </div>
         </div>
-
-        <!-- Item 2 -->
-        <div class="swiper-slide">
-          <div class="divs-facilidades d-flex flex-column align-items-center text-center">
+        <div class="carousel-item">
+          <div class="divs-facilidades">
             <div><i class="bi bi-calendar-check fs-3 icone-customizado"></i></div>
             <div>
               <div class="mb-1 titulo-preto">Rápido & Fácil</div>
@@ -27,10 +54,8 @@
             </div>
           </div>
         </div>
-
-        <!-- Item 3 -->
-        <div class="swiper-slide">
-          <div class="divs-facilidades d-flex flex-column align-items-center text-center">
+        <div class="carousel-item">
+          <div class="divs-facilidades">
             <div><i class="bi bi-book fs-2 icone-customizado"></i></div>
             <div>
               <div class="mb-1 titulo-preto">Livros novos & Usados</div>
@@ -38,19 +63,17 @@
             </div>
           </div>
         </div>
-      </div>
-      <!-- Se desejar controles de navegação, adicione botões -->
-        <!-- <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div> -->
+      </div> -->
 
-        <button class="swiper-button-prev" type="button">
+      <!-- Controles (setas) -->
+      <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Anterior</span>
       </button>
-      <button class="swiper-button-next" type="button">
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Próximo</span>
-      </button>
+      </button> -->
     </div>
   </div>
 </section>

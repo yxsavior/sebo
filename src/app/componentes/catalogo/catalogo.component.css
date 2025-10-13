@@ -236,3 +236,261 @@ body {
         gap: 0.5rem;
     }
 }
+
+
+/* ==================== FORMULÁRIO =================== */
+/* Overlay/Modal */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+
+.modal {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 450px;
+    max-height: 90vh;
+    overflow-y: auto;
+    /* border-top: 24px solid var(--color-secundaria, #2b2b2b); */
+    border-top: 24px solid #D19C97;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 100000;
+}
+
+/* Título do modal */
+.modal-titulo {
+    margin: 0;
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--color-secundaria, #222);
+}
+
+/* Botão de fechar modal */
+.fechar-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: transparent;
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    color: #333;
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+}
+
+.fechar-btn:hover {
+    color: #D19C97;
+}
+
+/* Inputs do formulário */
+.modal input,
+.modal select,
+.modal textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: var(--font-montserrat);
+}
+
+/* .modal label {
+    display: flex;
+    flex-direction: column; 
+    font-size: 14px;
+    color: var(--color-secundaria);
+    gap: 10px;
+    padding: 8px;
+} */
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #333;
+    margin-top: 10px;
+    flex-wrap: nowrap;
+}
+
+.checkbox-container input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+    border: 1px solid rgb(43, 43, 43);
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+}
+
+.checkbox-container input[type="checkbox"]:checked {
+    background-color: #D19C97;
+    border-color: #D19C97;
+}
+
+.checkbox-container input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 3px;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-label {
+    cursor: pointer;
+    user-select: none;
+    font-size: 14px;
+    color: inherit;
+    white-space: nowrap;
+    display: inline-flex; /* Usar flex para garantir que ele fique alinhado corretamente */
+    align-items: center;  /* Alinhar o texto com o checkbox */
+}
+
+.checkbox-label a {
+    display: inline-block; /* Certifica-se de que o link não quebra o layout */
+    color: #D19C97;
+    text-decoration: underline;
+    margin-left: 6px; /* Pequeno espaço entre o checkbox e o link */
+}
+
+.checkbox-label a:hover {
+    color: #D19C97;
+}
+
+/* Botão de envio no modal */
+.modal button[type="submit"] {
+    margin-top: 8px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #000000;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal button[type="submit"]:disabled {
+    cursor: not-allowed;
+    background-color: #ccc;
+}
+
+/* Estilos de erro */
+.erro {
+    font-size: 12px;
+    color: red;
+    margin-top: 4px;
+}
+
+.mensagem-erro {
+    color: rgb(255, 0, 0);
+    font-size: 0.8rem;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    display: block;
+    margin-left: 0.9rem;
+}
+
+/* Bloqueia o scroll da página quando o modal está aberto */
+body.modal-aberto {
+    overflow: hidden;
+}
+
+/* Responsividade e Layout Geral */
+@media (max-width: 768px) {
+    .filter-button {
+        font-size: 0.8rem;
+    }
+
+    .botao-reservar {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .modal {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .checkbox-label {
+        font-size: 12px;
+    }
+}
+
+/* Classe comum para os labels do formulário */
+.form-label {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: var(--color-secundaria);
+    gap: 10px;
+    padding: 8px;
+}
+
+/* Estilos específicos para o label do checkbox */
+.checkbox-label {
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;  /* Alinha o checkbox com o texto */
+    white-space: nowrap;
+}
+
+.checkbox-label a {
+    color: #D19C97;
+    text-decoration: underline;
+    margin-left: 6px;
+}
+
+.checkbox-label a:hover {
+    color: #D19C97;
+}
+
+/* Ajuste no estilo do checkbox */
+.checkbox-terms {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+    margin-left: 8px;
+    flex-wrap: nowrap;
+}
+
+.checkbox-terms input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
+
+.checkbox-terms .checkbox-label {
+    font-size: 14px;
+    color: #333;
+    margin: 12px 2px;
+    display: inline-flex;
+    align-items: flex-start;
+    white-space: nowrap;
+}
+

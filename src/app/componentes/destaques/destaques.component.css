@@ -1,3 +1,4 @@
+/* Estilo para o link do catálogo */
 .catalogo-link {
     text-decoration: underline;
     color: black;
@@ -6,7 +7,7 @@
     font-size: 0.75rem;
 }
 
-/* Estilo para os botões */
+/* Estilo para os botões de filtro */
 .filter-button {
     color: #000;
     text-decoration: none;
@@ -14,10 +15,8 @@
     position: relative;
     font-weight: 500;
     transition: color 0.3s, border-bottom 0.3s;
-    /* Transição suave para a cor e o sublinhado */
 }
 
-/* Barra inferior cinza, visível ao passar o mouse */
 .filter-button::after {
     content: '';
     position: absolute;
@@ -29,12 +28,10 @@
     transition: background-color 0.3s;
 }
 
-/* Muda a cor da barra para rosa ao passar o mouse */
 .filter-button:hover::after {
     background-color: #D19C97;
 }
 
-/* Estilo para o botão ativo (selecionado) */
 .filter-button.active {
     color: #D19C97;
     font-weight: bold;
@@ -44,14 +41,9 @@
     background-color: #D19C97;
 }
 
-/* h2.container {
-    padding-left: 12px; 
-    margin: 0;
-    width: 100%;
-}
- */
+/* Estilos gerais */
 h2.container, .container-fluid {
-    width: 100%; /* Garantir que ambos ocupem a largura total do container pai */
+    width: 100%;
 }
 
 .card-header {
@@ -116,8 +108,7 @@ h2.container, .container-fluid {
 }
 
 /* ==================== FORMULÁRIO =================== */
-/* Form */
-/* overlay/modal */
+/* Overlay/Modal */
 .overlay {
     position: fixed;
     inset: 0;
@@ -126,20 +117,17 @@ h2.container, .container-fluid {
     align-items: center;
     justify-content: center;
     z-index: 99999;
-    /* bem alto para não ficar atrás do card */
 }
 
-/* modal com mesmo padrão visual do card */
 .modal {
     background: #fff;
     border-radius: 8px;
     padding: 20px;
     max-width: 450px;
     max-height: 90vh;
-    /* usa até 90% da altura da janela */
     overflow-y: auto;
-    /* ativa scroll apenas se necessário */
-    border-top: 24px solid var(--color-secundaria, #2b2b2b);
+    /* border-top: 24px solid var(--color-secundaria, #2b2b2b); */
+    border-top: 24px solid #D19C97;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -148,15 +136,17 @@ h2.container, .container-fluid {
     z-index: 100000;
 }
 
-/* título centralizado e sempre visível */
+/* Título do modal */
 .modal-titulo {
     margin: 0;
+    margin-top: 15px;
     font-size: 18px;
     font-weight: 700;
     text-align: center;
     color: var(--color-secundaria, #222);
 }
 
+/* Botão de fechar modal */
 .fechar-btn {
     position: absolute;
     top: 10px;
@@ -164,12 +154,10 @@ h2.container, .container-fluid {
     border: none;
     background: transparent;
     font-size: 1.25rem;
-    /* tamanho pequeno e elegante */
     font-weight: bold;
     line-height: 1;
     cursor: pointer;
     color: #333;
-    /* cor discreta */
     padding: 0;
     margin: 0;
     z-index: 1;
@@ -177,46 +165,41 @@ h2.container, .container-fluid {
 
 .fechar-btn:hover {
     color: #D19C97;
-    /* muda para rosa ao passar o mouse */
 }
 
-/* Inputs */
-/* inputs + evitar overflow (correção do vazamento) */
+/* Inputs do formulário */
 .modal input,
 .modal select,
 .modal textarea {
     width: 100%;
     box-sizing: border-box;
-    /* ESSENCIAL */
     padding: 8px 10px;
     border: 1px solid #ddd;
     border-radius: 6px;
     font-family: var(--font-montserrat);
 }
 
-.modal label {
+/* .modal label {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     font-size: 14px;
     color: var(--color-secundaria);
     gap: 10px;
     padding: 8px;
-}
+} */
 
 .checkbox-container {
-    display: inline-block;
-    white-space: nowrap;
+    display: flex;
+    align-items: center;
     gap: 8px;
-    /* controla o espaço entre checkbox e texto */
     font-size: 14px;
     color: #333;
     margin-top: 10px;
+    flex-wrap: nowrap;
 }
 
 .checkbox-container input[type="checkbox"] {
-    /* tira a aparência padrão para customizar */
     appearance: none;
-    /* remove o estilo default */
     -webkit-appearance: none;
     width: 10px;
     height: 10px;
@@ -226,16 +209,13 @@ h2.container, .container-fluid {
     cursor: pointer;
     position: relative;
     margin: 0;
-    /* remove margens extras */
 }
 
-/* quando marcado, muda cor e mostra o "check" */
 .checkbox-container input[type="checkbox"]:checked {
     background-color: #D19C97;
     border-color: #D19C97;
 }
 
-/* cria o "check" */
 .checkbox-container input[type="checkbox"]:checked::after {
     content: "";
     position: absolute;
@@ -248,19 +228,28 @@ h2.container, .container-fluid {
     transform: rotate(45deg);
 }
 
-/* label */
 .checkbox-label {
     cursor: pointer;
     user-select: none;
-    font-size: 10px;
+    font-size: 14px;
     color: inherit;
-    white-space: normal !important;
-    display: inline;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-flex; /* Usar flex para garantir que ele fique alinhado corretamente */
+    align-items: center;  /* Alinhar o texto com o checkbox */
 }
 
-/* Botão Enviar */
+.checkbox-label a {
+    display: inline-block; /* Certifica-se de que o link não quebra o layout */
+    color: #D19C97;
+    text-decoration: underline;
+    margin-left: 6px; /* Pequeno espaço entre o checkbox e o link */
+}
+
+.checkbox-label a:hover {
+    color: #D19C97;
+}
+
+/* Botão de envio no modal */
 .modal button[type="submit"] {
     margin-top: 8px;
     padding: 10px 16px;
@@ -278,21 +267,11 @@ h2.container, .container-fluid {
     background-color: #ccc;
 }
 
+/* Estilos de erro */
 .erro {
     font-size: 12px;
     color: red;
     margin-top: 4px;
-}
-
-/* .erro { color: #c00; font-size: 12px; margin-top: 6px; } */
-
-body.modal-aberto {
-    overflow: hidden;
-}
-
-.checkbox-label a {
-    color: #D19C97;
-    text-decoration: underline;
 }
 
 .mensagem-erro {
@@ -301,6 +280,86 @@ body.modal-aberto {
     margin-top: 4px;
     margin-bottom: 8px;
     display: block;
-    /* text-align: center; */
     margin-left: 0.9rem;
 }
+
+/* Bloqueia o scroll da página quando o modal está aberto */
+body.modal-aberto {
+    overflow: hidden;
+}
+
+/* Responsividade e Layout Geral */
+@media (max-width: 768px) {
+    .filter-button {
+        font-size: 0.8rem;
+    }
+
+    .botao-reservar {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .modal {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .checkbox-label {
+        font-size: 12px;
+    }
+}
+
+/* Classe comum para os labels do formulário */
+.form-label {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: var(--color-secundaria);
+    gap: 10px;
+    padding: 8px;
+}
+
+/* Estilos específicos para o label do checkbox */
+.checkbox-label {
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;  /* Alinha o checkbox com o texto */
+    white-space: nowrap;
+}
+
+.checkbox-label a {
+    color: #D19C97;
+    text-decoration: underline;
+    margin-left: 6px;
+}
+
+.checkbox-label a:hover {
+    color: #D19C97;
+}
+
+/* Ajuste no estilo do checkbox */
+.checkbox-terms {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+    margin-left: 8px;
+    flex-wrap: nowrap;
+}
+
+.checkbox-terms input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
+
+.checkbox-terms .checkbox-label {
+    font-size: 14px;
+    color: #333;
+    margin: 12px 2px;
+    display: inline-flex;
+    align-items: flex-start;
+    white-space: nowrap;
+}
+

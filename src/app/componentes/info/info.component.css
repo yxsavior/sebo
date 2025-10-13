@@ -24,103 +24,50 @@
   margin-bottom: 10px;
 }
 
-/* Estilos para a parte do swiper */
-.swiper-container {
-  position: relative;
-  /* Para que os botões sejam posicionados em relação a esta div */
-  width: 100%;
-  /* height: auto; */
-  overflow: hidden;
-  /* Evitar que os itens que saem da área visível apareçam */
-  background-color: #fcf5f5;
-  /* background-color: #DFD9E2;; */
+/* Ajustando as setas do carrossel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #b91e10; /* Cor das setas */
 }
 
-.swiper-wrapper {
-  display: flex;
-  flex-wrap: nowrap;
-  /* Não deixa os itens quebrarem linha */
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: #D19C97; /* Cor das setas ao passar o mouse */
 }
 
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 20px;
-  box-sizing: border-box;
+/* Exibir os cards como layout de flex em telas grandes */
+@media (min-width: 992px) {
+  /* Exibe os cards lado a lado */
+  .d-flex {
+    flex-direction: row !important;
+    justify-content: space-between;
+  }
+
+  .carousel {
+    display: none; /* Oculta o carrossel */
+  }
+
+  .divs-facilidades {
+    display: block !important; /* Exibe os cards */
+  }
 }
 
-/* Ajuste a responsividade */
-@media (max-width: 1023px) {
-  .swiper-container {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    /* Adicionado aqui para garantir que o overflow seja sempre escondido */
+/* Exibir o carrossel em telas pequenas */
+@media (max-width: 991px) {
+  .d-flex {
+    flex-direction: column !important;
   }
 
-  .swiper-slide {
-    width: 100%;
-    /* Cada slide ocupa toda a tela */
+  .carousel {
+    display: block !important; /* Exibe o carrossel */
   }
 
-  /* Estilos personalizados para as setas */
-  .swiper-button-next,
-  .swiper-button-prev {
-    color: #b91e10;
-    /* Cor das setas */
-    font-size: 24px;
-    /* Tamanho do ícone */
-    width: 50px;
-    /* Largura das setas */
-    height: 50px;
-    /* Altura das setas */
-    background-color: transparent;
-    /* Remover o fundo */
-    border: none;
-    /* Remover a borda */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    /* Para garantir que fiquem sobre os slides */
-    cursor: pointer;
+  /* Não esconder os cards, apenas ajustá-los para o carrossel */
+  .divs-facilidades {
+    display: block !important; /* Exibe os cards normalmente */
   }
 
-  .swiper-button-next {
-    right: 10px;
-    /* Coloca a seta para a direita */
-    color: #b91e10;
-    width: 40px;
-    /* Ajusta o tamanho das setas em telas menores */
-    height: 40px;
+  .divs-facilidades {
+    display: none;
   }
-
-  .swiper-button-prev {
-    left: 10px;
-    /* Coloca a seta para a esquerda */
-  }
-
-  .swiper-button-next:hover,
-  .swiper-button-prev:hover {
-    color: #D19C97;
-    /* Muda a cor ao passar o mouse */
-  }
-
-}
-
-@media (min-width: 1024px) {
-  .swiper-slide {
-    width: calc(33.33% - 20px);
-    /* 3 slides por linha com espaçamento */
-  }
-
-  .swiper-button-next,
-.swiper-button-prev {
-  display: none;
-}
 }
