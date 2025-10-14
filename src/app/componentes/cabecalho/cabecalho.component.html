@@ -1,22 +1,11 @@
 <nav class="navbar navbar-expand-md navbar-custom alig">
   <div class="container-fluid">
-    <img
-      src="https://upload.wikimedia.org/wikipedia/commons/8/81/Book_SVG.svg"
-      alt="Logo UniSebo"
-      width="40px"
-      style="align-items: center;"
-    />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Book_SVG.svg" alt="Logo UniSebo" width="40px"
+      style="align-items: center;" />
     <span>UniSebo</span>
 
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -29,8 +18,11 @@
         <li class="nav-item me-4">
           <a class="nav-link" [routerLink]="['/catalogo']">Catálogo</a>
         </li>
-        <li class="nav-item me-4">
+        <!-- <li class="nav-item me-4">
           <a class="nav-link" [routerLink]="['/promo']">Promoções</a>
+        </li> -->
+        <li class="nav-item me-4">
+          <a class="nav-link" href="#faq">FAQ</a>
         </li>
       </ul>
 
@@ -40,13 +32,7 @@
       </button>
 
       <!-- Modal de pesquisa -->
-      <div
-        class="modal fade"
-        id="searchModal"
-        tabindex="-1"
-        aria-labelledby="searchModalLabel"
-        aria-hidden="true"
-      >
+      <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -54,33 +40,29 @@
             </div>
             <div class="modal-body">
               <form>
-                <input
-                  class="form-control rounded-pill custom-search"
-                  type="search"
-                  placeholder="Pesquisar livro"
-                  aria-label="Search"
-                />
+                <input class="form-control rounded-pill custom-search" type="search" placeholder="Pesquisar livro"
+                  aria-label="Search" />
               </form>
             </div>
           </div>
         </div>
       </div>
 
-<!-- Barra vertical -->
-<div class="vr mx-2"></div>
+      <!-- Barra vertical -->
+      <div class="vr mx-2"></div>
 
       <!-- Área condicional de autenticação -->
       <div class="d-flex align-items-center ms-3">
         <!-- Se logado -->
         <ng-container *ngIf="(user$ | async) as user; else notLogged">
 
-  <button class="btn" [routerLink]="'/dashboard'">
-    <i class="bi bi-speedometer2"></i>
-  </button>
+          <button class="btn" [routerLink]="'/dashboard'">
+            <i class="bi bi-speedometer2"></i>
+          </button>
 
-<button class="btn" (click)="logout()">
-  <i class="bi bi-box-arrow-right"></i>
-</button>
+          <button class="btn" (click)="logout()">
+            <i class="bi bi-box-arrow-right"></i>
+          </button>
 
         </ng-container>
 
