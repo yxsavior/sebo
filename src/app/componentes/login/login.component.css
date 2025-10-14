@@ -40,3 +40,30 @@
   /* font-weight: bold; */
   text-align: center;
 }
+
+/* Customização para o botão */
+.btn-primary {
+  background-color: #4B0082; /* Roxo escuro */
+  border: none; /* Remove a borda do botão */
+}
+
+.btn-primary:hover {
+  background-color: #6A0DAD; /* Roxo mais claro ao passar o mouse */
+}
+
+.btn-primary:focus, .btn-primary:active {
+  box-shadow: none; /* Remove o efeito de foco */
+}
+
+.voltar-home {
+  color: #9b45d8; /* Cor roxa */
+  text-decoration: none; /* Remove o sublinhado */
+}
+
+.voltar-home:hover {
+  color: #6A0DAD; /* Cor roxa mais clara quando o mouse passa por cima */
+}
+
+
+
+
