@@ -12,10 +12,10 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: false,
-    preco: 'R$ 22,00',
+    preco: 'R$ 20,00',
     imagem: 'peter.jpg',
     generoAutoria: 'masculino',
-    condicao: 'bom',
+    condicao: 'bom estado',
     editora: 'Zahar',
     novidade: false
   },
@@ -28,10 +28,10 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: false,
-    preco: 'R$ 22,00',
+    preco: 'R$ 20,00',
     imagem: 'redoma.jpg',
     generoAutoria: 'feminino',
-    condicao: 'perfeito',
+    condicao: 'excelente',
     editora: 'Biblioteca Azul',
     novidade: true
   },
@@ -44,10 +44,10 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: false,
-    preco: 'R$ 10,00',
+    preco: 'R$ 20,00',
     imagem: 'teto.jpg',
     generoAutoria: 'feminino',
-    condicao: 'perfeito',
+    condicao: 'excelente',
     editora: 'Tordesilhas',
     novidade: false
   },
@@ -60,7 +60,7 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: true,
-    preco: 'R$ 22,00',
+    preco: 'R$ 50,00',
     imagem: 'doutor.jpg',
     generoAutoria: 'masculino',
     condicao: 'novo',
@@ -76,7 +76,7 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: true,
-    preco: 'R$ 22,00',
+    preco: 'R$ 50,00',
     imagem: 'sertao.jpg',
     generoAutoria: 'masculino',
     condicao: 'novo',
@@ -92,10 +92,10 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: false,
-    preco: 'R$ 10,00',
+    preco: 'R$ 20,00',
     imagem: 'demian.jpg',
     generoAutoria: 'masculino',
-    condicao: 'bom',
+    condicao: 'bom estado',
     editora: 'Record',
     novidade: false
   },
@@ -140,10 +140,10 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: true,
-    preco: 'R$ 22,00',
+    preco: 'R$ 30,00',
     imagem: 'corcunda.jpg',
     generoAutoria: 'masculino',
-    condicao: 'bom',
+    condicao: 'bom estado',
     editora: 'Zahar',
     novidade: true
   },
@@ -156,10 +156,10 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: false,
-    preco: 'R$ 22,00',
+    preco: 'R$ 21,00',
     imagem: 'jardim.jpg',
     generoAutoria: 'feminino',
-    condicao: 'bom',
+    condicao: 'bom estado',
     editora: 'Zahar',
     novidade: false
   },
@@ -172,10 +172,10 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: true,
-    preco: 'R$ 22,00',
+    preco: 'R$ 32,00',
     imagem: 'conde.jpg',
     generoAutoria: 'masculino',
-    condicao: 'bom',
+    condicao: 'bom estado',
     editora: 'Zahar',
     novidade: false
   },
@@ -220,10 +220,10 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: false,
-    preco: 'R$ 22,00',
+    preco: 'R$ 28,00',
     imagem: 'morro.jpg',
     generoAutoria: 'feminino',
-    condicao: 'perfeito',
+    condicao: 'excelente',
     editora: 'Zahar',
     novidade: false
   },
@@ -236,10 +236,10 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: false,
-    preco: 'R$ 22,00',
+    preco: 'R$ 28,00',
     imagem: 'jane.jpg',
     generoAutoria: 'feminino',
-    condicao: 'perfeito',
+    condicao: 'excelente',
     editora: 'Zahar',
     novidade: false
   },
@@ -252,10 +252,10 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: true,
-    preco: 'R$ 13,00',
+    preco: 'R$ 22,00',
     imagem: 'lolita.jpg',
     generoAutoria: 'masculino',
-    condicao: 'bom',
+    condicao: 'bom estado',
     editora: 'Alfaguara',
     novidade: false
   },
@@ -380,10 +380,10 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: false,
-    preco: 'R$ 10,00',
+    preco: 'R$ 23,00',
     imagem: 'dublinenses.jpg',
     generoAutoria: 'masculino',
-    condicao: 'bom',
+    condicao: 'bom estado',
     editora: 'Penguin',
     novidade: false
   },
@@ -398,10 +398,10 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: true,
-    preco: 'R$ 12,00',
+    preco: 'R$ 24,00',
     imagem: 'paixao.jpg',
     generoAutoria: 'feminino',
-    condicao: 'perfeito',
+    condicao: 'excelente',
     editora: 'Rocco',
     novidade: true
   },
@@ -789,10 +789,10 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: false,
-    preco: 'R$ 10,00',
+    preco: 'R$ 20,00',
     imagem: 'bovary.jpg',
     generoAutoria: 'masculino',
-    condicao: 'bom',
+    condicao: 'bom estado',
     editora: 'Penguin',
     novidade: false
   },
@@ -826,7 +826,7 @@ export const livros: Livro[] = [
     preco: 'R$ 20,00',
     imagem: 'pessoas.jpg',
     generoAutoria: 'feminino',
-    condicao: 'novo',
+    condicao: 'excelente',
     editora: 'Companhia das Letras',
     novidade: false
   },
@@ -842,7 +842,7 @@ export const livros: Livro[] = [
     preco: 'R$ 20,00',
     imagem: 'conversas.jpg',
     generoAutoria: 'feminino',
-    condicao: 'novo',
+    condicao: 'excelente',
     editora: 'Companhia das Letras',
     novidade: true
   },
@@ -874,7 +874,7 @@ export const livros: Livro[] = [
     preco: 'R$ 20,00',
     imagem: 'daisy.jpg',
     generoAutoria: 'feminino',
-    condicao: 'novo',
+    condicao: 'excelente',
     editora: 'Paralela',
     novidade: false
   },
@@ -906,7 +906,7 @@ export const livros: Livro[] = [
     preco: 'R$ 20,00',
     imagem: 'reparacao.jpg',
     generoAutoria: 'masculino',
-    condicao: 'novo',
+    condicao: 'excelente',
     editora: 'Companhia das Letras',
     novidade: false
   },
@@ -960,7 +960,7 @@ export const livros: Livro[] = [
     preco: 'R$ 30,00',
     imagem: 'circo.jpg',
     generoAutoria: 'feminino',
-    condicao: 'novo',
+    condicao: 'excelente',
     editora: 'Morro Branco',
     novidade: true
   },
@@ -976,7 +976,7 @@ export const livros: Livro[] = [
     preco: 'R$ 20,00',
     imagem: 'piranesi.jpg',
     generoAutoria: 'feminino',
-    condicao: 'novo',
+    condicao: 'excelente',
     editora: 'Morro Branco',
     novidade: false
   },
@@ -1041,7 +1041,7 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: false,
-    preco: 'R$ 15,00',
+    preco: 'R$ 21,00',
     imagem: 'jantar.jpg',
     generoAutoria: 'masculino',
     condicao: 'novo',
@@ -1057,10 +1057,10 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: false,
-    preco: 'R$ 15,00',
+    preco: 'R$ 22,00',
     imagem: 'paciente.jpg',
     generoAutoria: 'masculino',
-    condicao: 'novo',
+    condicao: 'excelente',
     editora: 'Record',
     novidade: false
   },
@@ -1073,7 +1073,7 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: true,
-    preco: 'R$ 15,00',
+    preco: 'R$ 25,00',
     imagem: 'massacre.jpg',
     generoAutoria: 'masculino',
     condicao: 'novo',
@@ -1089,7 +1089,7 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: false,
-    preco: 'R$ 15,00',
+    preco: 'R$ 20,00',
     imagem: 'nilo.jpg',
     generoAutoria: 'feminino',
     condicao: 'novo',
@@ -1105,10 +1105,10 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: false,
-    preco: 'R$ 15,00',
+    preco: 'R$ 20,00',
     imagem: 'caribe.jpg',
     generoAutoria: 'feminino',
-    condicao: 'novo',
+    condicao: 'bom estado',
     editora: 'HarperCollins',
     novidade: false
   },
@@ -1121,7 +1121,7 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: false,
-    preco: 'R$ 15,00',
+    preco: 'R$ 20,00',
     imagem: 'colecionador.jpg',
     generoAutoria: 'masculino',
     condicao: 'novo',
@@ -1140,7 +1140,7 @@ export const livros: Livro[] = [
     preco: 'R$ 22,00',
     imagem: 'misery.jpg',
     generoAutoria: 'masculino',
-    condicao: 'perfeito',
+    condicao: 'excelente',
     editora: 'Suma',
     novidade: false
   },
@@ -1156,7 +1156,7 @@ export const livros: Livro[] = [
     preco: 'R$ 22,00',
     imagem: 'sob.jpg',
     generoAutoria: 'masculino',
-    condicao: 'perfeito',
+    condicao: 'aceitável',
     editora: 'Suma',
     novidade: false
   },
@@ -1169,10 +1169,10 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: true,
-    preco: 'R$ 10,00',
+    preco: 'R$ 20,00',
     imagem: 'empregada.jpg',
     generoAutoria: 'feminino',
-    condicao: 'novo',
+    condicao: 'excelente',
     editora: 'Arqueiro',
     novidade: false
   },
@@ -1207,7 +1207,7 @@ export const livros: Livro[] = [
     preco: 'R$ 34,00',
     imagem: 'lobisomem.jpg',
     generoAutoria: 'masculino',
-    condicao: 'novo',
+    condicao: 'excelente',
     editora: 'Suma',
     novidade: true
   },
@@ -1239,7 +1239,7 @@ export const livros: Livro[] = [
     preco: 'R$ 20,00',
     imagem: 'carrie.jpg',
     generoAutoria: 'masculino',
-    condicao: 'novo',
+    condicao: 'bom estado',
     editora: 'Suma',
     novidade: false
   },
@@ -1268,7 +1268,7 @@ export const livros: Livro[] = [
       livros: []
     },
     reservado: true,
-    preco: 'R$ 30,00',
+    preco: 'R$ 25,00',
     imagem: 'iluminado.jpg',
     generoAutoria: 'masculino',
     condicao: 'novo',

@@ -269,7 +269,7 @@ filtrar(filtro: string, tipo: string, event: Event) {
 
   gerarFiltrosDinamicos() {
     const precos = [
-      { faixa: 'Menos de R$20', min: 0, max: 19.99 },
+      // { faixa: 'Menos de R$20', min: 0, max: 19 },
       { faixa: 'R$20 - R$30', min: 20, max: 30 },
       { faixa: 'R$30 - R$40', min: 30, max: 40 },
       { faixa: 'R$40 - R$50', min: 40, max: 50 }
