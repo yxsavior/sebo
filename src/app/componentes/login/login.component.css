@@ -60,3 +60,15 @@
 .voltar-home:hover {
   color: #6A0DAD;
 }
+
+/* Sombreado lilás nos campos de input ao clicar */
+input:focus, textarea:focus, select:focus {
+  /* border-color: #9b45d8; */
+  border: none;
+  box-shadow: 0 0 0 0.2rem rgba(155, 69, 216, 0.25); /* Efeito de sombra lilás */
+}
+
+/* Adicionando o foco no label também para mudar a cor do texto ao clicar */
+input:focus + label, textarea:focus + label, select:focus + label {
+  color: #9b45d8; /* Mudando a cor do texto do label para lilás */
+}
