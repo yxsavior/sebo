@@ -1,4 +1,6 @@
 body, html {
+  height: 100%;  /* Garante que a altura seja 100% da tela */
+  margin: 0;     /* Remove qualquer margem padrão */
   overflow-x: hidden;  /* Impede a rolagem horizontal */
 }
 
@@ -6,7 +8,9 @@ body, html {
   box-sizing: border-box;  /* Garante que padding e border não ultrapassem a largura */
 }
 
-
+.main-content {
+  min-height: 100vh;  /* Garante que o conteúdo ocupe pelo menos 100% da altura da tela */
+}
 
 .navegacao {
   color: #D19C97;
@@ -79,3 +83,4 @@ body, html {
     width: 100%; /* Deixar os botões ocupando 100% da largura disponível */
   }
 }
+

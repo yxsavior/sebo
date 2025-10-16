@@ -54,3 +54,12 @@
 .accordion-body {
   min-height: 60px;  /* Garante uma altura mínima para o conteúdo */
 }
+
+  .whatsapp-link {
+    color: #db5ca2;  /* Cor rosa */
+    text-decoration: none;  /* Remove o sublinhado */
+  }
+
+  .whatsapp-link:hover {
+    text-decoration: underline;  /* Sublinha ao passar o mouse, se desejar */
+  }

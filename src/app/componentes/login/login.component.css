@@ -4,66 +4,59 @@
   min-height: 100vh;
   align-items: center;
   justify-content: center;
+  padding: 20px; /* Pequeno espaçamento em volta */
 }
 
 .login-box {
-  max-width: 500px;
-  width: 100%;
+  flex: 1; /* Garantir que o formulário ocupe metade do espaço */
+  max-width: 600px; /* Largura máxima para o formulário */
   background-color: #fff;
   padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
 }
 
 .login-image {
-  height: 100%; /* Adiciona 100% de altura para ocupar toda a altura do container */
-  width: 50%;   /* Garantir que tenha a mesma largura que a coluna da esquerda */
+  flex: 1;
+  max-width: 30%;   /* Ajusta a largura da imagem para não ocupar o espaço inteiro */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .login-image img {
-  max-width: 500px;
   width: 100%;
-  max-height: 600px;
   height: 100%;
-  object-fit: cover; /* Garantir que a imagem cubra o container sem distorção */
+  object-fit: cover;
+  border-radius: 8px;
 }
 
-.error-message {
-  /* background-color: #ff1212 !important; */
-  color: #880000 !important;
-  padding: 15px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  /* font-weight: bold; */
-  text-align: center;
+/* Adicionando um efeito de transição suave entre o formulário e a imagem */
+.login-container {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9));
+  border-radius: 8px;
 }
 
 /* Customização para o botão */
 .btn-primary {
-  background-color: #4B0082; /* Roxo escuro */
-  border: none; /* Remove a borda do botão */
+  background-color: #4B0082;
+  border: none;
+  border-radius: 5px;
 }
 
 .btn-primary:hover {
-  background-color: #6A0DAD; /* Roxo mais claro ao passar o mouse */
+  background-color: #6A0DAD;
 }
 
 .btn-primary:focus, .btn-primary:active {
-  box-shadow: none; /* Remove o efeito de foco */
+  box-shadow: none;
 }
 
 .voltar-home {
-  color: #9b45d8; /* Cor roxa */
-  text-decoration: none; /* Remove o sublinhado */
+  color: #9b45d8;
+  text-decoration: none;
 }
 
 .voltar-home:hover {
-  color: #6A0DAD; /* Cor roxa mais clara quando o mouse passa por cima */
+  color: #6A0DAD;
 }
-
-
-
-

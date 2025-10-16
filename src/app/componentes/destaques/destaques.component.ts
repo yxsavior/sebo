@@ -70,6 +70,8 @@ function validarTelefoneCompleto(control: AbstractControl) {
 })
 
 export class DestaquesComponent {
+
+
   livros: Livro[] = livros;  // lista original
   livrosFiltrados: Livro[] = livros;  // lista que será exibida, inicialmente igual a lista completa
 
@@ -129,9 +131,6 @@ export class DestaquesComponent {
   this.livrosFiltrados = this.livros.filter(livro => livro.novidade === true);
   }
 
-
-
-
   abrirFormularioReserva(livro: Livro) {
     console.log('Abrindo modal para livro:', livro.titulo);
     this.livroSelecionado = livro;
@@ -154,17 +153,29 @@ export class DestaquesComponent {
     this.livroSelecionado = null;
   }
 
+  sucessoReserva: boolean = false;  // Variável para controlar a notificação
   reservarLivro(dados: any) {
     if (this.livroSelecionado) {
       this.livroSelecionado.reservado = true;
 
       // Remove da lista exibida
-      this.livrosFiltrados = this.livrosFiltrados.filter(l => l !== this.livroSelecionado);
+      // this.livrosFiltrados = this.livrosFiltrados.filter(l => l !== this.livroSelecionado);
 
       this.fecharFormulario();
 
       console.log('Reserva feita com sucesso!', dados);
+      
     }
+
+    // alert('Reserva realizada com sucesso!');
+
+  //    this.sucessoReserva = true;
+  // console.log('Sucesso da reserva:', this.sucessoReserva); 
+
+  // setTimeout(() => {
+  //   this.sucessoReserva = false;
+  //   console.log('Notificação escondida');  
+  // }, 3000);
   }
 
   formatarTelefone() {

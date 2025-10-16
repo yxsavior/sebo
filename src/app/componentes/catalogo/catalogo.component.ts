@@ -172,7 +172,7 @@ export class CatalogoComponent implements OnInit {
       this.livroSelecionado.reservado = true;
 
       // Remove da lista exibida
-      this.livrosFiltrados = this.livrosFiltrados.filter(l => l !== this.livroSelecionado);
+      // this.livrosFiltrados = this.livrosFiltrados.filter(l => l !== this.livroSelecionado);
 
       this.fecharFormulario();
 
