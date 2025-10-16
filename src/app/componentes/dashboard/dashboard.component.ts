@@ -92,8 +92,8 @@ logout() {
       data: {
         labels: ['Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro'], // Meses
         datasets: [{
-          label: 'Quantidade de Livros Vendidos',
-          data: [12, 7, 16, 5, 21, 0], // Dados de vendas fictícios
+          label: 'Lucro',
+          data: [180, 70, 260, 95, 210, 0], // Dados de vendas fictícios
           fill: false, // Não preenche a área abaixo da linha
           borderColor: '#005207ff', // Cor da linha
           tension: 0.1, // Suaviza a curva
@@ -104,12 +104,13 @@ logout() {
         responsive: true,
         plugins: {
           legend: {
-            position: 'top', // Posiciona a legenda
+            // position: 'top', // Posiciona a legenda
+            display: false,
           },
           tooltip: {
             callbacks: {
               label: (tooltipItem) => {
-                return `Vendas: ${tooltipItem.raw} livros`;
+                return `Lucro: ${tooltipItem.raw} reais`;
               }
             }
           }
