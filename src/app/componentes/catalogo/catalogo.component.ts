@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CabecalhoComponent } from '../cabecalho/cabecalho.component';
 import { RodapeComponent } from "../rodape/rodape.component";
-import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { livros } from '../../mock-livros';
 import { Livro } from '../livro/livro';
 
@@ -68,7 +68,7 @@ function validarTelefoneCompleto(control: AbstractControl) {
 @Component({
   selector: 'app-catalogo',
   standalone: true,
-  imports: [CommonModule, RouterModule, CabecalhoComponent, RodapeComponent, ReactiveFormsModule],
+  imports: [CommonModule, RouterModule, CabecalhoComponent, RodapeComponent, ReactiveFormsModule, FormsModule],
   templateUrl: './catalogo.component.html',
   styleUrl: './catalogo.component.css'
 })
@@ -78,6 +78,43 @@ export class CatalogoComponent implements OnInit {
   filtroAtivo: string = '*';  // Filtro de categoria ativo
   itensPorPagina: number = 8;  // Quantidade de itens por página
   paginaAtual: number = 1;  // Página atual
+  filtroOrdenacao: string = 'Todos'; // Defina o valor inicial conforme sua necessidade
+
+
+    // Função para ordenar os livros
+  ordenarLivros(filtro: string) {
+    switch (filtro) {
+      case 'disponiveis':
+      this.livrosFiltrados = this.livros.filter(livro => !livro.reservado);
+      break;
+
+      case 'reservados':
+      this.livrosFiltrados = this.livros.filter(livro => livro.reservado);
+      break;
+
+      case 'precoAsc':
+        this.livrosFiltrados = [...this.livros].sort((a, b) => {
+          const precoA = parseFloat(a.preco.replace('R$', '').replace(',', '.').trim());
+          const precoB = parseFloat(b.preco.replace('R$', '').replace(',', '.').trim());
+          return precoA - precoB;
+        });
+        break;
+
+      case 'precoDesc':
+        this.livrosFiltrados = [...this.livros].sort((a, b) => {
+          const precoA = parseFloat(a.preco.replace('R$', '').replace(',', '.').trim());
+          const precoB = parseFloat(b.preco.replace('R$', '').replace(',', '.').trim());
+          return precoB - precoA;
+        });
+        break;
+
+      default:
+        this.livrosFiltrados = this.livros;  // Se "Todos" for selecionado, mostra todos
+    }
+
+    // Resetar para a primeira página após aplicar o filtro
+    this.paginaAtual = 1;
+  }
 
   // Variáveis de controle de paginação
   get totalDePaginas(): number {
@@ -90,19 +127,39 @@ export class CatalogoComponent implements OnInit {
   }
 
   // Filtro de categoria
-  filtrar(categoria: string, event: Event) {
-    event.preventDefault();
-    this.filtroAtivo = categoria;
+filtrar(filtro: string, tipo: string, event: Event) {
+  event.preventDefault();
 
-    if (categoria === '*') {
+  // Define qual filtro está ativo (categoria, preço, editora, condição)
+  switch (tipo) {
+    case 'categoria':
+      this.filtroAtivo = filtro;
+      this.livrosFiltrados = filtro === '*' ? this.livros : this.livros.filter(livro => livro.genero.id === filtro);
+      break;
+    case 'preco':
+      const faixa = this.filtrosPreco.find(f => f.faixa === filtro);
+      if (faixa) {
+        const [min, max] = faixa.faixa.split('-').map(f => parseFloat(f.replace('R$', '').trim()));
+        this.livrosFiltrados = this.livros.filter(livro => {
+          const valor = parseFloat(livro.preco.replace('R$', '').replace(',', '.').trim());
+          return valor >= min && valor <= max;
+        });
+      }
+      break;
+    case 'editora':
+      this.livrosFiltrados = this.livros.filter(livro => livro.editora === filtro);
+      break;
+    case 'condicao':
+      this.livrosFiltrados = this.livros.filter(livro => livro.condicao === filtro);
+      break;
+    default:
       this.livrosFiltrados = this.livros;
-    } else {
-      this.livrosFiltrados = this.livros.filter(livro => livro.genero.id === categoria);
-    }
-
-    // Resetar para a primeira página após aplicar filtro
-    this.paginaAtual = 1;
   }
+
+  // Resetar para a primeira página após aplicar filtro
+  this.paginaAtual = 1;
+}
+
 
   // Função para alternar entre páginas
   alterarPagina(pagina: number) {

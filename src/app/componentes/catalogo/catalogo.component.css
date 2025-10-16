@@ -486,3 +486,50 @@ body.modal-aberto {
     white-space: nowrap;
 }
 
+/* Estilo para o botão Limpar Filtros */
+.limpar-filtros-btn {
+    background: none;
+    border: none;
+    color: black;
+    text-decoration: underline;
+    text-transform: uppercase;
+    text-underline-offset: 4px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    padding: 0;
+    font-weight: normal;
+}
+
+/* Estilo de hover para o botão Limpar Filtros */
+.limpar-filtros-btn:hover {
+    color: #D19C97;  /* Cor do texto ao passar o mouse */
+    text-decoration: underline;
+}
+
+/* Estilo para tornar os filtros clicáveis com o cursor pointer */
+.clickable {
+    cursor: pointer;
+    transition: color 0.3s ease; /* Adiciona uma transição suave para a cor */
+}
+
+.clickable:hover {
+    color: #D19C97; /* Cor do texto quando o usuário passa o mouse (opcional) */
+}
+
+/* Opção para o botão Limpar Filtros também */
+.limpar-filtros-btn {
+    background: none;
+    border: none;
+    color: black;
+    text-decoration: underline;
+    text-transform: uppercase;
+    text-underline-offset: 4px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    padding: 0;
+    font-weight: normal;
+}
+
+.limpar-filtros-btn:hover {
+    color: #D19C97;; /* Cor do texto ao passar o mouse */
+}
